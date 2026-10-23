@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live The World - Manali, Parvati Valley & Shimla</title>
+  <meta name="description" content="Explore Manali, Parvati Valley, and Shimla with Live The World.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Font Awesome & Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts for Travlla Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&family=Arizonia&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Responsive Stylesheet -->
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ==================== STICKY / SCROLLING NAVBAR ==================== -->
+  <header class="travlla-navbar" id="siteHeader">
+    <div class="navbar-wrapper">
+      <div class="navbar-container">
+
+        <!-- Logo Left Side -->
+        <a href="index.html" class="brand-logo-link" title="Live The World">
+          <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
+          <div class="brand-text-wrap">
+            <span class="brand-name">Live The <span>World</span></span>
+          </div>
+        </a>
+
+        <!-- Menu in the Centre: Home, About, Gallery, Tour Package, Contact Us -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="tours.html" class="nav-link">Tour Packages</a>
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Right Actions: Search & Menu Icons (Exact as Screenshot) -->
+        <div class="navbar-right-actions">
+          <button class="nav-icon-action-btn" aria-label="Search" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="nav-icon-action-btn" aria-label="Menu" title="Menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (WITH SLIDER: MANALI, SHIMLA, PARVATI VALLEY) ==================== -->
+  <section class="travlla-hero-banner" id="home">
+
+    <!-- Hero Slides Container & Track -->
+    <div class="hero-slider-wrap" id="heroSlider">
+      <div class="hero-slider-track" id="heroSliderTrack">
+
+        <!-- Slide 1: Manali -->
+        <div class="hero-slide" data-slide="0">
+          <div class="hero-slide-bg">
+            <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks" class="hero-bg-img">
+            <div class="travlla-banner-overlay"></div>
+          </div>
+          <div class="hero-center-wrapper">
+            <div class="hero-text-block">
+              <span class="trv-banner-explore-script">Explore</span>
+              <div class="trv-banner-text-mid">
+                <h1 class="trv-banner-text-large">Manali</h1>
+                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="trv-butterfly-anim">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Shimla -->
+        <div class="hero-slide" data-slide="1">
+          <div class="hero-slide-bg">
+            <img src="assets/images/bg-shimla.jpg" alt="Shimla Queen of Hills" class="hero-bg-img">
+            <div class="travlla-banner-overlay"></div>
+          </div>
+          <div class="hero-center-wrapper">
+            <div class="hero-text-block">
+              <span class="trv-banner-explore-script">Explore</span>
+              <div class="trv-banner-text-mid">
+                <h1 class="trv-banner-text-large">Shimla</h1>
+                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="trv-butterfly-anim">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Parvati Valley -->
+        <div class="hero-slide" data-slide="2">
+          <div class="hero-slide-bg">
+            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley Magic" class="hero-bg-img">
+            <div class="travlla-banner-overlay"></div>
+          </div>
+          <div class="hero-center-wrapper">
+            <div class="hero-text-block">
+              <span class="trv-banner-explore-script">Explore</span>
+              <div class="trv-banner-text-mid">
+                <h1 class="trv-banner-text-large">Parvati Valley</h1>
+                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="trv-butterfly-anim">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 (Seamless Loop Clone of Slide 1): Manali -->
+        <div class="hero-slide hero-slide-clone" data-slide="3" aria-hidden="true">
+          <div class="hero-slide-bg">
+            <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks" class="hero-bg-img">
+            <div class="travlla-banner-overlay"></div>
+          </div>
+          <div class="hero-center-wrapper">
+            <div class="hero-text-block">
+              <span class="trv-banner-explore-script">Explore</span>
+              <div class="trv-banner-text-mid">
+                <h1 class="trv-banner-text-large">Manali</h1>
+                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="trv-butterfly-anim">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== POPULAR DESTINATION SECTION (EXACT AS SCREENSHOT) ==================== -->
+  <section class="popular-destination-section" id="destinations">
+
+    <!-- Background Floating Clouds (Travlla Cloud Theme) -->
+    <div class="dest-clouds-bg" aria-hidden="true">
+      <img src="assets/images/cloud-1.png" alt="" class="bg-cloud cloud-pos-1">
+      <img src="assets/images/cloud-2.png" alt="" class="bg-cloud cloud-pos-2">
+      <img src="assets/images/cloud-1.png" alt="" class="bg-cloud cloud-pos-3">
+      <img src="assets/images/cloud-2.png" alt="" class="bg-cloud cloud-pos-4">
+    </div>
+
+    <!-- Floating High-Detail Red-Orange Paraglider (Left) -->
+    <div class="paraglider-float paraglider-left" aria-hidden="true">
+      <svg width="220" height="190" viewBox="0 0 220 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="canopyRed" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF2A2A" />
+            <stop offset="35%" stop-color="#FF5722" />
+            <stop offset="75%" stop-color="#FF9800" />
+            <stop offset="100%" stop-color="#FFC107" />
+          </linearGradient>
+          <linearGradient id="canopyUnder" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#E65100" />
+            <stop offset="100%" stop-color="#BF360C" />
+          </linearGradient>
+          <linearGradient id="cellShine" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.7)" />
+            <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+          </linearGradient>
+          <filter id="gliderGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="rgba(6,91,98,0.2)" />
+          </filter>
+        </defs>
+        <!-- Paraglider Wing Canopy (Curved Aerodynamic Crescent Arc) -->
+        <g filter="url(#gliderGlow)">
+          <!-- Upper Surface -->
+          <path d="M 18 85 C 38 25, 172 20, 202 75 C 182 62, 130 52, 110 52 C 80 52, 38 65, 18 85 Z"
+            fill="url(#canopyRed)" />
+          <!-- Underside Surface / Air Inlets -->
+          <path
+            d="M 18 85 C 45 68, 95 56, 110 56 C 135 56, 180 64, 202 75 C 185 82, 135 72, 110 72 C 85 72, 35 78, 18 85 Z"
+            fill="url(#canopyUnder)" opacity="0.88" />
+          <!-- Rib Seams / Chambers -->
+          <path d="M 38 74 C 48 42, 65 34, 72 32" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" />
+          <path d="M 62 65 C 72 38, 88 30, 95 28" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none" />
+          <path d="M 88 58 C 96 35, 110 27, 118 26" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none" />
+          <path d="M 116 57 C 124 35, 138 28, 146 29" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none" />
+          <path d="M 144 60 C 154 38, 168 35, 174 38" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" />
+          <path d="M 172 68 C 180 48, 190 48, 194 54" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" fill="none" />
+          <!-- Aerodynamic Leading Edge Shimmer -->
+          <path d="M 28 72 C 55 28, 165 24, 195 68" stroke="url(#cellShine)" stroke-width="3" fill="none"
+            stroke-linecap="round" />
+          <!-- Wingtip Bright Accents -->
+          <path d="M 18 85 C 28 65, 45 48, 52 42 L 56 46 C 48 56, 32 72, 24 85 Z" fill="#FFE600" opacity="0.9" />
+          <path d="M 202 75 C 190 58, 175 42, 168 36 L 164 40 C 172 50, 185 64, 196 75 Z" fill="#FFE600"
+            opacity="0.9" />
+        </g>
+        <!-- Suspension Bridle Lines -->
+        <g stroke="rgba(6, 91, 98, 0.45)" stroke-width="1.1" stroke-linecap="round">
+          <line x1="26" y1="83" x2="110" y2="152" />
+          <line x1="45" y1="72" x2="110" y2="152" />
+          <line x1="70" y1="63" x2="110" y2="152" />
+          <line x1="95" y1="58" x2="110" y2="152" />
+          <line x1="125" y1="58" x2="116" y2="152" />
+          <line x1="148" y1="62" x2="116" y2="152" />
+          <line x1="172" y1="69" x2="116" y2="152" />
+          <line x1="195" y1="74" x2="116" y2="152" />
+          <!-- Control Brakes -->
+          <line x1="20" y1="85" x2="108" y2="154" stroke="rgba(255, 87, 34, 0.65)" stroke-width="1.2" />
+          <line x1="200" y1="76" x2="118" y2="154" stroke="rgba(255, 87, 34, 0.65)" stroke-width="1.2" />
+        </g>
+        <!-- Pilot in Speedbag Harness -->
+        <g>
+          <line x1="110" y1="152" x2="111" y2="158" stroke="#1C3F44" stroke-width="2.5" />
+          <line x1="116" y1="152" x2="115" y2="158" stroke="#1C3F44" stroke-width="2.5" />
+          <path d="M 104 163 C 104 158, 122 158, 122 163 L 126 174 C 127 178, 116 182, 108 180 L 102 172 Z"
+            fill="#114479" />
+          <path d="M 106 166 L 122 166 L 120 176 L 104 175 Z" fill="#DCA735" />
+          <circle cx="113" cy="158" r="4.5" fill="#E53935" />
+          <path d="M 114 157 Q 117 158 116 160" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Floating High-Detail Purple-Cyan Paraglider (Right) -->
+    <div class="paraglider-float paraglider-right" aria-hidden="true">
+      <svg width="220" height="190" viewBox="0 0 220 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="canopyPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7B1FA2" />
+            <stop offset="35%" stop-color="#9C27B0" />
+            <stop offset="70%" stop-color="#00BCD4" />
+            <stop offset="100%" stop-color="#26A69A" />
+          </linearGradient>
+          <linearGradient id="canopyUnderPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#4A148C" />
+            <stop offset="100%" stop-color="#311B92" />
+          </linearGradient>
+          <filter id="gliderGlow2" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="rgba(123,31,162,0.2)" />
+          </filter>
+        </defs>
+        <!-- Paraglider Wing Canopy in dynamic aerodynamic bank -->
+        <g filter="url(#gliderGlow2)">
+          <path d="M 22 75 C 48 20, 180 25, 204 85 C 184 68, 140 54, 114 54 C 84 54, 44 64, 22 75 Z"
+            fill="url(#canopyPurple)" />
+          <path
+            d="M 22 75 C 50 64, 95 58, 114 58 C 140 58, 182 68, 204 85 C 186 78, 140 74, 114 74 C 88 74, 46 80, 22 75 Z"
+            fill="url(#canopyUnderPurple)" opacity="0.88" />
+          <!-- Rib Seams -->
+          <path d="M 44 68 C 54 44, 70 34, 78 30" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" fill="none" />
+          <path d="M 70 60 C 80 38, 96 29, 104 27" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" />
+          <path d="M 98 56 C 108 34, 122 28, 130 27" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none" />
+          <path d="M 126 57 C 136 36, 150 32, 158 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none" />
+          <path d="M 154 62 C 164 42, 178 40, 184 44" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" fill="none" />
+          <path d="M 180 72 C 188 54, 196 52, 200 58" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none" />
+          <!-- Vibrant Orange Accent Wingtip (Matching Solang Valley Photo) -->
+          <path d="M 148 62 L 180 72 L 195 56 L 164 36 Z" fill="#FF9800" opacity="0.88" />
+          <path d="M 32 68 C 65 24, 172 26, 198 75" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none"
+            stroke-linecap="round" />
+        </g>
+        <!-- Suspension Lines -->
+        <g stroke="rgba(6, 91, 98, 0.45)" stroke-width="1.1" stroke-linecap="round">
+          <line x1="30" y1="74" x2="108" y2="152" />
+          <line x1="52" y1="64" x2="108" y2="152" />
+          <line x1="78" y1="58" x2="108" y2="152" />
+          <line x1="104" y1="56" x2="108" y2="152" />
+          <line x1="126" y1="56" x2="114" y2="152" />
+          <line x1="150" y1="60" x2="114" y2="152" />
+          <line x1="174" y1="67" x2="114" y2="152" />
+          <line x1="198" y1="80" x2="114" y2="152" />
+        </g>
+        <!-- Pilot in Tandem Harness -->
+        <g>
+          <line x1="108" y1="152" x2="109" y2="158" stroke="#1C3F44" stroke-width="2.5" />
+          <line x1="114" y1="152" x2="113" y2="158" stroke="#1C3F44" stroke-width="2.5" />
+          <path d="M 102 163 C 102 158, 120 158, 120 163 L 124 175 C 124 180, 114 183, 106 181 L 100 172 Z"
+            fill="#1C3F44" />
+          <path d="M 104 166 L 118 166 L 116 176 L 102 175 Z" fill="#00BCD4" />
+          <circle cx="111" cy="158" r="4.5" fill="#DCA735" />
+          <path d="M 112 157 Q 115 158 114 160" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="destination-container">
+
+      <!-- Section Title Exactly Matching Screenshot -->
+      <div class="destination-head-wrap">
+        <h2 class="destination-title">
+          <span class="text-popular">Popular</span> <span class="text-destination">Destination</span>
+        </h2>
+        <p class="destination-subtitle">
+          Destinations worth exploring! Here are a few popular spots
+        </p>
+
+        <!-- Paraglider Adventure Trail (NO Flight/Plane Icon) -->
+        <div class="paraglider-adventure-trail">
+          <svg class="paraglider-mini-icon" width="46" height="38" viewBox="0 0 60 50" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M 6 22 C 14 7, 46 7, 54 22 C 46 17, 34 14, 30 14 C 26 14, 14 17, 6 22 Z" fill="#FF5722" />
+            <path d="M 18 14 C 24 10, 36 10, 42 14 L 38 17 C 34 15, 26 15, 22 17 Z" fill="#DCA735" />
+            <line x1="10" y1="21" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
+            <line x1="22" y1="16" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
+            <line x1="38" y1="16" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
+            <line x1="50" y1="21" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
+            <circle cx="30" cy="40" r="2.5" fill="#114479" />
+            <path d="M 28 42 L 32 42 L 33 46 L 27 46 Z" fill="#FF5722" />
+          </svg>
+          <svg class="paraglider-dotted-curve" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 25 C70 5, 120 35, 180 18 C230 5, 270 28, 310 15" stroke="rgba(6, 91, 98, 0.28)"
+              stroke-width="2" stroke-dasharray="5 5" fill="none" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 3 Portrait Destination Cards with Bottom Capsule Pills (Exact As Travlla) -->
+      <div class="destination-cards-track">
+
+        <!-- Card 1: Parvati Valley -->
+        <div class="destination-photo-card">
+          <div class="card-image-wrap">
+            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley" class="destination-img">
+          </div>
+          <div class="card-pill-btn">
+            <span>Parvati Valley</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Shimla -->
+        <div class="destination-photo-card">
+          <div class="card-image-wrap">
+            <img src="assets/images/bg-shimla-img.jpg" alt="Shimla" class="destination-img">
+          </div>
+          <div class="card-pill-btn">
+            <span>Shimla</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Manali Peaks -->
+        <div class="destination-photo-card">
+          <div class="card-image-wrap">
+            <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks" class="destination-img">
+          </div>
+          <div class="card-pill-btn">
+            <span>Manali</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Puffy White Cloud Silhouette at Bottom Edge (Exact As Screenshot) -->
+    <div class="destination-cloud-bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 180" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0,120 C80,75 160,80 230,115 C310,65 420,60 500,105 C580,55 700,50 780,95 C860,50 970,55 1050,105 C1130,65 1240,70 1320,110 C1380,85 1420,90 1440,115 L1440,180 L0,180 Z"
+          fill="#FFFFFF" opacity="0.75" />
+        <path
+          d="M0,135 C60,95 140,95 200,130 C270,85 370,80 440,120 C520,75 620,70 700,115 C780,75 880,75 960,120 C1040,85 1140,85 1210,125 C1290,95 1370,95 1440,130 L1440,180 L0,180 Z"
+          fill="#F4F7FA" opacity="0.9" />
+        <path
+          d="M0,150 C70,115 150,110 220,145 C300,105 400,100 480,140 C560,100 660,95 740,135 C820,95 920,95 1000,135 C1080,105 1180,100 1260,140 C1330,115 1390,120 1440,145 L1440,180 L0,180 Z"
+          fill="#FAF8F5" />
+      </svg>
+    </div>
+
+
+  </section>
+
+  <!-- ==================== ABOUT & RECOMMEND DESTINATIONS SECTION (EXACT AS SCREENSHOT) ==================== -->
+  <section class="about-experience-section" id="about">
+    <div class="about-container">
+
+      <!-- Left Column: Content, Feature Cards, Actions -->
+      <div class="about-content-col">
+
+        <h2 class="about-heading">
+          We Recommend Beautiful Destinations Every Month
+        </h2>
+
+        <p class="about-lead">
+          Travlla is a multi-award-winning strategy and content creation agency that specializes in travel marketing...
+        </p>
+
+        <!-- Feature Block: 24/7 Badge + Feature List -->
+        <div class="about-features-block">
+
+          <!-- 24/7 Guide Support Badge Card (Deep Teal) -->
+          <div class="support-badge-card">
+            <span class="support-badge-val">24/7</span>
+            <span class="support-badge-lbl">Guide<br>Support</span>
+          </div>
+
+          <!-- Feature Items List -->
+          <div class="about-feature-list">
+
+            <!-- Item 1: Trusted Travel Guide -->
+            <div class="about-feature-item">
+              <div class="feature-icon-circle">
+                <img src="assets/images/travel-guide.webp" alt="Travel Guide Icon" class="feature-icon-img">
+              </div>
+              <div class="feature-text">
+                <h3 class="feature-title">Trusted Travel Guide</h3>
+                <p class="feature-desc">Provides reliable information to help travelers plan their trips efficiently and
+                  safely.</p>
+              </div>
+            </div>
+
+            <!-- Item 2: Mission & Vision -->
+            <div class="about-feature-item">
+              <div class="feature-icon-circle">
+                <img src="assets/images/mission-icon.webp" alt="Mission & Vision Icon" class="feature-icon-img">
+              </div>
+              <div class="feature-text">
+                <h3 class="feature-title">Mission & Vision</h3>
+                <p class="feature-desc">Aims to connect people to positive experience through travel, helping them see
+                  the world differently.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Bottom Actions: Discover More Button & Happy Customers -->
+        <div class="about-bottom-actions">
+          <a href="#destinations" class="btn-discover-more">Discover More</a>
+
+          <div class="happy-customers-wrap">
+            <div class="avatar-stack">
+              <img src="assets/images/pic1.webp" alt="Customer 1" class="avatar-img av-1">
+              <img src="assets/images/pic2.webp" alt="Customer 2" class="avatar-img av-2">
+              <img src="assets/images/pic3.webp" alt="Customer 3" class="avatar-img av-3">
+            </div>
+            <div class="customer-stats">
+              <span class="customer-count">3.5K</span>
+              <span class="customer-lbl">HAPPY CUSTOMER</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Portal Image Composition with Blank Image Space -->
+      <div class="about-visual-col">
+
+        <!-- Composition Container -->
+        <div class="about-portal-composition">
+
+          <!-- Floating "25 Years of Experience" Badge Connected to Paraglider with Dotted Thread -->
+          <div class="exp-badge-container">
+
+            <!-- Connected Dotted Thread & Anchor Dots SVG -->
+            <svg class="exp-connecting-thread" viewBox="0 0 350 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Dotted loop thread originating from middle anchor dot and connecting directly to paraglider -->
+              <path class="thread-path" d="M 115 150 C 45 160, 15 125, 22 80 C 28 35, 95 15, 182 45" stroke="#114479"
+                stroke-width="2.5" stroke-dasharray="7 6" stroke-linecap="round" />
+              <!-- Left Anchor 3-Dots Alignment (: • :) exactly as in reference -->
+              <circle cx="115" cy="136" r="2.5" fill="#114479" />
+              <circle cx="115" cy="150" r="4.5" fill="#114479" />
+              <circle cx="115" cy="164" r="2.5" fill="#114479" />
+            </svg>
+
+            <!-- Authentic Himalayan Adventure Paraglider (NO Airplane!) -->
+            <div class="exp-paraglider-rider" aria-label="Himalayan Paraglider">
+              <svg width="112" height="90" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="expParagliderWing" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FF3838" />
+                    <stop offset="30%" stop-color="#FF9F1C" />
+                    <stop offset="65%" stop-color="#2EC4B6" />
+                    <stop offset="100%" stop-color="#023047" />
+                  </linearGradient>
+                  <filter id="gliderShad" x="-20%" y="-20%" width="150%" height="150%">
+                    <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="rgba(0,0,0,0.2)" />
+                  </filter>
+                </defs>
+                <!-- Aerodynamic Curved Canopy Wing -->
+                <path d="M 10 38 C 26 8, 94 8, 110 38 C 90 28, 62 22, 34 28 Z" fill="url(#expParagliderWing)"
+                  filter="url(#gliderShad)" />
+                <!-- 3D Wing Cell Baffling / Ribs -->
+                <path d="M 28 27 C 33 15, 43 12, 49 24" stroke="rgba(255,255,255,0.45)" stroke-width="1.3"
+                  fill="none" />
+                <path d="M 49 24 C 55 12, 67 12, 73 24" stroke="rgba(255,255,255,0.45)" stroke-width="1.3"
+                  fill="none" />
+                <path d="M 73 24 C 79 14, 89 18, 93 28" stroke="rgba(255,255,255,0.45)" stroke-width="1.3"
+                  fill="none" />
+                <!-- Paraglider Suspension Lines (Risers converging to pilot) -->
+                <line x1="16" y1="36" x2="62" y2="76" stroke="#114479" stroke-width="1.2" stroke-opacity="0.8" />
+                <line x1="36" y1="28" x2="62" y2="76" stroke="#114479" stroke-width="1.2" stroke-opacity="0.8" />
+                <line x1="62" y1="23" x2="62" y2="76" stroke="#114479" stroke-width="1.2" stroke-opacity="0.8" />
+                <line x1="86" y1="28" x2="62" y2="76" stroke="#114479" stroke-width="1.2" stroke-opacity="0.8" />
+                <line x1="104" y1="36" x2="62" y2="76" stroke="#114479" stroke-width="1.2" stroke-opacity="0.8" />
+                <!-- Pilot and Tandem Harness in Flight -->
+                <circle cx="62" cy="74" r="5" fill="#114479" />
+                <circle cx="63" cy="73" r="2.5" fill="#DCA735" />
+                <path d="M 58 78 C 57 86, 67 88, 70 83 L 66 78 Z" fill="#04363a" />
+                <path d="M 66 82 L 74 87" stroke="#114479" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <!-- Exact White Pill Badge with 3D "25" and "Years of Experience" -->
+            <div class="exp-badge-pill">
+              <div class="exp-number-3d">25</div>
+              <div class="exp-text-block">
+                <span class="exp-line-1">Years of</span>
+                <span class="exp-line-2">Experience</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Circular Portal Frame with Scenic Himalayan Landscape -->
+          <div class="about-image-portal">
+            <img src="assets/images/circular.png" alt="Himalayan Valley View" class="portal-scenic-img">
+          </div>
+
+          <!-- Cutout Girl on Mountain Rock (3D Pop-Out Layering Exact As Screenshot) -->
+          <div class="girl-rock-wrapper">
+            <img src="assets/images/girl-with-rock.png" alt="Traveler on Mountain Rock" class="girl-rock-img">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== BRANDS / PARTNERS RIBBON SECTION ==================== -->
+  <section class="brands-partners-section" id="partners">
+    <div class="brands-container">
+      <div class="brands-dashed-box">
+
+        <!-- Left: 1K+ Brands Trust Us -->
+        <div class="brands-trust-lead">
+          <div class="brands-count-highlight">1K+</div>
+          <h3 class="brands-trust-title">Brands Trust Us</h3>
+        </div>
+
+        <!-- Right: 5 Brand Logos Strip (Exact as Screenshot) -->
+        <div class="brands-logos-strip">
+
+          <!-- Logo 1: Adventure Ribbon Badge -->
+          <div class="brand-logo-item" title="Adventure Brand">
+            <svg class="brand-svg" viewBox="0 0 160 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 8 28 L 22 14 L 32 14 L 32 42 L 22 42 Z" stroke="#718096" stroke-width="1.8" fill="none" />
+              <path d="M 152 28 L 138 14 L 128 14 L 128 42 L 138 42 Z" stroke="#718096" stroke-width="1.8" fill="none" />
+              <path d="M 26 12 C 60 8, 100 8, 134 12 L 134 44 C 100 48, 60 48, 26 44 Z" stroke="#718096" stroke-width="1.8" fill="none" />
+              <text x="80" y="32" font-family="'Figtree', sans-serif" font-weight="900" font-size="14.5" fill="#4A5568" text-anchor="middle" letter-spacing="2">ADVENTURE</text>
+            </svg>
+          </div>
+
+          <!-- Logo 2: travel WORLD -->
+          <div class="brand-logo-item" title="travel WORLD">
+            <svg class="brand-svg" viewBox="0 0 170 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="5" y="34" font-family="'Figtree', sans-serif" font-weight="600" font-size="18" fill="#718096">travel</text>
+              <text x="56" y="34" font-family="'Figtree', sans-serif" font-weight="900" font-size="22" fill="#2D3748" letter-spacing="1">WORLD</text>
+              <path d="M 15 42 Q 70 46 120 40" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="3 3" />
+              <circle cx="120" cy="40" r="2.5" fill="#DCA735" />
+              <text x="56" y="46" font-family="'Figtree', sans-serif" font-size="7" fill="#A0AEC0" letter-spacing="0.5">it's time to travel the world</text>
+            </svg>
+          </div>
+
+          <!-- Logo 3: TRAVELLING THE WORLD Badge -->
+          <div class="brand-logo-item" title="Travelling The World">
+            <svg class="brand-svg" viewBox="0 0 150 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="10" width="120" height="36" rx="6" fill="#718096" />
+              <circle cx="75" cy="14" r="2.5" fill="#ffffff" opacity="0.8" />
+              <text x="75" y="28" font-family="'Figtree', sans-serif" font-weight="900" font-size="12" fill="#ffffff" text-anchor="middle" letter-spacing="1">TRAVELLING</text>
+              <text x="75" y="38" font-family="'Figtree', sans-serif" font-weight="600" font-size="7" fill="#ffffff" text-anchor="middle" letter-spacing="1.5" opacity="0.9">THE WORLD</text>
+            </svg>
+          </div>
+
+          <!-- Logo 4: Roadtrip Adventure Travels -->
+          <div class="brand-logo-item" title="Roadtrip Adventure Travels">
+            <svg class="brand-svg" viewBox="0 0 175 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="10" y="30" font-family="'Kaushan Script', cursive" font-size="24" fill="#4A5568">Roadtrip</text>
+              <circle cx="140" cy="24" r="6" stroke="#718096" stroke-width="1.2" fill="none" />
+              <path d="M 140 30 L 140 40" stroke="#718096" stroke-width="1.5" />
+              <path d="M 140 24 Q 148 18 152 24" stroke="#718096" stroke-width="1.2" fill="none" />
+              <path d="M 140 24 Q 132 18 128 24" stroke="#718096" stroke-width="1.2" fill="none" />
+              <text x="12" y="44" font-family="'Figtree', sans-serif" font-size="9" font-weight="600" fill="#718096" letter-spacing="1">Adventure travels</text>
+            </svg>
+          </div>
+
+          <!-- Logo 5: BUSINESS Ticket Badge -->
+          <div class="brand-logo-item" title="Business Brand">
+            <svg class="brand-svg" viewBox="0 0 160 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="10" width="130" height="36" rx="4" stroke="#A0AEC0" stroke-width="1.5" fill="none" />
+              <rect x="19" y="14" width="122" height="28" rx="2" stroke="#CBD5E0" stroke-width="1" fill="none" />
+              <circle cx="15" cy="28" r="4" fill="#ffffff" stroke="#A0AEC0" stroke-width="1.5" />
+              <circle cx="145" cy="28" r="4" fill="#ffffff" stroke="#A0AEC0" stroke-width="1.5" />
+              <text x="80" y="33" font-family="'Figtree', serif" font-weight="800" font-size="14" fill="#4A5568" text-anchor="middle" letter-spacing="2">BUSINESS</text>
+            </svg>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ADVENTURE VIDEO & STATS HERO SECTION (EXACT AS SCREENSHOTS) ==================== -->
+  <section class="video-cta-section" id="adventureVideoSection">
+    <div class="video-cta-container">
+
+      <!-- The Grand Rounded Banner Card -->
+      <div class="video-banner-card" id="videoBannerCard">
+
+        <!-- HTML5 Video / Visual Media Layer -->
+        <div class="video-bg-media">
+          <video id="adventureHeroVideo" class="adventure-hero-video" muted loop playsinline preload="auto"
+            poster="assets/images/video-image.png">
+            <source src="assets/images/video.mp4" type="video/mp4">
+          </video>
+          <!-- Dynamic Ambient Visual Layer using video-image.png -->
+          <div class="video-ambient-poster" id="videoAmbientPoster"
+            style="background-image: url('assets/images/video-image.png');"></div>
+          <div class="video-vignette-overlay"></div>
+        </div>
+
+        <!-- Decorative Inner Wireframe Border -->
+        <div class="video-inner-border" aria-hidden="true"></div>
+
+        <!-- Central Play / Pause Button with Circular Motion Hover Effect -->
+        <div class="video-play-btn-wrap" id="videoPlayBtnWrap">
+
+          <!-- Concentric Circular Wave Pulsing Ripples -->
+          <div class="play-ripple ripple-1" aria-hidden="true"></div>
+          <div class="play-ripple ripple-2" aria-hidden="true"></div>
+
+          <!-- Continuous Rotating Circular Text Orbit Ring (Circular Motion Effect) -->
+          <svg class="circular-text-orbit" viewBox="0 0 180 180" aria-hidden="true">
+            <path id="orbitPath" d="M 90, 90 m -66, 0 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" fill="none" />
+            <text>
+              <textPath href="#orbitPath" class="orbit-text">
+                • PLAY ADVENTURE • LIVE THE WORLD • SAY YES •
+              </textPath>
+            </text>
+          </svg>
+
+          <!-- The Glassmorphic Play/Pause Button Core -->
+          <button class="video-play-core-btn" id="videoPlayPauseBtn" aria-label="Play Video" title="Play / Pause Video">
+            <i class="fa-solid fa-play play-icon" id="videoControlIcon"></i>
+          </button>
+        </div>
+
+        <!-- Right Side: Deep Teal Brush Splash Badge "Say Yes! To New Adventure" -->
+        <div class="brush-adventure-badge" aria-label="Say Yes! To New Adventure">
+          <svg class="brush-splash-svg" viewBox="0 0 360 160" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Organic Painterly Brush Splatter Background -->
+            <path
+              d="M 28 32 C 80 14, 280 18, 332 36 C 362 58, 356 112, 326 134 C 275 152, 75 148, 28 128 C 6 102, 8 48, 28 32 Z"
+              fill="#114479" />
+            <!-- Splatter droplets and bristle edges -->
+            <circle cx="16" cy="46" r="3.5" fill="#114479" />
+            <circle cx="10" cy="78" r="4.5" fill="#114479" />
+            <circle cx="20" cy="112" r="2.5" fill="#114479" />
+            <circle cx="342" cy="38" r="3" fill="#114479" />
+            <circle cx="352" cy="72" r="4" fill="#114479" />
+            <circle cx="338" cy="120" r="2.8" fill="#114479" />
+          </svg>
+          <div class="brush-badge-content">
+            <div class="brush-line-top">
+              <span class="brush-say">Say</span>
+              <span class="brush-yes">Yes!</span>
+            </div>
+            <div class="brush-line-bottom">To New Adventure</div>
+          </div>
+        </div>
+
+        <!-- Bottom Translucent Frosted Stats Bar (Exact As Image 2) -->
+        <div class="video-bottom-stats-bar">
+          <div class="stats-items-grid">
+
+            <!-- Stat 1: Awards Winning -->
+            <div class="stat-col-item">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="stat-text-wrap">
+                <span class="stat-label">Awards Winning</span>
+                <span class="stat-number">3600+</span>
+              </div>
+            </div>
+
+            <!-- Stat 2: Happy Traveler -->
+            <div class="stat-col-item">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-person-walking-luggage"></i>
+              </div>
+              <div class="stat-text-wrap">
+                <span class="stat-label">Happy Traveler</span>
+                <span class="stat-number">3600+</span>
+              </div>
+            </div>
+
+            <!-- Stat 3: Tours Success -->
+            <div class="stat-col-item">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-suitcase-rolling"></i>
+              </div>
+              <div class="stat-text-wrap">
+                <span class="stat-label">Tours Success</span>
+                <span class="stat-number">2+</span>
+              </div>
+            </div>
+
+            <!-- Stat 4: Our Experience -->
+            <div class="stat-col-item">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-hand-sparkles"></i>
+              </div>
+              <div class="stat-text-wrap">
+                <span class="stat-label">Our Experience</span>
+                <span class="stat-number">25+</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== BEST SERVICES SECTION (EXACT AS SCREENSHOT) ==================== -->
+  <section class="best-services-section" id="services">
+
+    <!-- Background Watermark Landmark Silhouette (building-1.webp) -->
+    <img src="assets/images/building-1.webp" alt="" class="services-watermark-landmark" aria-hidden="true">
+
+    <!-- Top Right Paraglider Flight Arc (Strictly NO Airplane) -->
+    <div class="services-sky-paraglider" aria-hidden="true">
+      <svg width="120" height="90" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 12 36 C 30 10, 110 10, 128 36 C 105 26, 75 20, 42 26 Z" fill="rgba(255, 170, 13, 0.75)" />
+        <line x1="22" y1="34" x2="70" y2="72" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" />
+        <line x1="45" y1="26" x2="70" y2="72" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" />
+        <line x1="95" y1="26" x2="70" y2="72" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" />
+        <line x1="118" y1="34" x2="70" y2="72" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" />
+        <circle cx="70" cy="70" r="4.5" fill="rgba(255, 255, 255, 0.65)" />
+      </svg>
+    </div>
+
+    <div class="services-container">
+
+      <!-- Left Column: Traveler Man (Left-Man-Image.webp) & Sticky 3D Diorama (combination.png) -->
+      <div class="services-visual-col">
+        <div class="services-man-wrapper">
+          <img src="assets/images/Left-Man-Image.webp" alt="Traveler discovering best services"
+            class="services-man-img">
+        </div>
+        <div class="services-diorama-sticky">
+          <img src="assets/images/combination.png" alt="Travel Wonders Diorama" class="diorama-sticky-img">
+        </div>
+      </div>
+
+      <!-- Right Column: Header, 3 Step Cards, Bottom Oblong Landscape Pill -->
+      <div class="services-content-col">
+
+        <!-- Header -->
+        <div class="services-header-block">
+          <h2 class="services-heading">We offer Best <span class="text-orange">Services</span></h2>
+          <p class="services-lead">
+            Travlla is a multi-award-winning strategy and content creation agency that specializes in travel marketing.
+            They have one of the world's largest and most influential online travel communities, helping brands and
+            tourism.
+          </p>
+        </div>
+
+        <!-- 3 Step Service Cards -->
+        <div class="service-cards-grid">
+
+          <!-- Card 1: Exclusive Trip -->
+          <div class="service-step-card">
+            <div class="step-icon-wrap icon-blue">
+              <img src="assets/images/ship.webp" alt="Exclusive Trip" class="step-card-icon-img" width="64" height="64">
+            </div>
+            <h3 class="step-title">Exclusive Trip</h3>
+            <p class="step-desc">We pay attention to every quality in the service we provide to you</p>
+            <!-- Step Ribbon Badge (Step 01 - Blue) -->
+            <div class="step-ribbon-badge ribbon-blue">
+              <span class="ribbon-lbl">Step</span>
+              <span class="ribbon-num">01</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Easy Booking -->
+          <div class="service-step-card">
+            <div class="step-icon-wrap icon-orange">
+              <img src="assets/images/plane-booking.webp" alt="Easy Booking" class="step-card-icon-img" width="64"
+                height="64">
+            </div>
+            <h3 class="step-title">Easy Booking</h3>
+            <p class="step-desc">Booking process and full support service assistance from us.</p>
+            <!-- Step Ribbon Badge (Step 02 - Orange) -->
+            <div class="step-ribbon-badge ribbon-orange">
+              <span class="ribbon-lbl">Step</span>
+              <span class="ribbon-num">02</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Professional Guide -->
+          <div class="service-step-card">
+            <div class="step-icon-wrap icon-green">
+              <img src="assets/images/guide-icon.webp" alt="Professional Guide" class="step-card-icon-img" width="64"
+                height="64">
+            </div>
+            <h3 class="step-title">Professional Guide</h3>
+            <p class="step-desc">While on vacation will be guided by our professional guide</p>
+            <!-- Step Ribbon Badge (Step 03 - Green) -->
+            <div class="step-ribbon-badge ribbon-green">
+              <span class="ribbon-lbl">Step</span>
+              <span class="ribbon-num">03</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Oblong Landscape Pill (landscape-pic.webp) -->
+        <div class="services-landscape-pill-wrap">
+          <div class="services-landscape-pill">
+            <img src="assets/images/landscape-pic.webp" alt="Tropical Island Panoramic View" class="landscape-pill-img">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==================== HIMALAYAN DESTINATIONS MARQUEE & PANORAMA SECTION ==================== -->
+  <section class="marquee-destinations-section" id="himalayas-explore">
+    <div class="marquee-section-inner">
+
+      <!-- Running Destination Ticker Marquee -->
+      <div class="marquee-ticker-container">
+        <div class="marquee-track">
+          <!-- Primary Loop Set -->
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 4 Tours</span>
+            <span class="marquee-dest-name color-gold">Manali</span>
+            <span class="marquee-popular-badge">Popular!</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 3 Tours</span>
+            <span class="marquee-dest-name color-blue">Shimla</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 6 Tours</span>
+            <span class="marquee-dest-name color-gold">Parvati Valley</span>
+            <span class="marquee-popular-badge">Popular!</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 2 Tours</span>
+            <span class="marquee-dest-name color-blue">Kasol</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 5 Tours</span>
+            <span class="marquee-dest-name color-gold">Solang Valley</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 3 Tours</span>
+            <span class="marquee-dest-name color-blue">Rohtang Pass</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 8 Tours</span>
+            <span class="marquee-dest-name color-gold">Spiti Valley</span>
+            <span class="marquee-popular-badge">Popular!</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 2 Tours</span>
+            <span class="marquee-dest-name color-blue">Dharamshala</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 4 Tours</span>
+            <span class="marquee-dest-name color-gold">Tirthan Valley</span>
+          </div>
+
+          <div class="marquee-item">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 1 Tour</span>
+            <span class="marquee-dest-name color-blue">Malana</span>
+          </div>
+
+          <!-- Duplicate Set for Seamless Infinite Scrolling -->
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 4 Tours</span>
+            <span class="marquee-dest-name color-gold">Manali</span>
+            <span class="marquee-popular-badge">Popular!</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 3 Tours</span>
+            <span class="marquee-dest-name color-blue">Shimla</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 6 Tours</span>
+            <span class="marquee-dest-name color-gold">Parvati Valley</span>
+            <span class="marquee-popular-badge">Popular!</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 2 Tours</span>
+            <span class="marquee-dest-name color-blue">Kasol</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 5 Tours</span>
+            <span class="marquee-dest-name color-gold">Solang Valley</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 3 Tours</span>
+            <span class="marquee-dest-name color-blue">Rohtang Pass</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 8 Tours</span>
+            <span class="marquee-dest-name color-gold">Spiti Valley</span>
+            <span class="marquee-popular-badge">Popular!</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 2 Tours</span>
+            <span class="marquee-dest-name color-blue">Dharamshala</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 4 Tours</span>
+            <span class="marquee-dest-name color-gold">Tirthan Valley</span>
+          </div>
+
+          <div class="marquee-item" aria-hidden="true">
+            <span class="marquee-tour-badge"><i class="fa-solid fa-flag"></i> 1 Tour</span>
+            <span class="marquee-dest-name color-blue">Malana</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower Graphic Banner: Himalayas Visual & Right Side Popular / LIVE THE WORLD -->
+      <div class="marquee-banner-visual">
+        <!-- Himalayas Panorama Graphic (Left Side) -->
+        <div class="himalayas-panorama-wrap">
+          <img src="assets/images/Himalayas.png" alt="Himalayas Panoramic Skyline" class="himalayas-panorama-img"
+            loading="lazy">
+        </div>
+
+        <!-- Right Side: Popular & LIVE THE WORLD (Matches Reference Screenshot) -->
+        <div class="marquee-banner-right-box">
+          <span class="marquee-banner-popular-tag">Popular!</span>
+          <div class="marquee-banner-headline" aria-label="Live The World">LIVE THE WORLD</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 8. EXPLORE POPULAR TOURS SECTION ==================== -->
+  <section class="popular-tours-section" id="tours">
+    <div class="site-container">
+      <div class="section-header-center">
+        <span class="section-script-subtitle">Explore Popular Tours</span>
+        <h2 class="section-main-heading">Most Popular Travel Packages</h2>
+        <p class="section-desc-center">Discover handcrafted Himalayan getaways designed for adventure, peace, and
+          unforgettable moments.</p>
+      </div>
+
+      <div class="popular-tours-grid">
+        <!-- Tour Card 1: Manali -->
+        <div class="tour-package-card">
+          <div class="tour-card-image-wrap">
+            <img src="assets/images/Manali.jpg" alt="Manali Adventure Tour" class="tour-card-img" loading="lazy">
+            <span class="tour-duration-badge"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+            <span class="tour-price-badge">₹12,499 <sub>/ Person</sub></span>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-location-rating">
+              <span class="tour-loc"><i class="fa-solid fa-location-dot"></i> Manali & Solang</span>
+              <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.9 (148)</span>
+            </div>
+            <h3 class="tour-card-title">Himalayan Solang Valley & Snow Point Expedition</h3>
+            <p class="tour-card-desc">Experience snow activities, river crossing, and serene monastery walks in Old
+              Manali.</p>
+            <div class="tour-card-footer">
+              <a href="#booking-steps" class="btn-theme-gold tour-book-btn">Book Now <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Card 2: Shimla -->
+        <div class="tour-package-card">
+          <div class="tour-card-image-wrap">
+            <img src="assets/images/bg-shimla.jpg" alt="Shimla Heritage Tour" class="tour-card-img" loading="lazy">
+            <span class="tour-duration-badge"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</span>
+            <span class="tour-price-badge">₹9,999 <sub>/ Person</sub></span>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-location-rating">
+              <span class="tour-loc"><i class="fa-solid fa-location-dot"></i> Shimla & Kufri</span>
+              <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.8 (96)</span>
+            </div>
+            <h3 class="tour-card-title">Queen of Hills Heritage & Kufri Pine Forests</h3>
+            <p class="tour-card-desc">Stroll along Mall Road, visit historical Viceregal Lodge, and enjoy horseback
+              rides in Kufri.</p>
+            <div class="tour-card-footer">
+              <a href="#booking-steps" class="btn-theme-gold tour-book-btn">Book Now <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Card 3: Parvati Valley -->
+        <div class="tour-package-card">
+          <div class="tour-card-image-wrap">
+            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley Trek" class="tour-card-img" loading="lazy">
+            <span class="tour-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <span class="tour-price-badge">₹14,999 <sub>/ Person</sub></span>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-location-rating">
+              <span class="tour-loc"><i class="fa-solid fa-location-dot"></i> Kasol, Tosh & Kheerganga</span>
+              <span class="tour-rating"><i class="fa-solid fa-star"></i> 5.0 (224)</span>
+            </div>
+            <h3 class="tour-card-title">Parvati Valley Riverside Camps & Hot Springs Trek</h3>
+            <p class="tour-card-desc">Camp under starlit Himalayan skies, hike pine trails to Kheerganga natural sulfur
+              springs.</p>
+            <div class="tour-card-footer">
+              <a href="#booking-steps" class="btn-theme-gold tour-book-btn">Book Now <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. 3 EASY STEPS TO BOOK YOUR NEXT TRIP ==================== -->
+  <section class="easy-steps-section" id="booking-steps">
+    <div class="site-container">
+      <div class="easy-steps-container">
+
+        <!-- Left Side: Steps Content -->
+        <div class="steps-content-col">
+          <span class="section-script-subtitle">3 Easy Steps to Book</span>
+          <h2 class="section-main-heading">Your Next Dream Trip</h2>
+          <p class="steps-lead-desc">Booking your memorable Himalayan getaway with Live The World takes just three
+            seamless steps.</p>
+
+          <div class="easy-steps-list">
+            <!-- Step 1 -->
+            <div class="easy-step-row">
+              <div class="step-icon-capsule">
+                <img src="assets/images/destination.webp" alt="Choose Destination" class="step-capsule-icon">
+                <span class="step-num-pill">01</span>
+              </div>
+              <div class="step-row-text">
+                <h3 class="step-row-title">Choose Your Destination</h3>
+                <p class="step-row-desc">Browse through Manali, Shimla, and Parvati Valley itineraries tailored to your
+                  style.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="easy-step-row">
+              <div class="step-icon-capsule">
+                <img src="assets/images/make-payment.webp" alt="Make Payment" class="step-capsule-icon">
+                <span class="step-num-pill">02</span>
+              </div>
+              <div class="step-row-text">
+                <h3 class="step-row-title">Make Secure Payment</h3>
+                <p class="step-row-desc">Guaranteed transparent pricing with 100% verified instant booking confirmation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 (NO FLIGHT ICON - using travel-guide icon) -->
+            <div class="easy-step-row">
+              <div class="step-icon-capsule">
+                <img src="assets/images/travel-guide.webp" alt="Begin Your Adventure" class="step-capsule-icon">
+                <span class="step-num-pill">03</span>
+              </div>
+              <div class="step-row-text">
+                <h3 class="step-row-title">Begin Your Adventure</h3>
+                <p class="step-row-desc">Meet your certified local guide at your pickup spot and immerse in nature.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Mini Stat Card -->
+          <div class="steps-experience-badge">
+            <div class="exp-badge-accent">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="exp-badge-info">
+              <span class="exp-highlight">10+ Years / 48k+</span>
+              <span class="exp-label">Happy Travelers Guided Across Himachal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Traveler Visual with Suitcase & Floating Cloud Accents -->
+        <div class="steps-visual-col">
+          <div class="steps-traveler-stage">
+            <div class="stage-backdrop-circle"></div>
+            <!-- Cloud Decorative Badges -->
+            <img src="assets/images/cloud-1.png" alt="Cloud Accent" class="stage-floating-cloud cloud-top">
+            <img src="assets/images/cloud-2.png" alt="Cloud Accent" class="stage-floating-cloud cloud-bottom">
+            <!-- Girl Image on Suitcase -->
+            <img src="assets/images/Girl-Image.webp" alt="Live The World Happy Traveler" class="steps-traveler-img"
+              loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. WHY CHOOSE US / CALL US BANNER ==================== -->
+  <section class="why-choose-banner-section" id="why-choose">
+    <div class="site-container">
+      <div class="why-choose-banner-card">
+
+        <!-- Left Features List -->
+        <div class="why-choose-left">
+          <span class="banner-badge-light">Why Choose Us?</span>
+          <h2 class="banner-choose-title">We Deliver The Safest, Most Memorable Journeys</h2>
+          <ul class="why-choose-checklist">
+            <li><i class="fa-solid fa-circle-check"></i> Certified Local Himalayan Guides</li>
+            <li><i class="fa-solid fa-circle-check"></i> Best Price & Handpicked Stays Guarantee</li>
+            <li><i class="fa-solid fa-circle-check"></i> 24/7 On-Ground Emergency & Medical Assistance</li>
+          </ul>
+          <a href="#tours" class="btn-theme-gold banner-action-btn">Explore Packages <i
+              class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Right Call Us Card -->
+        <div class="why-choose-right-call">
+          <div class="call-banner-icon-wrap">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <span class="call-banner-tag">HAVE QUESTIONS? CALL US NOW</span>
+          <a href="tel:+919876543210" class="call-banner-number">+91 98765 43210</a>
+          <span class="call-banner-sub">Toll Free • Available 24/7 For Inquiries</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 11. OUR CLIENTS SAY / TESTIMONIALS SECTION ==================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="site-container">
+
+      <!-- Header: LIVE THE WORLD Two-Tone Title & Our Client Says -->
+      <div class="testimonials-header-wrap">
+        <div class="testimonials-two-tone-wrap">
+          <h2 class="testimonials-two-tone-title">LIVE THE WORLD</h2>
+        </div>
+
+        <div class="testimonials-subheading-block">
+          <h3 class="testimonials-client-says-title">Our Client Says!</h3>
+          <div class="testimonials-trail-container">
+            <p class="testimonials-client-says-desc">Destinations worth exploring! Here are a few popular spots.</p>
+            <!-- Decorative Dotted Flight Trail SVG with Paraglider (No Airplane) -->
+            <svg class="testimonials-path-trail" viewBox="0 0 680 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M 50 42 C 110 48, 170 14, 220 22 C 270 30, 250 58, 340 40 C 430 22, 500 58, 600 32" stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
+              <circle cx="605" cy="32" r="4.5" fill="#CBD5E1" />
+              <circle cx="95" cy="40" r="4" fill="#CBD5E1" />
+              <g transform="translate(32, 28) scale(0.32)">
+                <path d="M 10 38 C 26 8, 94 8, 110 38 C 90 28, 62 22, 34 28 Z" fill="#DCA735" />
+                <line x1="20" y1="36" x2="60" y2="68" stroke="#114479" stroke-width="1.8" />
+                <line x1="100" y1="36" x2="60" y2="68" stroke="#114479" stroke-width="1.8" />
+                <circle cx="60" cy="72" r="6" fill="#114479" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-showcase-grid">
+
+        <!-- Left Column: Primary Client Photo with Thumbnail Stack -->
+        <div class="testimonial-portraits-col">
+          <div class="main-portrait-frame">
+            <img src="assets/images/pic1-1.webp" alt="Client Reviewer" class="main-reviewer-photo">
+          </div>
+          <div class="testimonial-thumb-stack">
+            <img src="assets/images/pic1.webp" alt="Reviewer Thumbnail" class="thumb-avatar active">
+            <img src="assets/images/pic2.webp" alt="Reviewer Thumbnail" class="thumb-avatar">
+            <img src="assets/images/pic3.webp" alt="Reviewer Thumbnail" class="thumb-avatar">
+          </div>
+        </div>
+
+        <!-- Right Column: Testimonial Quote Card -->
+        <div class="testimonial-card-col">
+          <div class="testimonial-quote-box">
+            <div class="quote-stars-row">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <blockquote class="testimonial-quote-text">
+              "Live The World curated the most unforgettable trip for our family to Manali and Parvati Valley! From cozy
+              wooden cottages to picturesque riverside cafes and patient mountain drivers, everything was handled with
+              perfection. Highly recommend their Himalayan tours!"
+            </blockquote>
+            <div class="testimonial-author-meta">
+              <h3 class="author-name">Aarav Sharma</h3>
+              <span class="author-location">Adventure Enthusiast from Mumbai</span>
+            </div>
+            <div class="testimonial-nav-dots">
+              <span class="t-dot active"></span>
+              <span class="t-dot"></span>
+              <span class="t-dot"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 12. FULL-WIDTH ADVENTURE PANORAMA BANNER (EXACT AS SCREENSHOT) ==================== -->
+  <section class="adventure-cta-section" id="adventure-cta">
+    <div class="adventure-cta-overlay"></div>
+    <div class="site-container adventure-cta-container">
+
+      <!-- Circular Rotating Badge with Logo and LIVE THE WORLD circulating text -->
+      <div class="adventure-rotating-badge" title="Live The World">
+        <svg class="adventure-badge-svg" viewBox="0 0 160 160">
+          <path id="adventureBadgeCircle" fill="none"
+            d="M 80, 80 m -58.5, 0 a 58.5,58.5 0 1,1 117,0 a 58.5,58.5 0 1,1 -117,0" />
+          <text class="adventure-badge-text">
+            <textPath href="#adventureBadgeCircle" textLength="346" lengthAdjust="spacing">
+              • LIVE THE WORLD • LIVE THE WORLD
+            </textPath>
+          </text>
+        </svg>
+        <div class="adventure-badge-center">
+          <img src="assets/images/logo.png" alt="Live The World Logo" class="adventure-badge-logo">
+        </div>
+      </div>
+
+      <!-- Main Headline: Adventure -->
+      <h2 class="adventure-cta-script-title">Adventure</h2>
+
+      <!-- Subtitle: IT'S TIME TO TRAVEL -->
+      <p class="adventure-cta-subtitle">IT'S TIME TO TRAVEL</p>
+
+      <!-- Pill Button: Booking Now -->
+      <a href="#tours" class="adventure-booking-btn">Booking Now</a>
+
+    </div>
+  </section>
+
+  <!-- ==================== 15. SITE FOOTER (EXACT AS SCREENSHOTS) ==================== -->
+  <footer class="site-footer" id="contact">
+    <div class="site-container">
+
+      <!-- 4 Columns Grid matching Screenshot 1 -->
+      <div class="dz-footer-main-grid">
+
+        <!-- Col 1: Brand Logo, Himalayan Trails, Description & Social Icons (Facebook, Instagram, LinkedIn) -->
+        <div class="dz-footer-brand-col">
+          <a href="index.html" class="dz-brand-logo-link">
+            <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
+            <span class="dz-brand-logo-name">Live The <span>World</span></span>
+          </a>
+          <p class="dz-brand-slogan-desc">Explore the beauty of the Himalayas.</p>
+          <div class="dz-social-icons-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: DESTINATIONS -->
+        <div class="dz-footer-menu-col">
+          <h4 class="dz-col-heading">DESTINATIONS</h4>
+          <ul class="dz-footer-nav-list">
+            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: EXPLORE -->
+        <div class="dz-footer-menu-col">
+          <h4 class="dz-col-heading">EXPLORE</h4>
+          <ul class="dz-footer-nav-list">
+            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> FAQs</a></li>
+            <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="#tours"><i class="fa-solid fa-chevron-right"></i> Tour Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CONTACT US with Mobile, Email, Address Badges -->
+        <div class="dz-footer-contact-col">
+          <h4 class="dz-col-heading">CONTACT US</h4>
+          <div class="dz-contact-items-stack">
+            <!-- Mobile -->
+            <div class="dz-contact-badge-item">
+              <div class="dz-badge-circle">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="dz-badge-content">
+                <span class="dz-contact-label">Mobile</span>
+                <a href="tel:+911234567898" class="dz-phone-script">+91 12345 678 98</a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="dz-contact-badge-item">
+              <div class="dz-badge-circle">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="dz-badge-content">
+                <span class="dz-contact-label">Email</span>
+                <a href="mailto:info@example.com" class="dz-email-text">info@example.com</a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="dz-contact-badge-item">
+              <div class="dz-badge-circle">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="dz-badge-content">
+                <span class="dz-contact-label">Address</span>
+                <span class="dz-address-text">55/11 Ronin Tower, New York</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Follow Instagram Strip from Screenshot 2 -->
+      <div class="dz-instagram-row">
+        <h3 class="dz-instagram-title">Follow Instagram</h3>
+        <div class="dz-instagram-grid">
+          <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/tour-kerala.webp" alt="Travel Moment 8" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 9" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar from Screenshot 2: Copyright -->
+      <div class="dz-footer-bottom">
+        <p class="dz-copyright-text">Copyright © 2025 <span class="dz-highlight-gold">DexignZone</span> All rights
+          reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/911234567898?text=Hello%20Live%20The%20World!%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package." class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

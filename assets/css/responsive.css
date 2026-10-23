@@ -1,0 +1,899 @@
+/* ===================================================================
+   LIVE THE WORLD - RESPONSIVE STYLESHEET (responsive.css)
+   Handles all responsive layouts, media queries, and device viewports
+   =================================================================== */
+
+/* ===================================================================
+   1. NAVIGATION, HERO BANNER & GENERAL GRIDS
+   =================================================================== */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item.span-2 {
+    grid-column: span 1;
+    aspect-ratio: 4/3;
+  }
+
+  .search-filter-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .destinations-grid,
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+
+  .recommend-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trv-banner-rock-pic,
+  .trv-banner-lizard-pic {
+    display: none;
+  }
+
+  .twm-concentric-circles-wrap {
+    display: none;
+  }
+
+  .trv-banner-social-follow {
+    display: none;
+  }
+
+  .hero-nav-prev {
+    left: 1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .hero-nav-next {
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .hero-slider-dots {
+    bottom: 2rem;
+    padding: 6px 14px;
+    gap: 8px;
+  }
+
+  .hero-dot {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-slider-nav {
+    display: none;
+  }
+
+  .hero-slider-dots {
+    bottom: 1.5rem;
+    max-width: 92%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 10px;
+  }
+
+  .hero-dot {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .hero-slide-subtitle {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destinations-grid,
+  .tours-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-full {
+    grid-column: span 1;
+  }
+}
+
+/* ===================================================================
+   2. POPULAR DESTINATIONS TRACK
+   =================================================================== */
+@media (max-width: 992px) {
+  .destination-cards-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .destination-cards-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================================
+   3. ABOUT SECTION & EXPERIENCE PORTAL
+   =================================================================== */
+@media (max-width: 1080px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 4.5rem;
+  }
+
+  .about-content-col {
+    text-align: center;
+  }
+
+  .about-features-block {
+    justify-content: center;
+  }
+
+  .about-bottom-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-image-portal {
+    width: 310px;
+    height: 310px;
+    border-width: 8px;
+  }
+
+  .girl-rock-wrapper {
+    width: 110%;
+    bottom: -20px;
+  }
+
+  .about-features-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .support-badge-card {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .exp-badge-container {
+    right: -10px;
+    top: -45px;
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+}
+
+/* ===================================================================
+   4. BRANDS & PARTNERS DASHED SHELF
+   =================================================================== */
+@media (max-width: 1024px) {
+  .brands-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands-dashed-box {
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+  }
+
+  .brands-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .brand-logo-slot.blank-slot {
+    height: 52px;
+  }
+}
+
+/* ===================================================================
+   5. ADVENTURE VIDEO BANNER & STATS BAR
+   =================================================================== */
+@media (max-width: 1080px) {
+  .video-bottom-stats-bar {
+    padding: 1.4rem 2rem;
+  }
+
+  .stats-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .brush-adventure-badge {
+    width: 320px;
+    height: 160px;
+    right: 2%;
+  }
+
+  .brush-say {
+    font-size: 2rem;
+  }
+
+  .brush-yes {
+    font-size: 3.2rem;
+  }
+
+  .brush-line-bottom {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-banner-card {
+    min-height: 580px;
+    border-radius: 28px;
+    background-attachment: scroll;
+  }
+
+  .video-ambient-poster {
+    background-attachment: scroll;
+  }
+
+  .video-inner-border {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 180px;
+    border-radius: 20px;
+  }
+
+  .brush-adventure-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin: 25px auto 15px;
+    width: 290px;
+    height: 145px;
+  }
+
+  .video-play-btn-wrap {
+    top: 32%;
+  }
+
+  .stats-items-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .stat-icon-wrap {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===================================================================
+   6. BEST SERVICES SECTION & 3-STEP SERVICE CARDS
+   =================================================================== */
+@media (max-width: 1200px) {
+  .services-container {
+    gap: 2.2rem;
+    padding: 0 2rem;
+  }
+
+  .service-cards-grid {
+    gap: 1.2rem;
+  }
+
+  .service-step-card {
+    padding: 2.6rem 1.2rem 3rem;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .best-services-section {
+    padding: 6rem 0 7rem;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .services-visual-col {
+    order: 2;
+    min-height: auto;
+  }
+
+  .services-man-wrapper {
+    max-width: 290px;
+    margin: 0 auto;
+    margin-bottom: -45px;
+  }
+
+  .services-diorama-sticky {
+    max-width: 440px;
+    margin: -95px auto 0;
+  }
+
+  .services-content-col {
+    order: 1;
+    text-align: center;
+    align-items: center;
+  }
+
+  .services-lead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 620px;
+  }
+
+  .service-cards-grid {
+    max-width: 860px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .best-services-section {
+    padding: 5rem 0 5.5rem;
+  }
+
+  .services-container {
+    padding: 0 1.5rem;
+    gap: 3rem;
+  }
+
+  .services-heading {
+    font-size: clamp(2rem, 5vw, 2.4rem);
+    margin-bottom: 0.9rem;
+  }
+
+  .services-lead {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 2.2rem;
+  }
+
+  .service-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .service-step-card {
+    padding: 2.6rem 1.6rem 3rem;
+    border-radius: 56px 20px 20px 20px;
+  }
+
+  .step-icon-wrap {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.2rem;
+  }
+
+  .step-card-icon-img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .step-title {
+    font-size: 1.3rem;
+  }
+
+  .step-desc {
+    font-size: 0.92rem;
+    padding-bottom: 1.4rem;
+  }
+
+  .services-landscape-pill {
+    max-width: 520px;
+    height: 130px;
+    border-radius: 65px;
+    border-width: 4px;
+  }
+
+  .services-sky-paraglider svg {
+    width: 110px;
+    height: auto;
+  }
+
+  .services-watermark-landmark {
+    width: 240px;
+    opacity: 0.07;
+    left: -30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .best-services-section {
+    padding: 4rem 0 4.5rem;
+  }
+
+  .services-container {
+    padding: 0 1.1rem;
+    gap: 2.5rem;
+  }
+
+  .services-heading {
+    font-size: 1.85rem;
+  }
+
+  .services-lead {
+    font-size: 0.92rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .service-cards-grid {
+    max-width: 100%;
+    gap: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-step-card {
+    border-radius: 46px 18px 18px 18px;
+    padding: 2.2rem 1.2rem 2.8rem;
+  }
+
+  .step-icon-wrap {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 1rem;
+  }
+
+  .step-card-icon-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding-bottom: 1.4rem;
+  }
+
+  .step-ribbon-badge {
+    padding: 10px 16px 6px 13px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 18px;
+  }
+
+  .ribbon-lbl {
+    font-size: 0.68rem;
+  }
+
+  .ribbon-num {
+    font-size: 1.3rem;
+  }
+
+  .services-landscape-pill {
+    height: 105px;
+    border-radius: 40px;
+    border-width: 3px;
+  }
+
+  .services-man-wrapper {
+    max-width: 220px;
+    margin: 0 auto;
+    margin-bottom: -35px;
+  }
+
+  .services-man-img {
+    max-height: 380px;
+  }
+
+  .services-diorama-sticky {
+    max-width: 320px;
+    margin: -75px auto 0;
+  }
+
+  .diorama-sticky-img {
+    max-height: 190px;
+  }
+
+  .services-sky-paraglider {
+    right: 3%;
+    top: 10px;
+  }
+
+  .services-sky-paraglider svg {
+    width: 80px;
+    height: auto;
+  }
+
+  .services-watermark-landmark {
+    width: 170px;
+    opacity: 0.05;
+    left: -20px;
+  }
+}
+
+/* ===================================================================
+   HIMALAYAN DESTINATIONS MARQUEE & PANORAMA SECTION RESPONSIVE
+   =================================================================== */
+@media (max-width: 1080px) {
+  .marquee-track {
+    gap: 4rem;
+  }
+
+  .marquee-dest-name {
+    font-size: 2.1rem;
+  }
+
+  .himalayas-panorama-wrap {
+    width: 48%;
+  }
+
+  .himalayas-panorama-img {
+    max-height: 250px;
+  }
+
+  .marquee-banner-headline {
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  }
+
+  .marquee-banner-popular-tag {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-destinations-section {
+    padding-top: 40px;
+  }
+
+  .marquee-track {
+    gap: 3.2rem;
+  }
+
+  .marquee-dest-name {
+    font-size: 1.85rem;
+  }
+
+  .marquee-tour-badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+  }
+
+  .marquee-popular-badge {
+    font-size: 0.78rem;
+  }
+
+  .marquee-banner-visual {
+    min-height: 220px;
+    padding: 0 3%;
+    position: relative;
+  }
+
+  .himalayas-panorama-wrap {
+    width: 55%;
+  }
+
+  .himalayas-panorama-img {
+    max-height: 180px;
+  }
+
+  .marquee-banner-right-box {
+    position: absolute;
+    right: 4%;
+    bottom: 12px;
+    z-index: 2;
+    align-items: flex-end;
+  }
+
+  .marquee-banner-popular-tag {
+    font-size: 1.15rem;
+  }
+
+  .marquee-banner-headline {
+    font-size: clamp(2.2rem, 6.8vw, 3.6rem);
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-destinations-section {
+    padding-top: 30px;
+  }
+
+  .marquee-track {
+    gap: 2.2rem;
+  }
+
+  .marquee-dest-name {
+    font-size: 1.55rem;
+  }
+
+  .marquee-banner-visual {
+    min-height: 190px;
+  }
+
+  .himalayas-panorama-wrap {
+    width: 75%;
+    margin-left: 0;
+  }
+
+  .himalayas-panorama-img {
+    max-height: 135px;
+  }
+
+  .marquee-banner-right-box {
+    bottom: 8px;
+    right: 3%;
+  }
+
+  .marquee-banner-popular-tag {
+    font-size: 1rem;
+  }
+
+  .marquee-banner-headline {
+    font-size: 1.85rem;
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE STYLES FOR SECTIONS 8 - 15
+   (Popular Tours, 3 Easy Steps, Why Choose Us, Testimonials,
+    Adventure CTA, News & Blogs, Subscribe Ribbon, Site Footer)
+   =================================================================== */
+@media (max-width: 1080px) {
+  .site-container,
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .popular-tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .easy-steps-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .steps-visual-col {
+    order: -1;
+  }
+
+  .steps-traveler-stage {
+    min-height: 440px;
+  }
+
+  .steps-traveler-img {
+    max-height: 440px;
+  }
+
+  .why-choose-banner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 45px 35px;
+    gap: 2.5rem;
+  }
+
+  .why-choose-checklist li {
+    justify-content: center;
+  }
+
+  .why-choose-right-call {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .testimonial-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .testimonial-portraits-col {
+    justify-content: center;
+  }
+
+  .news-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .subscribe-ribbon-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 42px 32px;
+  }
+
+  .subscribe-subtext {
+    margin: 0 auto;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.8rem;
+  }
+
+  .footer-gallery-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-container,
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .popular-tours-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-section-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .testimonial-portraits-col {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-thumb-stack {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main-portrait-frame {
+    width: 100%;
+    max-width: 290px;
+    height: 310px;
+  }
+
+  .testimonial-quote-box {
+    padding: 30px 25px;
+  }
+
+  .testimonial-quote-text {
+    font-size: 1.05rem;
+  }
+
+  .adventure-cta-section {
+    padding: 100px 0;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .footer-gallery-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-container,
+  .container {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .popular-tours-section,
+  .easy-steps-section,
+  .testimonials-section,
+  .latest-news-section {
+    padding: 65px 0;
+  }
+
+  .easy-step-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .steps-experience-badge {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .steps-traveler-stage {
+    min-height: 360px;
+  }
+
+  .stage-backdrop-circle {
+    width: 290px;
+    height: 290px;
+  }
+
+  .steps-traveler-img {
+    max-height: 350px;
+  }
+
+  .subscribe-script-text {
+    font-size: 2.2rem;
+  }
+
+  .subscribe-input-group {
+    flex-direction: column;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .subscribe-email-field {
+    width: 100%;
+    background: #ffffff;
+    padding: 13px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .subscribe-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-gallery-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .f-gal-thumb {
+    height: 75px;
+  }
+}
+
+
+
