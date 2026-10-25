@@ -1930,13 +1930,9 @@ h4 {
   overflow: hidden;
 }
 
-/* Background Floating Clouds (Travlla Cloud Theme) */
+/* Background Floating Clouds (Removed) */
 .dest-clouds-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
+  display: none !important;
 }
 
 .bg-cloud {
@@ -2070,6 +2066,13 @@ h4 {
   position: relative;
 }
 
+.destination-head-wrap {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.8rem;
+  position: relative;
+}
+
 .destination-title {
   font-family: var(--font-heading);
   font-size: clamp(2.4rem, 4.2vw, 3.5rem);
@@ -2098,33 +2101,8 @@ h4 {
   margin: 0 auto;
 }
 
-/* Paraglider Adventure Trail (NO Flight/Plane Icon) */
-.paraglider-adventure-trail {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.5rem;
-  width: 280px;
-  height: 38px;
-}
-
-.paraglider-adventure-trail .paraglider-mini-icon {
-  position: absolute;
-  left: 10px;
-  top: 0px;
-  transform: rotate(-10deg);
-  opacity: 0.85;
-  transition: transform 0.4s ease;
-}
-
-.paraglider-adventure-trail:hover .paraglider-mini-icon {
-  transform: rotate(-5deg) translateY(-3px);
-}
-
-.paraglider-dotted-curve {
-  width: 100%;
-  height: 100%;
+.destination-head-wrap .tours-paraglider-trail-wrap {
+  margin: -15px auto 0;
 }
 
 /* 3 Destination Photo Cards with Bottom Bar Stuck to Bottom (Exact As Screenshot) */
@@ -3801,6 +3779,7 @@ h4 {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 1.0rem;
   padding: 0 2.5rem;
   overflow: hidden;
 }
@@ -3853,8 +3832,8 @@ h4 {
   font-weight: 800;
   color: #114479;
   letter-spacing: -0.01em;
-  margin-bottom: 6px;
-  line-height: 1.1;
+  margin-bottom: 12px;
+  line-height: 3.0;
   display: inline-block;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
 }
@@ -3870,6 +3849,9 @@ h4 {
   color: #FFE6BA;
   white-space: nowrap;
   margin: 0;
+  display: inline-block;
+  transform: scaleY(1.35);
+  transform-origin: bottom left;
   transition: color 0.3s ease;
   text-shadow: 0 2px 5px rgba(220, 167, 53, 0.08);
 }
@@ -3887,49 +3869,156 @@ h4 {
   background-image: linear-gradient(180deg, #E8F2F8 0%, #F4F8FC 100%);
   padding: 95px 0;
   position: relative;
+  overflow: hidden;
+}
+
+/* Ambient Floating Paragliders in Sky (Section 8) */
+.tours-sky-paraglider {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tours-glider-left {
+  top: 25px;
+  left: 2.5%;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 20px rgba(17, 68, 121, 0.12));
+  animation: toursGliderSwayLeft 7s ease-in-out infinite alternate;
+}
+
+.tours-glider-right {
+  top: 30px;
+  right: 3%;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 20px rgba(17, 68, 121, 0.12));
+  animation: toursGliderSwayRight 8.5s ease-in-out infinite alternate;
+}
+
+@keyframes toursGliderSwayLeft {
+  0% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+
+  50% {
+    transform: translateY(-14px) translateX(8px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(-6px) translateX(16px) rotate(-8deg);
+  }
+}
+
+@keyframes toursGliderSwayRight {
+  0% {
+    transform: translateY(0px) rotate(8deg);
+  }
+
+  50% {
+    transform: translateY(-16px) translateX(-10px) rotate(3deg);
+  }
+
+  100% {
+    transform: translateY(-8px) translateX(-18px) rotate(11deg);
+  }
 }
 
 .section-header-center {
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto 3.8rem;
+  max-width: 760px;
+  margin: 0 auto 3.4rem;
+  position: relative;
 }
 
 .section-script-subtitle {
-  font-family: var(--font-script), cursive;
-  font-size: 1.7rem;
-  color: #DCA735;
-  display: block;
-  margin-bottom: 0.45rem;
+  display: none;
 }
 
 .section-main-heading {
   font-family: var(--font-heading);
-  font-size: clamp(2.1rem, 3.2vw, 2.85rem);
+  font-size: clamp(2.4rem, 3.8vw, 3.2rem);
   font-weight: 800;
   color: #114479;
   line-height: 1.2;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.section-main-heading .text-gold {
+  color: #FFAA0D;
 }
 
 .section-desc-center {
   color: #556272;
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  max-width: 660px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Paraglider with Dotted Thread Loop in Section 8 */
+.tours-paraglider-trail-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  margin: -24px auto 0;
+  line-height: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tours-paraglider-trail-svg {
+  width: 100%;
+  height: auto;
+  max-height: 98px;
+  display: block;
+}
+
+.tours-thread-paraglider {
+  animation: gliderThreadFloat 5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes gliderThreadFloat {
+  0% {
+    transform: translate(118px, 18px) rotate(-12deg) scale(0.62);
+  }
+
+  100% {
+    transform: translate(118px, 8px) rotate(-6deg) scale(0.64);
+  }
+}
+
+.tours-thread-paraglider-right {
+  animation: gliderThreadRightFloat 5.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes gliderThreadRightFloat {
+  0% {
+    transform: translate(670px, 10px) rotate(14deg) scale(0.60);
+  }
+
+  100% {
+    transform: translate(674px, 2px) rotate(8deg) scale(0.62);
+  }
 }
 
 .popular-tours-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.2rem;
+  align-items: stretch;
 }
 
 .tour-package-card {
   background: #ffffff;
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(17, 68, 121, 0.07);
-  border: 1px solid rgba(220, 167, 53, 0.16);
+  box-shadow: 0 10px 30px rgba(17, 68, 121, 0.08);
+  border: 1px solid rgba(220, 167, 53, 0.2);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   display: flex;
   flex-direction: column;
@@ -3937,10 +4026,11 @@ h4 {
 
 .tour-package-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 42px rgba(17, 68, 121, 0.14);
-  border-color: rgba(220, 167, 53, 0.45);
+  box-shadow: 0 18px 38px rgba(17, 68, 121, 0.13);
+  border-color: rgba(220, 167, 53, 0.48);
 }
 
+/* Image Wrap: 100% Uncovered Photo */
 .tour-card-image-wrap {
   position: relative;
   height: 255px;
@@ -3951,308 +4041,506 @@ h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
 
 .tour-package-card:hover .tour-card-img {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 
+/* Duration Badge at top-left (Our Navy & Gold Brand Theme) */
 .tour-duration-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(17, 68, 121, 0.88);
-  backdrop-filter: blur(8px);
+  top: 0;
+  left: 20px;
+  background: #114479;
   color: #ffffff;
-  font-family: 'Figtree', sans-serif;
-  font-size: 0.78rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
   font-weight: 700;
-  padding: 5px 14px;
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px 16px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgba(17, 68, 121, 0.25);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+  z-index: 2;
 }
 
-.tour-price-badge {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  background: #ffffff;
-  color: #114479;
-  font-family: 'Figtree', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  padding: 5px 14px;
-  border-radius: 30px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(220, 167, 53, 0.35);
+.tour-duration-badge svg {
+  flex-shrink: 0;
+  color: #DCA735;
 }
 
-.tour-price-badge sub {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #6C7A89;
+/* Location & Title Bar: Golden Background ONLY Behind This Text (As Shown in Picture) */
+.tour-card-title-bar {
+  background: #f8efdd;
+
+  padding: 15px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(220, 167, 53, 0.2);
+  border-bottom: 1px solid rgba(17, 68, 121, 0.08);
 }
 
-.tour-card-content {
-  padding: 24px;
+.tour-loc-pin-svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  stroke: #114479;
+}
+
+.tour-card-titles {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  gap: 2px;
+  min-width: 0;
 }
 
-.tour-location-rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.tour-loc {
+.tour-loc-sub {
   color: #114479;
-  font-weight: 700;
-  font-size: 0.88rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tour-loc i {
-  color: #DCA735;
-}
-
-.tour-rating {
-  color: #DCA735;
-  font-weight: 700;
-  font-size: 0.88rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .tour-card-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: #114479;
-  line-height: 1.35;
-  margin-bottom: 10px;
+  line-height: 1.32;
+  margin: 0;
+}
+
+/* Content Area Below Golden Title Bar */
+.tour-card-content {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+  background: #ffffff;
+}
+
+/* Two-Column Info Row */
+.tour-info-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 2px;
+}
+
+.tour-price-box {
+  flex-shrink: 0;
+}
+
+.tour-price-val {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #DCA735;
+  line-height: 1;
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.tour-price-unit {
+  color: #718096;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: block;
 }
 
 .tour-card-desc {
-  color: #5C6A7B;
+  color: #556272;
   font-size: 0.92rem;
   line-height: 1.55;
-  margin-bottom: 22px;
+  margin: 0;
+  font-weight: 500;
   flex: 1;
 }
 
+/* Card Footer: Book Now Pill + Rating (Our Theme Colors) */
 .tour-card-footer {
-  border-top: 1px solid rgba(17, 68, 121, 0.08);
-  padding-top: 18px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  margin-top: auto;
+  border-top: 1px solid rgba(17, 68, 121, 0.08);
 }
 
-.tour-book-btn {
-  font-size: 0.92rem;
-  padding: 10px 24px;
-  border-radius: 30px;
+.tour-pill-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  border: 1.5px solid #DCA735;
+  border-radius: 999px;
+  background: transparent;
+  color: #114479;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.tour-pill-book-btn:hover {
+  background: #DCA735;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(220, 167, 53, 0.35);
+  transform: translateY(-2px);
+}
+
+.tour-rating-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.tour-review-count {
+  font-size: 0.78rem;
+  color: #718096;
+  font-weight: 600;
+}
+
+.tour-star-icons {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #DCA735;
+  font-size: 0.75rem;
 }
 
 /* ===================================================================
-   9. 3 EASY STEPS TO BOOK YOUR NEXT TRIP
+   9. 3 EASY STEPS TO BOOK YOUR NEXT TRIP (BRAND COLOR THEME & PARAGLIDERS)
    =================================================================== */
 .easy-steps-section {
   background-color: #FFFFFF;
-  padding: 100px 0;
+  padding: 85px 0 50px;
   position: relative;
+  overflow: hidden;
 }
 
-.easy-steps-container {
+.easy-steps-main-title {
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+  font-size: 3.50rem;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.easy-steps-main-title .text-gold {
+  color: #DCA735;
+}
+
+.easy-steps-main-title .text-navy {
+  color: #114479;
+}
+
+/* 3-Column Grid Layout: Offer Card | 3 Steps Cards | Traveler Girl Stage */
+.easy-steps-three-col-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 4.5rem;
+  grid-template-columns: 245px minmax(380px, 1.25fr) minmax(360px, 1.1fr);
+  gap: 2.6rem;
   align-items: center;
 }
 
-.steps-lead-desc {
-  color: #566474;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 2.2rem;
+/* Column 1: Left Special Offer Card (Our Brand Gold Theme) */
+.steps-offer-card {
+  background: linear-gradient(135deg, #F3C644 0%, #DCA735 50%, #C48E1D 100%);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(220, 167, 53, 0.28), 0 6px 16px rgba(17, 68, 121, 0.08);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.35s ease;
+  width: 100%;
 }
 
-.easy-steps-list {
+.steps-offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(220, 167, 53, 0.38), 0 8px 20px rgba(17, 68, 121, 0.12);
+}
+
+.steps-offer-img-wrap {
+  width: 100%;
+  height: 235px;
+  overflow: hidden;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+.steps-offer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.steps-offer-card:hover .steps-offer-img {
+  transform: scale(1.05);
+}
+
+.steps-offer-badge-box {
+  background: linear-gradient(180deg, #F3C644 0%, #DCA735 100%);
+  padding: 18px 20px 22px;
+  text-align: center;
+}
+
+.steps-offer-title {
+  display: block;
+  color: #114479;
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.steps-offer-discount-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.steps-offer-num {
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: 4.4rem;
+  font-weight: 900;
+  line-height: 0.9;
+  color: #FFFFFF;
+  letter-spacing: -2px;
+  text-shadow: 0 2px 8px rgba(17, 68, 121, 0.2);
+}
+
+.steps-offer-unit {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-bottom: 2.2rem;
+  line-height: 1.1;
+  color: #114479;
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  text-align: left;
 }
 
-.easy-step-row {
+.steps-offer-percent {
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.steps-offer-off {
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+/* Column 2: Center 3 Step Pill Cards */
+.steps-cards-list {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 18px 24px;
-  border-radius: 18px;
-  background: #FAF7F0;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.steps-pill-card {
+  background: #FFFFFF;
+  border-radius: 16px 50px 50px 16px;
+  box-shadow: 0 8px 26px rgba(17, 68, 121, 0.08);
   border: 1px solid rgba(220, 167, 53, 0.16);
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 14px 10px 10px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.easy-step-row:hover {
-  background: #ffffff;
-  box-shadow: 0 10px 28px rgba(17, 68, 121, 0.08);
+.steps-pill-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 34px rgba(17, 68, 121, 0.14);
   border-color: #DCA735;
-  transform: translateX(8px);
 }
 
-.step-icon-capsule {
-  position: relative;
-  width: 66px;
-  height: 66px;
-  border-radius: 18px;
-  background: #ffffff;
-  border: 1px solid rgba(17, 68, 121, 0.12);
+.steps-pill-num-badge {
+  background: #114479;
+  color: #FFFFFF;
+  width: 74px;
+  height: 74px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(17, 68, 121, 0.25);
+}
+
+.steps-pill-text-content {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 0;
+}
+
+.steps-pill-title {
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #114479;
+  margin: 0 0 5px;
+  line-height: 1.3;
+}
+
+.steps-pill-desc {
+  font-size: 0.84rem;
+  color: #5A6B82;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.steps-pill-icon-circle {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 4px solid #DCA735;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(17, 68, 121, 0.06);
+  box-shadow: 0 4px 15px rgba(220, 167, 53, 0.24);
+  transition: transform 0.3s ease;
 }
 
-.step-capsule-icon {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
+.steps-pill-card:hover .steps-pill-icon-circle {
+  transform: rotate(6deg) scale(1.05);
 }
 
-.step-num-pill {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: #114479;
-  color: #ffffff;
-  font-family: 'Figtree', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 20px;
-  border: 2px solid #ffffff;
-}
-
-.step-row-title {
-  font-family: var(--font-heading);
-  font-size: 1.22rem;
-  font-weight: 800;
-  color: #114479;
-  margin-bottom: 5px;
-}
-
-.step-row-desc {
-  font-size: 0.92rem;
-  color: #586676;
-  line-height: 1.5;
-}
-
-.steps-experience-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 24px;
-  background: linear-gradient(135deg, rgba(220, 167, 53, 0.12) 0%, rgba(17, 68, 121, 0.05) 100%);
-  border: 1px solid rgba(220, 167, 53, 0.35);
-  border-radius: 16px;
-}
-
-.exp-badge-accent {
+.steps-pill-icon-img {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: var(--color-gold-gradient);
-  color: #0A0F1A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  box-shadow: 0 4px 12px rgba(220, 167, 53, 0.3);
-}
-
-.exp-highlight {
-  display: block;
-  font-family: 'Figtree', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #114479;
-}
-
-.exp-label {
-  display: block;
-  font-size: 0.85rem;
-  color: #617081;
-  font-weight: 600;
-}
-
-/* Traveler Visual Stage */
-.steps-traveler-stage {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 520px;
-}
-
-.stage-backdrop-circle {
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(220, 167, 53, 0.16) 0%, rgba(17, 68, 121, 0.06) 65%, transparent 100%);
-  z-index: 1;
-}
-
-.steps-traveler-img {
-  position: relative;
-  z-index: 2;
-  max-width: 100%;
-  max-height: 520px;
   object-fit: contain;
-  filter: drop-shadow(0 18px 36px rgba(17, 68, 121, 0.15));
 }
 
-.stage-floating-cloud {
+/* Column 3: Right Traveler Visual Stage (Girl on Suitcase + Paragliders + Clouds) */
+.steps-traveler-stage-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.steps-stage-backdrop-circle {
   position: absolute;
-  z-index: 3;
-  opacity: 0.88;
+  top: -45px;
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FDF0CE 0%, #FEF5DF 50%, #FFF9EB 100%);
+
+  box-shadow: 0 12px 40px rgba(220, 167, 53, 0.16);
+  z-index: 1;
   pointer-events: none;
 }
 
-.cloud-top {
-  top: 8%;
-  left: -2%;
-  width: 135px;
-  animation: floatCloudMotion 7s ease-in-out infinite alternate;
+.steps-girl-img {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(17, 68, 121, 0.15));
 }
 
-.cloud-bottom {
-  bottom: 12%;
-  right: -2%;
-  width: 120px;
-  animation: floatCloudMotion 8s ease-in-out infinite alternate-reverse;
+/* Ambient Floating Paragliders in Sky (Brand Theme) */
+.steps-sky-paraglider {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 14px rgba(17, 68, 121, 0.18));
 }
 
-@keyframes floatCloudMotion {
+.steps-paraglider-top {
+  top: -45px;
+  right: -25px;
+  animation: floatGliderTop 6s ease-in-out infinite alternate;
+}
+
+.steps-paraglider-left {
+  top: 48%;
+  left: -20px;
+  animation: floatGliderLeft 7s ease-in-out 1s infinite alternate-reverse;
+}
+
+@keyframes floatGliderTop {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(-16px) rotate(3deg);
+  }
+}
+
+@keyframes floatGliderLeft {
+  0% {
+    transform: translateY(0) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(-14px) rotate(-3deg);
+  }
+}
+
+/* Floating Clouds Accents */
+.steps-stage-cloud {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.steps-stage-cloud.cloud-top-right {
+  top: -15px;
+  right: -15px;
+  width: 125px;
+  opacity: 0.88;
+  animation: floatStepsCloud 8s ease-in-out infinite alternate;
+}
+
+.steps-stage-cloud.cloud-mid-left {
+  top: 36%;
+  left: -25px;
+  width: 125px;
+  opacity: 0.92;
+  animation: floatStepsCloud 9s ease-in-out 1.2s infinite alternate-reverse;
+}
+
+.steps-stage-cloud.cloud-bottom-right {
+  bottom: 8%;
+  right: 15px;
+  width: 105px;
+  opacity: 0.82;
+  animation: floatStepsCloud 7.5s ease-in-out 0.6s infinite alternate;
+}
+
+@keyframes floatStepsCloud {
   0% {
     transform: translateY(0) scale(1);
   }
 
   100% {
-    transform: translateY(-14px) scale(1.05);
+    transform: translateY(-12px) scale(1.04);
   }
 }
 

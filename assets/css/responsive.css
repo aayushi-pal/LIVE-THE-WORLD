@@ -692,21 +692,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .easy-steps-container {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-
-  .steps-visual-col {
-    order: -1;
-  }
-
-  .steps-traveler-stage {
-    min-height: 440px;
-  }
-
-  .steps-traveler-img {
-    max-height: 440px;
+  .easy-steps-three-col-grid {
+    grid-template-columns: 220px 1.25fr 1fr;
+    gap: 1.8rem;
   }
 
   .why-choose-banner-card {
@@ -767,6 +755,42 @@
 
   .popular-tours-grid {
     grid-template-columns: 1fr;
+  }
+
+  .easy-steps-three-col-grid {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .steps-offer-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .steps-pill-card {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .steps-traveler-stage-col {
+    max-width: 440px;
+    margin: 0 auto;
+    min-height: 440px;
+  }
+
+  .tours-glider-left {
+    transform: scale(0.65);
+    left: 1%;
+    top: 15px;
+    opacity: 0.6;
+  }
+
+  .tours-glider-right {
+    transform: scale(0.65);
+    right: 1%;
+    top: 15px;
+    opacity: 0.6;
   }
 
   .news-cards-grid {
@@ -837,30 +861,71 @@
     padding: 65px 0;
   }
 
-  .easy-step-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px;
+  .easy-steps-main-title {
+    font-size: 2.15rem;
   }
 
-  .steps-experience-badge {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
+  .steps-pill-card {
+    padding: 8px 10px 8px 8px;
+    gap: 12px;
+    border-radius: 14px 40px 40px 14px;
   }
 
-  .steps-traveler-stage {
+  .steps-pill-num-badge {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+    border-radius: 12px;
+  }
+
+  .steps-pill-title {
+    font-size: 1.05rem;
+  }
+
+  .steps-pill-desc {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .steps-pill-icon-circle {
+    width: 60px;
+    height: 60px;
+    border-width: 3px;
+  }
+
+  .steps-pill-icon-img {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .steps-traveler-stage-col {
     min-height: 360px;
   }
 
-  .stage-backdrop-circle {
-    width: 290px;
-    height: 290px;
+  .steps-stage-backdrop-circle {
+    top: -25px;
+    width: 310px;
+    height: 310px;
   }
 
-  .steps-traveler-img {
+  .steps-girl-img {
     max-height: 350px;
+  }
+
+  .steps-paraglider-top {
+    right: 0px;
+    top: -30px;
+  }
+
+  .steps-paraglider-top svg {
+    width: 125px;
+    height: auto;
+  }
+
+  .steps-paraglider-left svg {
+    width: 90px;
+    height: auto;
   }
 
   .subscribe-script-text {
