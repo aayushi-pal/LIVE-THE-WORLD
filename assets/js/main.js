@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.className = 'toast-notice';
       document.body.appendChild(toast);
     }
-    toast.innerHTML = `<i class="fa-solid fa-mountain" style="color: var(--color-travlla-lime); font-size: 1.3rem;"></i> <span>${msg}</span>`;
+    toast.innerHTML = `<i class="fa-solid fa-mountain" style="color: var(--color-ltw-gold); font-size: 1.3rem;"></i> <span>${msg}</span>`;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3500);
   }

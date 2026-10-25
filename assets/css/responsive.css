@@ -417,30 +417,31 @@
   }
 
   .step-title {
-    font-size: 1.3rem;
+    font-size: 1.48rem;
   }
 
   .step-desc {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
     padding-bottom: 1.4rem;
   }
 
   .services-landscape-pill {
-    max-width: 520px;
-    height: 130px;
-    border-radius: 65px;
-    border-width: 4px;
+    max-width: 580px;
+    height: 160px;
+    border-radius: 80px;
+    border: none;
   }
 
   .services-sky-paraglider svg {
-    width: 110px;
+    width: 140px;
     height: auto;
   }
 
   .services-watermark-landmark {
-    width: 240px;
-    opacity: 0.07;
-    left: -30px;
+    width: 340px;
+    opacity: 0.38;
+    filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255, 255, 255, 0.3));
+    left: -10px;
   }
 }
 

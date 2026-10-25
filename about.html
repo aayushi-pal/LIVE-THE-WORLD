@@ -30,8 +30,8 @@
 </head>
 
 <body>
-  <!-- ==================== STICKY / SCROLLING NAVBAR ==================== -->
-  <header class="travlla-navbar" id="siteHeader">
+  <!-- ==================== SECTION 1: STICKY NAVIGATION BAR ==================== -->
+  <header class="ltw-navbar travlla-navbar" id="siteHeader">
     <div class="navbar-wrapper">
       <div class="navbar-container">
 
@@ -52,16 +52,13 @@
           <a href="contact.html" class="nav-link">Contact Us</a>
         </nav>
 
-        <!-- Right Actions: Search & Menu Icons (Exact as Screenshot) -->
-        <div class="navbar-right-actions">
-          <button class="nav-icon-action-btn" aria-label="Search" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <button class="nav-icon-action-btn" aria-label="Menu" title="Menu"><i class="fa-solid fa-bars"></i></button>
-        </div>
+        <!-- Right Side Blank to keep Menu Centered -->
+        <div class="navbar-right-blank" aria-hidden="true"></div>
 
       </div>
     </div>
   </header>
-  <!-- ==================== HERO BREADCRUMB BANNER ==================== -->
+  <!-- ==================== SECTION 2: ABOUT US HERO BREADCRUMB BANNER ==================== -->
   <section class="inner-hero-banner" id="about-hero">
     <div class="inner-hero-sky-elements" aria-hidden="true">
       <!-- Floating Paraglider in Sky (No Airplane) -->
@@ -94,10 +91,95 @@
     </div>
   </section>
 
-  <!-- ==================== POPULAR DESTINATIONS ==================== -->
+  <!-- ==================== SECTION 3: WE RECOMMEND BEAUTIFUL DESTINATIONS EVERY MONTH ==================== -->
+  <section class="about-recommend-section" id="about-recommend">
+    <div class="recommend-container">
+
+      <!-- Left Column: Traveler Collage with Paraglider in Sky -->
+      <div class="recommend-visual-col">
+        <img src="assets/images/about-dest-collage-clean.png" alt="We Recommend Beautiful Destinations"
+          class="recommend-collage-img" width="550" height="458">
+      </div>
+
+      <!-- Center/Right Column: Heading, Lead, Feature Cards & Bottom Actions -->
+      <div class="recommend-content-col">
+
+        <h2 class="recommend-title">
+          We <span class="highlight-gold">Recommend</span> Beautiful Destinations Every Month
+        </h2>
+
+        <p class="recommend-lead-desc">
+          Live The World is a premier adventure and travel agency that specializes in authentic Himalayan journeys, mountain experiences, and paragliding expeditions...
+        </p>
+
+        <!-- 2 Stacked Feature Cards matching Screenshot -->
+        <div class="recommend-feature-cards">
+
+          <!-- Card 1: Trusted Travel Guide -->
+          <div class="recommend-card-box">
+            <div class="recommend-card-icon-wrap">
+              <img src="assets/images/travel-guide.webp" alt="Trusted Travel Guide Icon"
+                class="recommend-card-icon-img">
+            </div>
+            <div class="recommend-card-info">
+              <h3 class="recommend-card-heading">Trusted Travel Guide</h3>
+              <p class="recommend-card-snippet">
+                Provides reliable information to help travelers plan their trips efficiently and safely
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Mission & Vision -->
+          <div class="recommend-card-box">
+            <div class="recommend-card-icon-wrap">
+              <img src="assets/images/mission-icon.webp" alt="Mission & Vision Icon" class="recommend-card-icon-img">
+            </div>
+            <div class="recommend-card-info">
+              <h3 class="recommend-card-heading">Mission & Vision</h3>
+              <p class="recommend-card-snippet">
+                Aims to connect people to positive experience through travel, helping them see the world differently.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Actions Row: Golden Discover More Button + 3.5K Happy Customer -->
+        <div class="recommend-bottom-row">
+          <div class="recommend-bottom-actions">
+            <a href="#destinations" class="btn-recommend-discover">Discover More</a>
+
+            <div class="recommend-happy-customers">
+              <div class="recommend-avatar-stack">
+                <img src="assets/images/pic1.webp" alt="Customer 1" class="recommend-avatar-img">
+                <img src="assets/images/pic2.webp" alt="Customer 2" class="recommend-avatar-img">
+                <img src="assets/images/pic3.webp" alt="Customer 3" class="recommend-avatar-img">
+              </div>
+              <div class="recommend-stats-text">
+                <span class="recommend-count-num">3.5K</span>
+                <span class="recommend-count-label">HAPPY CUSTOMER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Far Right Column: 25 Years of Experience Vertical Ribbon -->
+      <div class="recommend-vertical-badge" aria-label="25 Years of Experience">
+        <div class="vertical-badge-wrap">
+          <span class="vertical-badge-num">25</span>
+          <span class="vertical-badge-text">Years of Experience</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: POPULAR DESTINATIONS SHOWCASE ==================== -->
   <section class="popular-destination-section" id="destinations">
 
-    <!-- Background Floating Clouds (Travlla Cloud Theme) -->
+    <!-- Background Floating Clouds (Alpine Mountain Cloud Theme) -->
     <div class="dest-clouds-bg" aria-hidden="true">
       <img src="assets/images/cloud-1.png" alt="" class="bg-cloud cloud-pos-1">
       <img src="assets/images/cloud-2.png" alt="" class="bg-cloud cloud-pos-2">
@@ -250,7 +332,7 @@
           Destinations worth exploring! Here are a few popular spots
         </p>
 
-        <!-- Paraglider Adventure Trail (NO Flight/Plane Icon) -->
+        <!-- Paraglider Adventure Trail (Himalayan Paraglider Trail) -->
         <div class="paraglider-adventure-trail">
           <svg class="paraglider-mini-icon" width="46" height="38" viewBox="0 0 60 50" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -270,47 +352,36 @@
         </div>
       </div>
 
-      <!-- 3 Portrait Destination Cards with Bottom Capsule Pills (Exact As Travlla) -->
-      <!-- 4 Portrait Destination Cards with Bottom Capsule Pills (Exact as Screenshot 2) -->
-      <div class="destination-cards-track dest-4-cards">
+      <!-- 3 Portrait Destination Cards with Bottom Capsule Pills (Exact As Screenshot) -->
+      <div class="destination-cards-track">
 
-        <!-- Card 1: Bangkok -->
+        <!-- Card 1: Parvati Valley -->
         <div class="destination-photo-card">
           <div class="card-image-wrap">
-            <img src="assets/images/tour-bangkok.webp" alt="Bangkok" class="destination-img">
+            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley" class="destination-img">
           </div>
           <div class="card-pill-btn">
-            <span>Bangkok</span>
+            <span>Parvati Valley</span>
           </div>
         </div>
 
-        <!-- Card 2: Maldives -->
+        <!-- Card 2: Shimla -->
         <div class="destination-photo-card">
           <div class="card-image-wrap">
-            <img src="assets/images/landscape-pic.webp" alt="Maldives" class="destination-img">
+            <img src="assets/images/bg-shimla-img.jpg" alt="Shimla" class="destination-img">
           </div>
           <div class="card-pill-btn">
-            <span>Maldives</span>
+            <span>Shimla</span>
           </div>
         </div>
 
-        <!-- Card 3: Thailand -->
+        <!-- Card 3: Manali -->
         <div class="destination-photo-card">
           <div class="card-image-wrap">
-            <img src="assets/images/parvati-valley.jpg" alt="Thailand" class="destination-img">
+            <img src="assets/images/Manali.jpg" alt="Manali" class="destination-img">
           </div>
           <div class="card-pill-btn">
-            <span>Thailand</span>
-          </div>
-        </div>
-
-        <!-- Card 4: Paris -->
-        <div class="destination-photo-card">
-          <div class="card-image-wrap">
-            <img src="assets/images/tour-spain.webp" alt="Paris" class="destination-img">
-          </div>
-          <div class="card-pill-btn">
-            <span>Paris</span>
+            <span>Manali</span>
           </div>
         </div>
 
@@ -335,136 +406,85 @@
 
   </section>
 
+  <!-- ==================== SECTION 5: OUR AMAZING SERVICES SECTION ==================== -->
+  <section class="amazing-services-section" id="services">
+    <div class="amazing-services-header">
+      <h2 class="amazing-services-title">
+        <span class="title-gold">Our Amazing</span> <span class="title-white">Services</span>
+      </h2>
+      <p class="amazing-services-subtitle">
+        Destinations worth exploring! Here are a few popular spots.
+      </p>
 
+      <!-- Paraglider Adventure Trail (Strictly NO Airplane) -->
+      <div class="services-paraglider-trail" aria-hidden="true">
+        <svg class="trail-paraglider-svg" width="46" height="38" viewBox="0 0 60 50" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M 6 22 C 14 7, 46 7, 54 22 C 46 17, 34 14, 30 14 C 26 14, 14 17, 6 22 Z" fill="#FFAA0D" />
+          <path d="M 18 14 C 24 10, 36 10, 42 14 L 38 17 C 34 15, 26 15, 22 17 Z" fill="#FFFFFF" />
+          <line x1="10" y1="21" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
+          <line x1="22" y1="16" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
+          <line x1="38" y1="16" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
+          <line x1="50" y1="21" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
+          <circle cx="30" cy="40" r="2.5" fill="#FFAA0D" />
+        </svg>
+        <svg class="trail-dotted-curve" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 25 C70 5, 120 35, 180 18 C230 5, 270 28, 310 15" stroke="rgba(255, 255, 255, 0.45)"
+            stroke-width="1.8" stroke-dasharray="5 5" fill="none" />
+        </svg>
+      </div>
+    </div>
 
-  <!-- ==================== ADVENTURE VIDEO & STATS HERO SECTION (EXACT AS SCREENSHOTS) ==================== -->
-  <section class="video-cta-section" id="adventureVideoSection">
-    <div class="video-cta-container">
+    <!-- Mint/Cyan Rounded Outer Container -->
+    <div class="amazing-cards-outer-wrap">
+      <div class="amazing-cards-grid">
 
-      <!-- The Grand Rounded Banner Card -->
-      <div class="video-banner-card" id="videoBannerCard">
-
-        <!-- HTML5 Video / Visual Media Layer -->
-        <div class="video-bg-media">
-          <video id="adventureHeroVideo" class="adventure-hero-video" muted loop playsinline preload="auto"
-            poster="assets/images/video-image.png">
-            <source src="assets/images/video.mp4" type="video/mp4">
-          </video>
-          <!-- Dynamic Ambient Visual Layer using video-image.png -->
-          <div class="video-ambient-poster" id="videoAmbientPoster"
-            style="background-image: url('assets/images/video-image.png');"></div>
-          <div class="video-vignette-overlay"></div>
-        </div>
-
-        <!-- Decorative Inner Wireframe Border -->
-        <div class="video-inner-border" aria-hidden="true"></div>
-
-        <!-- Central Play / Pause Button with Circular Motion Hover Effect -->
-        <div class="video-play-btn-wrap" id="videoPlayBtnWrap">
-
-          <!-- Concentric Circular Wave Pulsing Ripples -->
-          <div class="play-ripple ripple-1" aria-hidden="true"></div>
-          <div class="play-ripple ripple-2" aria-hidden="true"></div>
-
-          <!-- Continuous Rotating Circular Text Orbit Ring (Circular Motion Effect) -->
-          <svg class="circular-text-orbit" viewBox="0 0 180 180" aria-hidden="true">
-            <path id="orbitPath" d="M 90, 90 m -66, 0 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" fill="none" />
-            <text>
-              <textPath href="#orbitPath" class="orbit-text">
-                • PLAY ADVENTURE • LIVE THE WORLD • SAY YES •
-              </textPath>
-            </text>
-          </svg>
-
-          <!-- The Glassmorphic Play/Pause Button Core -->
-          <button class="video-play-core-btn" id="videoPlayPauseBtn" aria-label="Play Video" title="Play / Pause Video">
-            <i class="fa-solid fa-play play-icon" id="videoControlIcon"></i>
-          </button>
-        </div>
-
-        <!-- Right Side: Deep Teal Brush Splash Badge "Say Yes! To New Adventure" -->
-        <div class="brush-adventure-badge" aria-label="Say Yes! To New Adventure">
-          <svg class="brush-splash-svg" viewBox="0 0 360 160" preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <!-- Organic Painterly Brush Splatter Background -->
-            <path
-              d="M 28 32 C 80 14, 280 18, 332 36 C 362 58, 356 112, 326 134 C 275 152, 75 148, 28 128 C 6 102, 8 48, 28 32 Z"
-              fill="#114479" />
-            <!-- Splatter droplets and bristle edges -->
-            <circle cx="16" cy="46" r="3.5" fill="#114479" />
-            <circle cx="10" cy="78" r="4.5" fill="#114479" />
-            <circle cx="20" cy="112" r="2.5" fill="#114479" />
-            <circle cx="342" cy="38" r="3" fill="#114479" />
-            <circle cx="352" cy="72" r="4" fill="#114479" />
-            <circle cx="338" cy="120" r="2.8" fill="#114479" />
-          </svg>
-          <div class="brush-badge-content">
-            <div class="brush-line-top">
-              <span class="brush-say">Say</span>
-              <span class="brush-yes">Yes!</span>
-            </div>
-            <div class="brush-line-bottom">To New Adventure</div>
+        <!-- Service Card 1 (Active by Default as in Screenshot) -->
+        <div class="amazing-service-card card-active">
+          <div class="service-card-inner">
+            <img src="assets/images/service-tour-guide.png" alt="Tour Guide" class="service-card-img" loading="lazy">
           </div>
+          <h3 class="service-card-label">Tour Guide</h3>
         </div>
 
-        <!-- Bottom Translucent Frosted Stats Bar (Exact As Image 2) -->
-        <div class="video-bottom-stats-bar">
-          <div class="stats-items-grid">
-
-            <!-- Stat 1: Awards Winning -->
-            <div class="stat-col-item">
-              <div class="stat-icon-wrap">
-                <i class="fa-solid fa-award"></i>
-              </div>
-              <div class="stat-text-wrap">
-                <span class="stat-label">Awards Winning</span>
-                <span class="stat-number">3600+</span>
-              </div>
-            </div>
-
-            <!-- Stat 2: Happy Traveler -->
-            <div class="stat-col-item">
-              <div class="stat-icon-wrap">
-                <i class="fa-solid fa-person-walking-luggage"></i>
-              </div>
-              <div class="stat-text-wrap">
-                <span class="stat-label">Happy Traveler</span>
-                <span class="stat-number">3600+</span>
-              </div>
-            </div>
-
-            <!-- Stat 3: Tours Success -->
-            <div class="stat-col-item">
-              <div class="stat-icon-wrap">
-                <i class="fa-solid fa-suitcase-rolling"></i>
-              </div>
-              <div class="stat-text-wrap">
-                <span class="stat-label">Tours Success</span>
-                <span class="stat-number">2+</span>
-              </div>
-            </div>
-
-            <!-- Stat 4: Our Experience -->
-            <div class="stat-col-item">
-              <div class="stat-icon-wrap">
-                <i class="fa-solid fa-hand-sparkles"></i>
-              </div>
-              <div class="stat-text-wrap">
-                <span class="stat-label">Our Experience</span>
-                <span class="stat-number">25+</span>
-              </div>
-            </div>
-
+        <!-- Service Card 2: Entertainment -->
+        <div class="amazing-service-card">
+          <div class="service-card-inner">
+            <img src="assets/images/service-entertainment.png" alt="Entertainment" class="service-card-img"
+              loading="lazy">
           </div>
+          <h3 class="service-card-label">Entertainment</h3>
+        </div>
+
+        <!-- Service Card 3: Safe Mountain Expeditions -->
+        <div class="amazing-service-card">
+          <div class="service-card-inner">
+            <img src="assets/images/service-safe-expeditions.png" alt="Safe Mountain Expeditions" class="service-card-img" loading="lazy">
+          </div>
+          <h3 class="service-card-label">Transportation</h3>
+        </div>
+
+        <!-- Service Card 4: Texi & Metro -->
+        <div class="amazing-service-card">
+          <div class="service-card-inner">
+            <img src="assets/images/service-taxi-metro.png" alt="Texi & Metro" class="service-card-img" loading="lazy">
+          </div>
+          <h3 class="service-card-label">Texi & Metro</h3>
         </div>
 
       </div>
+    </div>
 
+    <!-- Bottom Banner Block (Exact As Screenshot: SERVICES WE OFFER) -->
+    <div class="services-offer-bottom-block">
+      <div class="services-offer-content">
+        <span class="services-offer-sub">Wornderful Services For You</span>
+        <h3 class="services-offer-title">SERVICES WE OFFER</h3>
+      </div>
     </div>
   </section>
 
-
-  <!-- ==================== 12. FULL-WIDTH ADVENTURE PANORAMA BANNER (EXACT AS SCREENSHOT) ==================== -->
+  <!-- ==================== SECTION 6: FULL-WIDTH ADVENTURE CALL-TO-ACTION BANNER ==================== -->
   <section class="adventure-cta-section" id="adventure-cta">
     <div class="adventure-cta-overlay"></div>
     <div class="site-container adventure-cta-container">
@@ -497,7 +517,7 @@
     </div>
   </section>
 
-  <!-- ==================== 15. SITE FOOTER (EXACT AS SCREENSHOTS) ==================== -->
+  <!-- ==================== SECTION 7: SITE FOOTER ==================== -->
   <footer class="site-footer" id="contact">
     <div class="site-container">
 
@@ -510,7 +530,7 @@
             <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
             <span class="dz-brand-logo-name">Live The <span>World</span></span>
           </a>
-          <p class="dz-brand-slogan-desc">Explore the beauty of the Himalayas.</p>
+          <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain experiences, and thrilling paragliding adventures.</p>
           <div class="dz-social-icons-row">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
                 class="fa-brands fa-facebook-f"></i></a>
@@ -588,20 +608,13 @@
         <h3 class="dz-instagram-title">Follow Instagram</h3>
         <div class="dz-instagram-grid">
           <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy">
-          </div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy">
-          </div>
-          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy">
-          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy"></div>
           <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy">
-          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy"></div>
           <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-kerala.webp" alt="Travel Moment 8" loading="lazy">
-          </div>
-          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 9" loading="lazy">
-          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 8" loading="lazy"></div>
         </div>
       </div>
 
@@ -615,7 +628,9 @@
   </footer>
 
   <!-- Floating WhatsApp Action Button -->
-  <a href="https://wa.me/911234567898?text=Hello%20Live%20The%20World!%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package." class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp">
+  <a href="https://wa.me/911234567898?text=Hello%20Live%20The%20World!%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package."
+    class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
+    title="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
     <span class="whatsapp-tooltip">Chat with us</span>
   </a>
