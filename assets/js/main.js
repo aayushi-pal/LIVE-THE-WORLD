@@ -3,6 +3,29 @@
  * Header scroll state, Popular Destinations & Interactive Controls
  */
 
+// --- 0. CLEAN URLS: REMOVE .html EXTENSION FROM ADDRESS BAR ---
+(function cleanUrlExtension() {
+  try {
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+      var path = window.location.pathname;
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+
+      if (path.endsWith('/index.html')) {
+        var clean = path.slice(0, -10) || '/';
+        window.history.replaceState(null, '', clean + search + hash);
+      } else if (path === '/index.html' || path === 'index.html') {
+        window.history.replaceState(null, '', '/' + search + hash);
+      } else if (path.endsWith('.html')) {
+        var clean = path.slice(0, -5);
+        window.history.replaceState(null, '', clean + search + hash);
+      }
+    }
+  } catch (err) {
+    // Graceful fallback for any strict security sandbox
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   const siteHeader = document.getElementById('siteHeader');
 
@@ -322,6 +345,24 @@ document.addEventListener('DOMContentLoaded', () => {
       role: 'Customer',
       photo: 'assets/images/testimonial-thumb-3.jpg',
       quote: 'The Himachal winter expedition was beyond words! The hot sulfur springs of Manikaran, pine trails in Tosh, and paragliding above Solang Valley made this my favorite trip of all time. Truly 5-star service!'
+    },
+    {
+      name: 'Vikram & Priya Sharma',
+      role: 'Customer',
+      photo: 'assets/images/reviewer-vikram-priya.jpg',
+      quote: 'Our Shimla and Manali vacation felt straight out of a fairy tale! The team arranged a luxury private Innova Crysta, scenic riverside dining in Kasol, and exhilarating tandem paragliding at Solang. Exceptional hospitality throughout!'
+    },
+    {
+      name: 'Ananya Iyer',
+      role: 'Customer',
+      photo: 'assets/images/reviewer-ananya.jpg',
+      quote: 'Booking the Spiti Valley circuit with Live The World was the best travel decision! From high-altitude homestays in Langza to visiting the world’s highest post office in Hikkim, everything was smooth and safe. Our mountain driver was courteous and highly experienced!'
+    },
+    {
+      name: 'Rajesh Patel',
+      role: 'Customer',
+      photo: 'assets/images/reviewer-rajesh.jpg',
+      quote: 'Traveling with elderly parents can be challenging, but Live The World took care of every single comfort on our 7-day Himachal family holiday. Clean tempo traveller, prompt chauffeurs, and great hotel selections with snow-peak views. Highly recommended!'
     }
   ];
 

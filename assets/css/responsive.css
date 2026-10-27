@@ -4,6 +4,34 @@
    =================================================================== */
 
 /* ===================================================================
+   0. GLOBAL RESPONSIVE RESET & HORIZONTAL OVERFLOW PREVENTION
+   =================================================================== */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  max-width: 100%;
+}
+
+/* ===================================================================
    1. NAVIGATION, HERO BANNER & GENERAL GRIDS
    =================================================================== */
 @media (max-width: 1200px) {
@@ -1004,6 +1032,8 @@
   .testimonial-thumb-stack {
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .testimonial-author-header {
@@ -1144,6 +1174,8 @@
   .testimonial-thumb-stack {
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .main-portrait-frame {
@@ -1304,6 +1336,353 @@
 
   .f-gal-thumb {
     height: 75px;
+  }
+
+  /* Hero Slider Banner on Mobile */
+  .hero-center-wrapper {
+    padding: 0 1.1rem;
+    padding-top: 4.8rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.7rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 7.5vw, 2.3rem);
+    line-height: 1.18;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 1.35rem;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-outline {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.94rem;
+  }
+
+  /* Destination & Tours Section Headers */
+  .dest-section-title,
+  .light-fleet-title {
+    font-size: clamp(1.85rem, 6.8vw, 2.35rem);
+    line-height: 1.2;
+  }
+
+  /* Paragliders and Floating SVGs - Constrained */
+  .paraglider-float,
+  .tours-sky-paraglider,
+  .testimonials-floating-glider,
+  .testimonials-header-glider-left {
+    pointer-events: none;
+    max-width: 35vw;
+  }
+
+  /* Why Choose Us Banner Card */
+  .why-choose-banner-card {
+    padding: 38px 16px;
+    border-radius: 22px;
+    gap: 1.8rem;
+  }
+
+  .why-choose-script-heading {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+  }
+
+  .why-choose-grid-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
+  }
+
+  .why-choose-item-label {
+    font-size: 0.98rem;
+  }
+
+  .why-choose-discover-pill {
+    width: 100%;
+    max-width: 240px;
+    padding: 11px 32px;
+    font-size: 0.96rem;
+  }
+
+  .why-choose-right-call-box {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .why-choose-24-img {
+    width: 120px;
+  }
+
+  .why-choose-call-label {
+    font-size: 1.45rem;
+  }
+
+  .why-choose-phone-link {
+    font-size: clamp(1.2rem, 5.2vw, 1.55rem);
+  }
+
+  /* Testimonials Showcase */
+  .testimonials-client-says-title {
+    font-size: clamp(1.75rem, 6vw, 2.2rem);
+  }
+
+  .testimonials-wordmark-text,
+  .testimonials-giant-wordmark {
+    font-size: clamp(1.35rem, 5.5vw, 1.95rem);
+    letter-spacing: 0.05em;
+  }
+
+  .main-portrait-frame {
+    max-width: 270px;
+    height: 330px;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+
+  .thumb-avatar-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+
+  .testimonial-author-script {
+    font-size: 1.9rem;
+  }
+
+  .testimonial-author-role {
+    font-size: 0.88rem;
+  }
+
+  .testimonial-review-body {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 14px 0 18px;
+    min-height: auto;
+  }
+
+  .testimonial-stars-rating {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Adventure CTA Section */
+  .adventure-cta-section {
+    padding: 70px 0;
+  }
+
+  .adventure-cta-script-title {
+    font-size: clamp(2.3rem, 12vw, 3.4rem);
+  }
+
+  .adventure-cta-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
+  }
+
+  .adventure-booking-btn {
+    padding: 12px 32px;
+    font-size: 0.98rem;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  /* Latest News */
+  .news-thumb-wrap {
+    height: 190px;
+  }
+
+  .news-article-body {
+    padding: 18px 16px;
+  }
+
+  .news-card-title {
+    font-size: 1.12rem;
+  }
+
+  /* Site Footer (DZ Footer) */
+  .dz-footer-main {
+    padding: 50px 0 20px;
+  }
+
+  .dz-footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .dz-col-heading {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+
+  .dz-instagram-title {
+    font-size: 1.45rem;
+  }
+
+  .dz-instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .dz-insta-thumb {
+    border-radius: 10px;
+    max-width: 100%;
+  }
+
+  .dz-footer-bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+  }
+
+  .dz-back-to-top {
+    position: static;
+    margin: 0 auto;
+  }
+
+  .dz-copyright-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Floating WhatsApp Button */
+  .floating-whatsapp-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
+
+  .floating-whatsapp-btn .whatsapp-tooltip {
+    display: none !important;
+  }
+
+  /* Inner Pages Components (About, Tours, Gallery, Fleet, Contact, Package Details) */
+  .inner-hero-banner {
+    min-height: 310px;
+    padding: 120px 14px 50px 14px;
+  }
+
+  .inner-hero-title {
+    font-size: clamp(1.95rem, 7.5vw, 2.7rem);
+    margin-bottom: 10px;
+  }
+
+  .inner-breadcrumb {
+    padding: 6px 16px;
+    font-size: 0.82rem;
+  }
+
+  .services-offer-title {
+    font-size: clamp(1.6rem, 6.5vw, 2.1rem);
+    word-break: break-word;
+  }
+
+  .amazing-cards-outer-wrap {
+    padding: 16px 12px 24px 12px;
+  }
+
+  .gallery-collage-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    gap: 12px;
+  }
+
+  .gallery-photo-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .tours-grid-style-1 {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .fleet-ref-wrap {
+    padding: 0 16px;
+  }
+
+  .contact-details-grid {
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .contact-form-box {
+    padding: 16px;
+  }
+}
+
+/* ===================================================================
+   ULTRA-COMPACT MOBILE BREAKPOINT (Screens <= 360px - e.g. iPhone SE, Fold)
+   =================================================================== */
+@media (max-width: 360px) {
+  .site-container,
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .hero-headline {
+    font-size: 1.65rem;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-outline {
+    font-size: 0.88rem;
+    padding: 10px 16px;
+  }
+
+  .why-choose-script-heading {
+    font-size: 1.95rem;
+  }
+
+  .why-choose-phone-link {
+    font-size: 1.15rem;
+  }
+
+  .main-portrait-frame {
+    max-width: 235px;
+    height: 290px;
+  }
+
+  .thumb-avatar-item {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .dz-instagram-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .dz-insta-thumb {
+    border-radius: 8px;
   }
 }
 

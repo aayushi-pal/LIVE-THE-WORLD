@@ -1,0 +1,26 @@
+# ==============================================================================
+# LIVE THE WORLD - Clean URLs & SEO Server Configuration (.htaccess)
+# ==============================================================================
+RewriteEngine On
+RewriteBase /
+
+# 1. Strip .html extension from external requests with 301 Permanent Redirect
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+([^.]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 2. Redirect /index or /index.html to root
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+/)?index(\.html)?[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3. Silently serve .html file when extensionless URL is requested
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Security & Cache Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

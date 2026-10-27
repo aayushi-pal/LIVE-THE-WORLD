@@ -1,0 +1,2 @@
+# Netlify & Cloudflare clean URLs
+/*.html  /:splat  301
