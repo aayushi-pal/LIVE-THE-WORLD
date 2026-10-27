@@ -39,46 +39,54 @@
         <!-- Logo Left Side -->
         <a href="index.html" class="brand-logo-link" title="Live The World">
           <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
-          <div class="brand-text-wrap">
-            <span class="brand-name">Live The <span>World</span></span>
-          </div>
         </a>
 
-        <!-- Menu in the Centre: Home, About, Gallery, Tour Package, Contact Us -->
+        <!-- Menu in the Centre: Home, About Us, Destination, Fleet, Tour Packages, Gallery -->
         <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="gallery.html" class="nav-link">Gallery</a>
-          <a href="tours.html" class="nav-link">Tour Packages</a>
-          <a href="contact.html" class="nav-link active">Contact Us</a>
+          <div class="mobile-nav-header">
+            <span class="mobile-nav-brand">Live The <span>World</span></span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">&times;</button>
+          </div>
+          <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="nav-link"><i class="fa-solid fa-compass"></i> About Us</a>
+            <a href="destinations.html" class="nav-link"><i class="fa-solid fa-mountain-sun"></i> Destination</a>
+            <a href="fleet.html" class="nav-link"><i class="fa-solid fa-car-side"></i> Fleet</a>
+            <a href="tours.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+            <a href="gallery.html" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html" class="nav-link mobile-only-link active"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <a href="contact.html" class="mobile-cta-btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+            <div class="mobile-nav-contact">
+              <i class="fa-solid fa-phone"></i> <a href="tel:+911234567898">+91 12345 678 98</a>
+            </div>
+          </div>
         </nav>
 
-        <!-- Right Side Blank to keep Menu Centered -->
-        <div class="navbar-right-blank" aria-hidden="true"></div>
+        <!-- Right Side: Contact Us Button & Mobile Hamburger Toggle Button -->
+        <div class="navbar-right-box">
+          <a href="contact.html" class="navbar-contact-btn active">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
 
       </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
   <!-- ==================== SECTION 2: CONTACT US HERO BREADCRUMB BANNER ==================== -->
   <section class="inner-hero-banner" id="contact-hero">
-    <div class="inner-hero-sky-elements" aria-hidden="true">
-      <!-- Floating Paraglider in Sky (No Airplane) -->
-      <svg class="sky-paraglider" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 10,40 C 25,8 75,8 90,40 C 80,32 50,30 10,40 Z" fill="#DCA735" />
-        <path d="M 18,37 C 32,16 68,16 82,37 C 72,31 46,29 18,37 Z" fill="#114479" />
-        <line x1="20" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="40" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="60" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="80" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <circle cx="50" cy="71" r="3.5" fill="#DCA735" />
-      </svg>
-      <svg class="sky-balloon-1" viewBox="0 0 60 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 30,5 C 48,5 55,25 45,48 C 38,62 34,70 30,70 C 26,70 22,62 15,48 C 5,25 12,5 30,5 Z" fill="#DCA735" />
-        <rect x="27" y="74" width="6" height="5" fill="#091D33" rx="1" />
-      </svg>
-    </div>
-
     <div class="inner-hero-content">
       <h1 class="inner-hero-title">Contact Us</h1>
       <div class="inner-breadcrumb">
@@ -115,12 +123,18 @@
               <p>We'd love to hear from you. Our friendly team is always here to chat and plan your journey.</p>
             </div>
 
-            <form id="contactForm"
-              onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to our travel team. We will call you back shortly.');">
-              <input type="text" class="contact-input-field" placeholder="Enter Your Name" required>
-              <input type="email" class="contact-input-field" placeholder="Enter Email Address" required>
-              <input type="text" class="contact-input-field" placeholder="Enter Your Subject" required>
-              <textarea class="contact-input-field" placeholder="Message" rows="4" required></textarea>
+            <form id="contactForm" class="contact-main-form">
+              <input type="text" id="contactName" name="name" class="contact-input-field"
+                placeholder="Enter Your Full Name " pattern="[A-Za-z\s]+"
+                title="Name must contain only alphabets and spaces"
+                oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '');" required>
+              <input type="email" id="contactEmail" name="email" class="contact-input-field"
+                placeholder="Enter Email Address" required>
+              <input type="tel" id="contactMobile" name="mobile" class="contact-input-field" placeholder="Mobile No."
+                pattern="[0-9]{10}" maxlength="10" minlength="10" inputmode="numeric"
+                title="Please enter a valid 10-digit mobile number"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" required>
+              <textarea name="message" class="contact-input-field" placeholder="Message" rows="4" required></textarea>
               <button type="submit" class="contact-submit-btn">Send Message <i
                   class="fa-solid fa-paper-plane"></i></button>
             </form>
@@ -189,11 +203,11 @@
 
         <!-- Col 1: Brand Logo & Description -->
         <div class="dz-footer-brand-col">
-          <a href="index.html" class="dz-brand-logo-link">
+          <a href="index.html" class="dz-brand-logo-link" title="Live The World">
             <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
-            <span class="dz-brand-logo-name">Live The <span>World</span></span>
           </a>
-          <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain experiences, and thrilling paragliding adventures.</p>
+          <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain
+            experiences, and thrilling paragliding adventures.</p>
           <div class="dz-social-icons-row">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
                 class="fa-brands fa-facebook-f"></i></a>
@@ -208,9 +222,10 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">DESTINATIONS</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#shimla"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="destinations.html#manali"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="destinations.html#parvati"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#dharamshala"><i class="fa-solid fa-chevron-right"></i> Dharamshala</a></li>
           </ul>
         </div>
 
@@ -219,9 +234,11 @@
           <h4 class="dz-col-heading">EXPLORE</h4>
           <ul class="dz-footer-nav-list">
             <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="about.html#faq"><i class="fa-solid fa-chevron-right"></i> FAQs</a></li>
-            <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Guide</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="fleet.html"><i class="fa-solid fa-chevron-right"></i> Travel Fleet</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
           </ul>
         </div>
 
@@ -270,27 +287,37 @@
       <div class="dz-instagram-row">
         <h3 class="dz-instagram-title">Follow Instagram</h3>
         <div class="dz-instagram-grid">
-          <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 8" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting.jfif" alt="River Rafting Adventure"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Paragliding in Solang Valley"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img.jfif" alt="White Water River Rapids"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img-3.jfif" alt="River Expedition Team"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-parvati.jpg" alt="Winter Mountain Trek" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Manali Valley Riverside" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Shimla Hillside Town" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/slider.jfif" alt="Snowboarding Alpine Slopes"
+              loading="lazy"></div>
         </div>
       </div>
 
       <!-- Bottom Bar from Screenshot 2: Copyright -->
       <div class="dz-footer-bottom">
-        <p class="dz-copyright-text">Copyright © 2025 <span class="dz-highlight-gold">DexignZone</span> All rights
+        <p class="dz-copyright-text">Copyright © 2026 <span class="dz-highlight-gold">Live The World</span>. All rights
           reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp Action Button -->
-  <a href="https://wa.me/911234567898?text=Hello%20Live%20The%20World!%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package." class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp">
+  <a href="https://wa.me/911234567898?text=Hello%20Live%20The%20World!%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package."
+    class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
+    title="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
     <span class="whatsapp-tooltip">Chat with us</span>
   </a>

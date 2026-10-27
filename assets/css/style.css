@@ -50,7 +50,7 @@
   --color-bg-surface: #ffffff;
 
   /* Typography */
-  --font-heading: 'Afacad', sans-serif;
+  --font-heading: 'Figtree', sans-serif;
   --font-body: 'Figtree', sans-serif;
   --font-script: 'Kaushan Script', cursive;
   --font-cursive: 'Arizonia', cursive;
@@ -176,7 +176,7 @@ h4 {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 10005;
   padding: 1.4rem 0;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
@@ -237,7 +237,7 @@ h4 {
 .travlla-navbar.scrolled .navbar-container {
   background: rgba(9, 29, 51, 0.97);
   backdrop-filter: blur(14px);
-  border-bottom: 2px solid var(--color-gold);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0 0 28px 28px;
   box-shadow: 0 14px 40px rgba(9, 29, 51, 0.35);
   padding: 0.95rem 2.8rem;
@@ -285,21 +285,27 @@ h4 {
   color: var(--color-gold);
 }
 
-/* Centre: Navigation Links (Home, About, Gallery, Tour Package, Contact Us) */
+/* Centre: Navigation Links (Home, About, Destinations, Fleet, Tour Packages, Gallery, Contact Us) */
 .main-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.15rem;
   justify-self: center;
+}
+
+.mobile-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
 }
 
 .nav-link {
   font-family: var(--font-heading);
-  font-size: 1.30rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #ffffff;
-  padding: 0.4rem 0.25rem;
+  padding: 0.35rem 0.2rem;
   position: relative;
   text-decoration: none;
   transition: color var(--transition-fast);
@@ -330,55 +336,140 @@ h4 {
   transform: scaleX(1);
 }
 
-/* Right Side: Search & Menu Icons  */
-.navbar-right-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1.25rem;
-  justify-self: end;
+/* Hide mobile-specific drawer elements on desktop */
+@media (min-width: 993px) {
+
+  .mobile-nav-header,
+  .mobile-nav-footer,
+  .mobile-nav-backdrop,
+  .mobile-nav-toggle,
+  .main-nav .nav-link i,
+  .main-nav .mobile-only-link {
+    display: none !important;
+  }
 }
 
-.nav-icon-action-btn {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.25rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  transition: all 0.25s ease;
-  line-height: 1;
-}
-
-.nav-icon-action-btn:hover {
-  color: var(--color-gold);
-  transform: scale(1.15);
-}
-
+/* Right Side: Balancer / Contact Button & Mobile Toggle Container */
+.navbar-right-box,
 .navbar-right-blank {
   justify-self: end;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
 }
 
-@media (max-width: 991px) {
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 1.2rem;
-  }
+/* Right Side: Contact Us Button */
+.navbar-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-gold-gradient);
+  color: #091D33;
+  padding: 0.62rem 1.45rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(220, 167, 53, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
 
-  .main-nav {
-    gap: 1.2rem;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+.navbar-contact-btn:hover {
+  background: #ffffff;
+  color: #091D33;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 167, 53, 0.5);
+}
 
-  .navbar-right-blank {
-    display: none;
-  }
+.navbar-contact-btn i {
+  font-size: 0.88rem;
+  transition: transform 0.25s ease;
+}
+
+.navbar-contact-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Mobile Hamburger Toggle Button */
+.mobile-nav-toggle {
+  display: none;
+  background: rgba(17, 68, 121, 0.85);
+  border: 1.5px solid var(--color-gold);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  padding: 10px 8px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+  z-index: 1002;
+}
+
+.mobile-nav-toggle:hover {
+  background: rgba(220, 167, 53, 0.2);
+  transform: scale(1.05);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, background-color 0.3s ease;
+}
+
+/* Hamburger to X Animation */
+.mobile-nav-toggle.is-active {
+  background: rgba(9, 29, 51, 0.95);
+  border-color: #ffffff;
+}
+
+.mobile-nav-toggle.is-active .hamburger-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+  background-color: var(--color-gold);
+}
+
+.mobile-nav-toggle.is-active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-nav-toggle.is-active .hamburger-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+  background-color: var(--color-gold);
+}
+
+/* Mobile Backdrop Overlay */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 15, 27, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  pointer-events: none;
+}
+
+.mobile-nav-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.nav-drawer-open {
+  overflow: hidden !important;
 }
 
 /* ===================================================================
@@ -410,7 +501,7 @@ h4 {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 0.9s cubic-bezier(0.25, 1, 0.35, 1);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.35, 1);
   will-change: transform;
 }
 
@@ -763,6 +854,161 @@ h4 {
   margin: 0 auto;
   padding: 0 3.5rem;
   padding-top: 3.5rem;
+}
+
+/* ==================== HERO SLIDE EDITORIAL CONTENT & BUTTONS ==================== */
+.hero-slide-content {
+  position: relative;
+  z-index: 10;
+  max-width: 980px;
+  text-align: left;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: clamp(0.82rem, 1.05vw, 0.95rem);
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 1.15rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-eyebrow .eyebrow-dash {
+  display: inline-block;
+  width: 34px;
+  height: 2.5px;
+  background-color: var(--color-gold, #DCA735);
+  border-radius: 2px;
+}
+
+.hero-headline {
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+  font-size: clamp(2.8rem, 4.8vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.14;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.025em;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-headline .headline-primary {
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
+}
+
+.hero-headline .headline-accent {
+  font-style: italic;
+  font-weight: 700;
+  color: #F3C644;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
+}
+
+.hero-subtext {
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: clamp(1.05rem, 1.25vw, 1.22rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 660px;
+  margin: 0 0 2.25rem 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #E5A835;
+  color: #091D33;
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(229, 168, 53, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.hero-btn-primary:hover {
+  background: #ffffff;
+  color: #091D33;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(229, 168, 53, 0.5);
+}
+
+.hero-btn-primary .btn-arrow {
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.hero-btn-primary:hover .btn-arrow {
+  transform: translate(2px, -2px);
+}
+
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(9, 29, 51, 0.35);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  font-family: var(--font-body, 'Figtree', sans-serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 13.5px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.hero-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .hero-center-wrapper {
+    padding: 0 1.5rem;
+    padding-top: 5rem;
+  }
+  .hero-headline {
+    font-size: clamp(2.4rem, 8vw, 3.4rem);
+  }
+  .hero-subtext {
+    font-size: 0.98rem;
+    margin-bottom: 1.6rem;
+  }
+  .hero-actions-row {
+    gap: 12px;
+  }
+  .hero-btn-primary,
+  .hero-btn-outline {
+    padding: 12px 22px;
+    font-size: 0.92rem;
+  }
 }
 
 .hero-text-block {
@@ -2532,7 +2778,9 @@ h4 {
 }
 
 .exp-connecting-thread .thread-path {
-  filter: drop-shadow(0 2px 4px rgba(17, 68, 121, 0.15));
+  stroke: #A3CEE2;
+  stroke-dasharray: 6 6;
+  filter: drop-shadow(0 2px 4px rgba(163, 206, 226, 0.25));
 }
 
 /* Authentic Paraglider Riding Above Badge (NO Airplane!) */
@@ -3141,7 +3389,7 @@ h4 {
 .best-services-section {
   position: relative;
   background-color: #E8F2F8;
-  background-image: linear-gradient(180deg, #091D33 0%, #114479 100%);
+  background-image: linear-gradient(180deg, #114479 100%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 100% calc(100% - 195px);
@@ -3220,19 +3468,19 @@ h4 {
 .services-man-wrapper {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 540px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   z-index: 2;
-  margin-bottom: -85px;
+  margin-bottom: -40px;
 }
 
 .services-man-img {
   width: 100%;
-  max-width: 440px;
+  max-width: 520px;
   height: auto;
-  max-height: 760px;
+  max-height: 860px;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.28));
@@ -3249,8 +3497,8 @@ h4 {
 .services-diorama-sticky {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  margin-top: -140px;
+  max-width: 620px;
+  margin-top: -95px;
   margin-bottom: 0;
   line-height: 0;
   display: flex;
@@ -3386,16 +3634,19 @@ h4 {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.step-card-icon-img {
-  width: 60px;
-  height: 60px;
+.step-card-icon-img,
+.step-card-icon-svg {
+  width: 62px;
+  height: 62px;
   object-fit: contain;
   display: block;
-  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.service-step-card:hover .step-card-icon-img {
-  transform: scale(1.12) rotate(3deg);
+.service-step-card:hover .step-card-icon-img,
+.service-step-card:hover .step-card-icon-svg {
+  transform: scale(1.14) translateY(-2px);
+  filter: drop-shadow(0 6px 14px rgba(17, 68, 121, 0.18));
 }
 
 .step-title {
@@ -3923,6 +4174,256 @@ h4 {
   }
 }
 
+/* ===================================================================
+   LIGHT THEME VEHICLE FLEET SECTION (SECTION 8 - WITH OUR FONT & LIGHT BLUE CARDS)
+   =================================================================== */
+.light-vehicle-section {
+  position: relative;
+  padding: 95px 0 105px 0;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.light-fleet-header-center {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.light-fleet-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #DCA735;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.light-fleet-header-center .light-fleet-eyebrow::before,
+.light-fleet-header-center .light-fleet-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #DCA735;
+}
+
+.light-fleet-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  color: #114479;
+  margin: 0 auto 0.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.light-fleet-header-center .tours-paraglider-trail-wrap {
+  margin: -16px auto 0;
+  max-width: 740px;
+}
+
+/* 3 Cards Grid Matching Screenshot */
+.light-fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Light Blue Cards */
+.light-vehicle-card {
+  background: #EFF6FC;
+  background: linear-gradient(180deg, #F1F7FD 0%, #E6F1FB 100%);
+  border: 1.5px solid rgba(17, 68, 121, 0.16);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 28px rgba(17, 68, 121, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease;
+}
+
+.light-vehicle-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(180deg, #E8F2FC 0%, #DCEBFA 100%);
+  border-color: #DCA735;
+  box-shadow: 0 18px 44px rgba(17, 68, 121, 0.16);
+}
+
+.light-vehicle-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #DFEBF5;
+}
+
+.light-vehicle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light-vehicle-card:hover .light-vehicle-img {
+  transform: scale(1.05);
+}
+
+.light-vehicle-body {
+  padding: 26px 26px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.light-vehicle-tag {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 1.6px;
+  color: #114479;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.light-vehicle-heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #114479;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.light-vehicle-copy {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4A5568;
+  margin: 0 0 18px;
+}
+
+.light-vehicle-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.light-vehicle-price-val {
+  font-family: var(--font-heading);
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #DCA735;
+  line-height: 1;
+}
+
+.light-vehicle-price-unit {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #5A6B82;
+  font-weight: 500;
+}
+
+.light-driver-label {
+  font-family: var(--font-heading);
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0F2444;
+  margin-bottom: 22px;
+}
+
+.light-driver-select {
+  font-family: var(--font-body);
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(17, 68, 121, 0.22);
+  color: #0F2444;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23114479' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+.light-driver-select:focus {
+  border-color: #DCA735;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(220, 167, 53, 0.25);
+}
+
+.light-vehicle-enquire-btn {
+  font-family: var(--font-heading);
+  border: 0;
+  background: none;
+  padding: 0 0 4px;
+  border-bottom: 2px solid #DCA735;
+  color: #DCA735;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: color 0.25s, border-color 0.25s, gap 0.25s;
+}
+
+.light-vehicle-enquire-btn span {
+  font-size: 1.15rem;
+  transition: transform 0.25s;
+}
+
+.light-vehicle-enquire-btn:hover {
+  color: #114479;
+  border-bottom-color: #114479;
+  gap: 10px;
+}
+
+.light-vehicle-enquire-btn:hover span {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 992px) {
+  .light-fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .light-fleet-grid {
+    grid-template-columns: 1fr;
+  }
+  .light-vehicle-img-wrap {
+    height: 210px;
+  }
+}
+
 .section-header-center {
   text-align: center;
   max-width: 760px;
@@ -4068,20 +4569,48 @@ h4 {
   z-index: 2;
 }
 
-.tour-duration-badge svg {
+.tour-duration-badge svg,
+.tour-duration-badge i {
   flex-shrink: 0;
   color: #DCA735;
+  font-size: 0.85rem;
+}
+
+/* Vehicle Type Pill Badge (Top-Right of Image) */
+.tour-vehicle-badge {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(17, 68, 121, 0.94);
+  backdrop-filter: blur(6px);
+  color: #F3C644;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(220, 167, 53, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+.tour-vehicle-badge i {
+  color: #DCA735;
+  font-size: 0.82rem;
 }
 
 /* Location & Title Bar: Golden Background ONLY Behind This Text (As Shown in Picture) */
 .tour-card-title-bar {
   background: #f8efdd;
-
   padding: 15px 22px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
   width: 100%;
+  min-height: 96px;
   box-shadow: 0 4px 14px rgba(220, 167, 53, 0.2);
   border-bottom: 1px solid rgba(17, 68, 121, 0.08);
 }
@@ -4097,6 +4626,7 @@ h4 {
   flex-direction: column;
   gap: 2px;
   min-width: 0;
+  flex: 1;
 }
 
 .tour-loc-sub {
@@ -4115,16 +4645,42 @@ h4 {
   color: #114479;
   line-height: 1.32;
   margin: 0;
+  min-height: 2.64em;
 }
 
 /* Content Area Below Golden Title Bar */
 .tour-card-content {
-  padding: 20px 22px 22px;
+  padding: 18px 22px 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 16px;
+  gap: 14px;
   background: #ffffff;
+}
+
+/* Travel Specifications Row: Persons & Features */
+.tour-specs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #F8FAFC;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 68, 121, 0.08);
+  font-size: 0.82rem;
+  color: #114479;
+  font-weight: 700;
+}
+
+.tour-spec-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tour-spec-item i {
+  color: #DCA735;
+  font-size: 0.88rem;
 }
 
 /* Two-Column Info Row */
@@ -4132,7 +4688,7 @@ h4 {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 18px;
+  gap: 16px;
   margin-top: 2px;
 }
 
@@ -4160,7 +4716,7 @@ h4 {
 
 .tour-card-desc {
   color: #556272;
-  font-size: 0.92rem;
+  font-size: 0.90rem;
   line-height: 1.55;
   margin: 0;
   font-weight: 500;
@@ -4182,22 +4738,33 @@ h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 24px;
-  border: 1.5px solid #DCA735;
+  gap: 7px;
+  padding: 9px 22px;
+  border: 1.5px solid #114479;
   border-radius: 999px;
-  background: transparent;
-  color: #114479;
+  background: #114479;
+  color: #ffffff;
   font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(17, 68, 121, 0.2);
 }
 
 .tour-pill-book-btn:hover {
   background: #DCA735;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(220, 167, 53, 0.35);
+  color: #114479;
+  border-color: #DCA735;
+  box-shadow: 0 6px 18px rgba(220, 167, 53, 0.4);
   transform: translateY(-2px);
+}
+
+.tour-pill-book-btn i {
+  transition: transform 0.25s ease;
+}
+
+.tour-pill-book-btn:hover i {
+  transform: translateX(3px);
 }
 
 .tour-rating-block {
@@ -4545,362 +5112,498 @@ h4 {
 }
 
 /* ===================================================================
-   10. WHY CHOOSE US / CALL US BANNER
+/* ===================================================================
+   WHY CHOOSE US / 24 HOURS SERVICE CALL BANNER
+   (Matches 24-Image.webp reference in Our Alpine Navy & Royal Gold Theme)
    =================================================================== */
 .why-choose-banner-section {
-  padding: 30px 0 85px;
+  padding: 40px 0 95px;
   background-color: #FFFFFF;
+  position: relative;
 }
 
 .why-choose-banner-card {
-  background: linear-gradient(135deg, #0A2B4C 0%, #114479 55%, #0B335C 100%);
-  border-radius: 28px;
-  padding: 55px 65px;
+  position: relative;
+  background: linear-gradient(135deg, #071F36 0%, #0D3156 35%, #114479 70%, #0A2744 100%);
+  border-radius: 36px;
+  padding: 60px 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3.5rem;
-  box-shadow: 0 22px 55px rgba(17, 68, 121, 0.28);
-  border: 2px solid rgba(220, 167, 53, 0.35);
-  position: relative;
+  gap: 40px;
+  box-shadow: 0 24px 60px rgba(11, 39, 68, 0.32);
+  border: 1.5px solid rgba(220, 167, 53, 0.28);
   overflow: hidden;
 }
 
+/* Ambient Radial Glow */
 .why-choose-banner-card::before {
   content: '';
   position: absolute;
-  top: -40%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
+  top: 10%;
+  right: 5%;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(220, 167, 53, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(220, 167, 53, 0.12) 0%, transparent 68%);
   pointer-events: none;
+  z-index: 1;
 }
 
-.banner-badge-light {
-  display: inline-block;
-  background: rgba(220, 167, 53, 0.22);
-  color: #ECC86A;
-  border: 1px solid rgba(220, 167, 53, 0.45);
-  font-family: 'Figtree', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 4px 15px;
-  border-radius: 20px;
-  margin-bottom: 14px;
+/* Bottom Skyline Silhouette */
+.why-choose-skyline-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 110px;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.banner-choose-title {
-  color: #ffffff;
-  font-family: var(--font-heading);
-  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 22px;
-  max-width: 600px;
+.why-choose-skyline-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.why-choose-checklist {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 25px 0;
+/* Left Box Content */
+.why-choose-left-box {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
 }
 
-.why-choose-checklist li {
-  color: #E2ECF7;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 12px;
+/* Script Cursive Heading: Why Choose Us! */
+.why-choose-script-heading {
+  font-family: 'Caveat', 'Kaushan Script', cursive;
+  font-size: clamp(2.8rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* 2x2 Feature Checklist Grid */
+.why-choose-grid-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(210px, 1fr));
+  gap: 18px 32px;
+  margin-bottom: 34px;
+}
+
+.why-choose-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.why-choose-checklist i {
-  color: #DCA735;
-  font-size: 1.2rem;
-}
-
-.banner-action-btn {
-  font-size: 0.95rem;
-  padding: 12px 28px;
-}
-
-.why-choose-right-call {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(220, 167, 53, 0.35);
-  border-radius: 24px;
-  padding: 38px 45px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 330px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.call-banner-icon-wrap {
-  width: 68px;
-  height: 68px;
+/* Golden Checkmark Circle Badge */
+.why-choose-check-circle {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: var(--color-gold-gradient);
-  color: #0A0F1A;
-  font-size: 1.7rem;
+  background: linear-gradient(135deg, #F3C644 0%, #DCA735 100%);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
-  box-shadow: 0 8px 24px rgba(220, 167, 53, 0.45);
+  font-size: 0.88rem;
+  font-weight: 900;
+  box-shadow: 0 3px 12px rgba(220, 167, 53, 0.45);
+  flex-shrink: 0;
 }
 
-.call-banner-tag {
-  color: #ECC86A;
+.why-choose-item-label {
+  color: #FFFFFF;
+  font-family: 'Figtree', var(--font-body), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Pill Action Button: Discover More */
+.why-choose-discover-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F3C644 0%, #DCA735 100%);
+  color: #081E36;
   font-family: 'Figtree', sans-serif;
-  font-size: 0.78rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  padding: 13px 44px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(220, 167, 53, 0.42);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.why-choose-discover-pill:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(220, 167, 53, 0.6);
+  background: linear-gradient(135deg, #FDE692 0%, #E5AC32 100%);
+  color: #041222;
+}
+
+/* Right Box Content: 24 Hours Service + CALL US + Phone */
+.why-choose-right-call-box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+  min-width: 280px;
+}
+
+.why-choose-24-badge-holder {
+  display: flex;
+  justify-content: center;
   margin-bottom: 6px;
 }
 
-.call-banner-number {
-  color: #ffffff;
+.why-choose-24-img {
+  width: 155px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.4));
+  transition: transform 0.35s ease;
+}
+
+.why-choose-right-call-box:hover .why-choose-24-img {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.why-choose-call-label {
   font-family: 'Figtree', sans-serif;
-  font-size: 1.95rem;
+  font-size: clamp(2.4rem, 3.8vw, 3.3rem);
   font-weight: 900;
-  text-decoration: none;
-  transition: color 0.25s ease;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.why-choose-phone-link {
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 900;
+  color: #DCA735;
+  letter-spacing: 0.02em;
   line-height: 1.1;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
 }
 
-.call-banner-number:hover {
-  color: #ECC86A;
-}
-
-.call-banner-sub {
-  color: #A9C2DB;
-  font-size: 0.84rem;
-  margin-top: 8px;
-  font-weight: 500;
+.why-choose-phone-link:hover {
+  color: #F8D568;
+  transform: scale(1.03);
+  text-shadow: 0 0 25px rgba(220, 167, 53, 0.65);
 }
 
 /* ===================================================================
    11. OUR CLIENTS SAY / TESTIMONIALS SECTION
-   NO FLIGHT ICON
+   (Exact Match to Reference Screenshot: LIVE THE WORLD Banner & Paraglider)
    =================================================================== */
 .testimonials-section {
   background-color: #FAF8F5;
-  padding: 100px 0;
+  padding: 90px 0 115px;
   position: relative;
   overflow: hidden;
 }
 
-.testimonials-header-wrap {
+/* Section Header Block */
+.testimonials-header-block {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+}
+
+/* Ambient Paraglider on Left Side of "Our Client Says" */
+.testimonials-header-glider-left {
+  position: absolute;
+  left: clamp(10px, 5vw, 65px);
+  top: -24px;
+  width: 140px;
+  height: 105px;
+  pointer-events: none;
+  z-index: 3;
+  animation: gliderLeftFloat 4.4s ease-in-out infinite alternate;
+}
+
+@keyframes gliderLeftFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-9px) rotate(-5deg);
+  }
+}
+
+.testimonials-client-says-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: #114479;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.testimonials-client-says-desc {
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #64748B;
+  margin: 0;
+}
+
+.testimonials-header-block .tours-paraglider-trail-wrap {
+  margin: -14px auto 0;
+}
+
+/* Refined & Reduced LIVE THE WORLD Wordmark Banner (No Thread Sign, Clean Paraglider) */
+.testimonials-wordmark-wrap,
+.testimonials-giant-banner-wrap {
   position: relative;
   text-align: center;
-  max-width: 1080px;
-  margin: 0 auto 3.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  margin: 12px 0 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testimonials-wordmark-inner {
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.testimonials-two-tone-wrap {
+  justify-content: center;
   position: relative;
-  display: inline-block;
-  text-align: center;
 }
 
-.testimonials-two-tone-title {
+.testimonials-wordmark-text,
+.testimonials-giant-wordmark {
   font-family: 'Figtree', var(--font-heading), sans-serif;
-  font-size: clamp(2.8rem, 6.8vw, 5.6rem);
+  font-size: clamp(7.4rem, 7vw, 8.2rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: 1.05;
-  margin: 0;
-  display: inline-block;
-  position: relative;
-  /* Two-tone vertical gradient: Navy Blue top half into Golden Sand bottom half */
-  background: linear-gradient(180deg, #114479 0%, #154f8b 38%, #ca9527 76%, #f3cf7c 100%);
+  letter-spacing: 0.15em;
+  line-height: 1.1;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(17, 68, 121, 0.45) 0%, rgba(29, 90, 150, 0.35) 45%, rgba(220, 167, 53, 0.35) 80%, rgba(220, 167, 53, 0.1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
   user-select: none;
-  filter: drop-shadow(0 2px 10px rgba(17, 68, 121, 0.08));
+  white-space: nowrap;
+  display: inline-block;
 }
 
-.testimonials-subheading-block {
-  position: relative;
-  text-align: center;
+/* Floating Paraglider (No thread, no airplane) */
+.testimonials-floating-glider {
+  position: absolute;
+  right: -70px;
+  top: -50px;
+  width: 160px;
+  height: 120px;
+  pointer-events: none;
+  animation: gliderFloat 3.8s ease-in-out infinite alternate;
+}
+
+.testimonials-glider-svg {
   width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: block;
+}
+
+@keyframes gliderFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+/* Main Testimonial Showcase Grid (3 Columns matching Screenshot 2) */
+.testimonial-showcase-grid {
+  display: grid;
+  grid-template-columns: 410px 75px 1fr;
+  gap: 2.8rem;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Column 1: Portrait */
+.testimonial-portrait-col {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.testimonials-client-says-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-  font-weight: 800;
-  color: #065B62;
-  margin: 0 0 10px 0;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  position: relative;
-  z-index: 2;
-}
-
-.testimonials-trail-container {
-  position: relative;
-  display: inline-block;
-  padding: 8px 30px;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 780px;
-}
-
-.testimonials-client-says-desc {
-  font-family: 'Figtree', sans-serif;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  font-weight: 500;
-  color: #475569;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.testimonials-path-trail {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 680px;
-  height: 65px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.75;
-}
-
-.testimonial-showcase-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 4.5rem;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.testimonial-portraits-col {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
-
 .main-portrait-frame {
-  width: 320px;
-  height: 385px;
-  border-radius: 26px;
+  width: 380px;
+  height: 480px;
+  border-radius: 32px;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 18px 45px rgba(17, 68, 121, 0.14);
   border: 4px solid #ffffff;
-  box-shadow: 0 16px 40px rgba(17, 68, 121, 0.14);
 }
 
 .main-reviewer-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.45s ease;
 }
 
+/* Column 2: Avatar Stack */
 .testimonial-thumb-stack {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
+  align-self: center;
+  z-index: 3;
 }
 
-.thumb-avatar {
-  width: 66px;
-  height: 66px;
+.thumb-avatar-item {
+  width: 68px;
+  height: 68px;
   border-radius: 18px;
-  object-fit: cover;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border: 2.5px solid transparent;
   opacity: 0.65;
 }
 
-.thumb-avatar.active,
-.thumb-avatar:hover {
+.thumb-avatar-item.active,
+.thumb-avatar-item:hover {
   opacity: 1;
   border-color: #DCA735;
   transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(220, 167, 53, 0.35);
+  box-shadow: 0 6px 20px rgba(220, 167, 53, 0.42);
 }
 
-.testimonial-quote-box {
-  background: #ffffff;
-  padding: 45px 50px;
-  border-radius: 26px;
-  box-shadow: 0 14px 40px rgba(17, 68, 121, 0.08);
-  border: 1px solid rgba(220, 167, 53, 0.2);
+.thumb-avatar-item .thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.quote-stars-row {
-  color: #DCA735;
-  font-size: 1.15rem;
-  margin-bottom: 20px;
+/* Column 3: Review Details */
+.testimonial-content-col {
   display: flex;
-  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  padding-left: 10px;
 }
 
-.testimonial-quote-text {
-  font-size: 1.2rem;
-  color: #272C33;
-  line-height: 1.75;
-  font-style: italic;
-  margin-bottom: 28px;
-}
-
-.author-name {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #114479;
+.testimonial-author-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 4px;
 }
 
-.author-location {
-  font-size: 0.92rem;
-  color: #6D7B8C;
-  font-weight: 600;
+.testimonial-author-script {
+  font-family: 'Caveat', 'Kaushan Script', cursive;
+  font-size: clamp(2.4rem, 3.4vw, 3.3rem);
+  font-weight: 700;
+  color: #114479;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: 0.01em;
 }
 
-.testimonial-nav-dots {
+.testimonial-author-role {
+  display: block;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #DCA735;
+  margin-top: 3px;
+}
+
+.testimonial-quote-icon-box {
+  opacity: 0.85;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-quote-svg {
+  display: block;
+}
+
+.testimonial-review-body {
+  font-family: 'Figtree', var(--font-body), sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4A5568;
+  margin: 24px 0 24px;
+  font-weight: 400;
+  min-height: 85px;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-stars-rating {
   display: flex;
-  gap: 9px;
-  margin-top: 26px;
+  gap: 6px;
+  color: #FFAA0D;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
 }
 
-.t-dot {
-  width: 12px;
-  height: 12px;
+.testimonial-nav-arrows {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.t-nav-arrow-btn {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(17, 68, 121, 0.2);
+  background: #DCA735;
+  color: #ffffff;
+  border: none;
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.4, 1);
+  box-shadow: 0 6px 18px rgba(220, 167, 53, 0.42);
 }
 
-.t-dot.active {
-  background: #DCA735;
-  width: 30px;
-  border-radius: 12px;
+.t-nav-arrow-btn:hover {
+  background: #114479;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(17, 68, 121, 0.35);
 }
 
 /* ===================================================================
@@ -4908,7 +5611,7 @@ h4 {
    =================================================================== */
 .adventure-cta-section {
   position: relative;
-  background: url('../images/paragliding.jpg') center/cover no-repeat;
+  background: url('../images/pexels.jpg') center/cover no-repeat;
   padding: 130px 0 110px;
   text-align: center;
   color: #ffffff;

@@ -39,46 +39,53 @@
         <!-- Logo Left Side -->
         <a href="index.html" class="brand-logo-link" title="Live The World">
           <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
-          <div class="brand-text-wrap">
-            <span class="brand-name">Live The <span>World</span></span>
-          </div>
         </a>
 
-        <!-- Menu in the Centre: Home, About, Gallery, Tour Package, Contact Us -->
+        <!-- Menu in the Centre: Home, About Us, Destination, Fleet, Tour Packages, Gallery -->
         <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="gallery.html" class="nav-link">Gallery</a>
-          <a href="tours.html" class="nav-link active">Tour Packages</a>
-          <a href="contact.html" class="nav-link">Contact Us</a>
+          <div class="mobile-nav-header">
+            <span class="mobile-nav-brand">Live The <span>World</span></span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">&times;</button>
+          </div>
+          <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="nav-link"><i class="fa-solid fa-compass"></i> About Us</a>
+            <a href="destinations.html" class="nav-link"><i class="fa-solid fa-mountain-sun"></i> Destination</a>
+            <a href="fleet.html" class="nav-link"><i class="fa-solid fa-car-side"></i> Fleet</a>
+            <a href="tours.html" class="nav-link active"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+            <a href="gallery.html" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html" class="nav-link mobile-only-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <a href="contact.html" class="mobile-cta-btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+            <div class="mobile-nav-contact">
+              <i class="fa-solid fa-phone"></i> <a href="tel:+911234567898">+91 12345 678 98</a>
+            </div>
+          </div>
         </nav>
 
-        <!-- Right Side Blank to keep Menu Centered -->
-        <div class="navbar-right-blank" aria-hidden="true"></div>
+        <!-- Right Side: Contact Us Button & Mobile Hamburger Toggle Button -->
+        <div class="navbar-right-box">
+          <a href="contact.html" class="navbar-contact-btn">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
 
       </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
   <!-- ==================== SECTION 2: TOUR PACKAGES HERO BREADCRUMB BANNER ==================== -->
   <section class="inner-hero-banner" id="tours-hero">
-    <div class="inner-hero-sky-elements" aria-hidden="true">
-      <!-- Floating Paraglider in Sky (No Airplane) -->
-      <svg class="sky-paraglider" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 10,40 C 25,8 75,8 90,40 C 80,32 50,30 10,40 Z" fill="#DCA735" />
-        <path d="M 18,37 C 32,16 68,16 82,37 C 72,31 46,29 18,37 Z" fill="#114479" />
-        <line x1="20" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="40" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="60" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="80" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <circle cx="50" cy="71" r="3.5" fill="#DCA735" />
-      </svg>
-      <svg class="sky-balloon-1" viewBox="0 0 60 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 30,5 C 48,5 55,25 45,48 C 38,62 34,70 30,70 C 26,70 22,62 15,48 C 5,25 12,5 30,5 Z" fill="#DCA735" />
-        <rect x="27" y="74" width="6" height="5" fill="#091D33" rx="1" />
-      </svg>
-    </div>
-
     <div class="inner-hero-content">
       <h1 class="inner-hero-title">Tour Package Listing</h1>
       <div class="inner-breadcrumb">
@@ -93,27 +100,17 @@
   <section class="tours-page-wrapper">
     <div class="site-container">
 
-      <!-- Filter Bar -->
-      <div class="tours-filter-bar">
-        <button class="tour-filter-btn active">All Packages</button>
-        <button class="tour-filter-btn">Shimla Heritage</button>
-        <button class="tour-filter-btn">Manali Snow Adventure</button>
-        <button class="tour-filter-btn">Parvati Valley Trek</button>
-        <button class="tour-filter-btn">Paragliding Expeditions</button>
-        <button class="tour-filter-btn">Weekend Getaways</button>
-      </div>
-
-      <!-- Section Header: Curated Popular Tours (Style 1 from Screenshot 4) -->
+      <!-- Section Header: Curated Popular Tours -->
       <div class="tours-section-style-header">
         <h3>Featured Tour Collections</h3>
-        <span>Showing 6 Premium Itineraries</span>
+        <span id="tourCountDisplay">Showing 6 Premium Itineraries</span>
       </div>
 
       <!-- Tours Grid Style 1 -->
       <div class="tours-grid-style-1">
 
         <!-- Package 1: Shimla Colonial & Pine Trails -->
-        <div class="tour-card-pkg">
+        <div class="tour-card-pkg" data-category="shimla weekend">
           <div class="tour-card-thumb">
             <img src="assets/images/bg-shimla.jpg" alt="Shimla Colonial Heritage Tour">
             <span class="tour-card-badge"><i class="fa-solid fa-location-dot"></i> Shimla, HP</span>
@@ -128,58 +125,56 @@
             <p class="tour-card-desc">Walk the historic British Mall Road, climb Jakhu Temple ridge, and explore the
               apple orchards of Mashobra.</p>
             <div class="tour-card-footer">
-              <span class="tour-duration"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
-              <a href="contact.html" class="tour-book-btn">Book Now <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Package 2: Manali Snow & Solang Adventure -->
-        <div class="tour-card-pkg">
-          <div class="tour-card-thumb">
-            <img src="assets/images/Manali.jpg" alt="Manali Snow Valley Tour">
-            <span class="tour-card-badge"><i class="fa-solid fa-location-dot"></i> Manali, HP</span>
-            <span class="tour-card-price-tag">₹18,499</span>
-          </div>
-          <div class="tour-card-body">
-            <div class="tour-card-meta">
-              <span><i class="fa-solid fa-user-group"></i> 2 - 12 Persons</span>
-              <span class="tour-rating"><i class="fa-solid fa-star"></i> 5.0 (214)</span>
-            </div>
-            <h4 class="tour-card-title">Manali Snow Valley & Solang Adventure</h4>
-            <p class="tour-card-desc">Experience breathtaking Rohtang snow passes, riverside cafe hopping in Old Manali,
-              and thrilling Solang Valley sports.</p>
-            <div class="tour-card-footer">
-              <span class="tour-duration"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
-              <a href="contact.html" class="tour-book-btn">Book Now <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Package 3: Parvati Valley & Kasol Riverside -->
-        <div class="tour-card-pkg">
-          <div class="tour-card-thumb">
-            <img src="assets/images/parvati-valley.jpg" alt="Parvati Valley & Kasol Tour">
-            <span class="tour-card-badge"><i class="fa-solid fa-location-dot"></i> Parvati Valley, HP</span>
-            <span class="tour-card-price-tag">₹12,999</span>
-          </div>
-          <div class="tour-card-body">
-            <div class="tour-card-meta">
-              <span><i class="fa-solid fa-user-group"></i> 2 - 10 Persons</span>
-              <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.8 (186)</span>
-            </div>
-            <h4 class="tour-card-title">Parvati Valley Kasol & Tosh Riverside Trek</h4>
-            <p class="tour-card-desc">Unwind amidst towering deodars, experience the natural hot springs of Manikaran,
-              and camp under starry Himalayan skies.</p>
-            <div class="tour-card-footer">
               <span class="tour-duration"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</span>
-              <a href="contact.html" class="tour-book-btn">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="shimla-hill-retreat.html" class="tour-book-btn">View Package <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2: Manali Private SUV Cab Expedition -->
+        <div class="tour-card-pkg" data-category="manali weekend">
+          <div class="tour-card-thumb">
+            <img src="assets/images/travel-car-suv.jpg" alt="Manali Private SUV Cab Tour">
+            <span class="tour-card-badge"><i class="fa-solid fa-car-side"></i> Luxury Cab / SUV</span>
+            <span class="tour-card-price-tag">₹14,999</span>
+          </div>
+          <div class="tour-card-body">
+            <div class="tour-card-meta">
+              <span><i class="fa-solid fa-user-group"></i> 2 - 6 Persons</span>
+              <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.9 (148)</span>
+            </div>
+            <h4 class="tour-card-title">Manali Mountain Adventure</h4>
+            <p class="tour-card-desc">Chauffeur-driven luxury Innova Crysta for Rohtang snow points, Atal Tunnel & Old Manali with fuel and driver included.</p>
+            <div class="tour-card-footer">
+              <span class="tour-duration"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+              <a href="manali-mountain-adventure.html" class="tour-book-btn">View Package <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3: Parvati Valley Luxury Tempo Road Trip -->
+        <div class="tour-card-pkg" data-category="parvati weekend">
+          <div class="tour-card-thumb">
+            <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.57 PM.jpeg" alt="Parvati Valley Mountain River Crossing">
+            <span class="tour-card-badge"><i class="fa-solid fa-mountain"></i> Parvati Valley, HP</span>
+            <span class="tour-card-price-tag">₹7,999</span>
+          </div>
+          <div class="tour-card-body">
+            <div class="tour-card-meta">
+              <span><i class="fa-solid fa-user-group"></i> 6 - 14 Persons</span>
+              <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.8 (176)</span>
+            </div>
+            <h4 class="tour-card-title">Parvati Valley Riverside Escape</h4>
+            <p class="tour-card-desc">AC Tempo Traveller group road trip along Parvati river, Manikaran hot springs & scenic riverside campsite bonfire.</p>
+            <div class="tour-card-footer">
+              <span class="tour-duration"><i class="fa-regular fa-clock"></i> 3 Days / 2 Nights</span>
+              <a href="parvati-valley-escape.html" class="tour-book-btn">View Package <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
 
         <!-- Package 4: Solang Paragliding Tandem Package -->
-        <div class="tour-card-pkg">
+        <div class="tour-card-pkg" data-category="sky manali weekend">
           <div class="tour-card-thumb">
             <img src="assets/images/paragliding.jpg" alt="Solang Paragliding Tandem Experience">
             <span class="tour-card-badge"><i class="fa-solid fa-wind"></i> Sky Adventure</span>
@@ -201,9 +196,9 @@
         </div>
 
         <!-- Package 5: Triund & Dharamshala Spiritual Trail -->
-        <div class="tour-card-pkg">
+        <div class="tour-card-pkg" data-category="weekend">
           <div class="tour-card-thumb">
-            <img src="assets/images/Girl-Image.webp" alt="Triund & Dharamshala Trail">
+            <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.22 PM.jpeg" alt="Triund Snowline and Mountain Ridge">
             <span class="tour-card-badge"><i class="fa-solid fa-mountain"></i> Dharamshala, HP</span>
             <span class="tour-card-price-tag">₹13,500</span>
           </div>
@@ -222,23 +217,22 @@
           </div>
         </div>
 
-        <!-- Package 6: Complete Himachal Grand Circuit -->
-        <div class="tour-card-pkg">
+        <!-- Package 6: Rohtang Pass & Spiti 4x4 Mountain Safari -->
+        <div class="tour-card-pkg" data-category="manali">
           <div class="tour-card-thumb">
-            <img src="assets/images/landscape-pic.webp" alt="Complete Himachal Grand Circuit">
-            <span class="tour-card-badge"><i class="fa-solid fa-compass"></i> Grand Tour</span>
-            <span class="tour-card-price-tag">₹29,999</span>
+            <img src="assets/images/travel-4x4-suv.jpg" alt="Rohtang Pass & Spiti 4x4 Safari Tour">
+            <span class="tour-card-badge"><i class="fa-solid fa-truck-monster"></i> 4x4 Mountain SUV</span>
+            <span class="tour-card-price-tag">₹18,999</span>
           </div>
           <div class="tour-card-body">
             <div class="tour-card-meta">
-              <span><i class="fa-solid fa-user-group"></i> 2 - 16 Persons</span>
-              <span class="tour-rating"><i class="fa-solid fa-star"></i> 5.0 (310)</span>
+              <span><i class="fa-solid fa-user-group"></i> 2 - 4 Persons</span>
+              <span class="tour-rating"><i class="fa-solid fa-star"></i> 5.0 (210)</span>
             </div>
-            <h4 class="tour-card-title">Complete Himachal Grand Circuit Odyssey</h4>
-            <p class="tour-card-desc">The ultimate Himalayan road trip covering Shimla, Kullu, Manali, Kasol, and
-              Dharamshala with private luxury transport.</p>
+            <h4 class="tour-card-title">Rohtang Pass & Spiti Valley 4x4 Safari Tour</h4>
+            <p class="tour-card-desc">Conquer rugged high-altitude passes at 13,050 ft with certified mountain driver & off-road 4WD expedition vehicle.</p>
             <div class="tour-card-footer">
-              <span class="tour-duration"><i class="fa-regular fa-clock"></i> 9 Days / 8 Nights</span>
+              <span class="tour-duration"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
               <a href="contact.html" class="tour-book-btn">Book Now <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -256,9 +250,8 @@
 
         <!-- Col 1: Brand Logo & Description -->
         <div class="dz-footer-brand-col">
-          <a href="index.html" class="dz-brand-logo-link">
+          <a href="index.html" class="dz-brand-logo-link" title="Live The World">
             <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
-            <span class="dz-brand-logo-name">Live The <span>World</span></span>
           </a>
           <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain experiences, and thrilling paragliding adventures.</p>
           <div class="dz-social-icons-row">
@@ -275,9 +268,10 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">DESTINATIONS</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#shimla"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="destinations.html#manali"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="destinations.html#parvati"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#dharamshala"><i class="fa-solid fa-chevron-right"></i> Dharamshala</a></li>
           </ul>
         </div>
 
@@ -286,9 +280,11 @@
           <h4 class="dz-col-heading">EXPLORE</h4>
           <ul class="dz-footer-nav-list">
             <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="about.html#faq"><i class="fa-solid fa-chevron-right"></i> FAQs</a></li>
-            <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Guide</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="fleet.html"><i class="fa-solid fa-chevron-right"></i> Travel Fleet</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
           </ul>
         </div>
 
@@ -337,20 +333,20 @@
       <div class="dz-instagram-row">
         <h3 class="dz-instagram-title">Follow Instagram</h3>
         <div class="dz-instagram-grid">
-          <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 8" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.31 PM (1).jpeg" alt="Langza Buddha Statue" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.03 PM.jpeg" alt="Himalayan Family Retreat" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.10 PM.jpeg" alt="Spiti River Valley" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.27 PM.jpeg" alt="World Highest Post Office" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.22 PM.jpeg" alt="Glacier Stream & Snow Peaks" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.05 PM.jpeg" alt="Kinnaur Cliff Route" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.32 PM.jpeg" alt="Key Monastery Heritage" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.20 PM (1).jpeg" alt="Stupa Under Moonlit Sky" loading="lazy"></div>
         </div>
       </div>
 
       <!-- Bottom Bar from Screenshot 2: Copyright -->
       <div class="dz-footer-bottom">
-        <p class="dz-copyright-text">Copyright © 2025 <span class="dz-highlight-gold">DexignZone</span> All rights
+        <p class="dz-copyright-text">Copyright © 2026 <span class="dz-highlight-gold">Live The World</span>. All rights
           reserved.</p>
       </div>
     </div>

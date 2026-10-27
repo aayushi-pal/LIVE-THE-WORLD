@@ -26,10 +26,53 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     });
   });
+  // --- 4. MOBILE NAVIGATION DRAWER CONTROLLER ---
+  const mobileToggle = document.getElementById('mobileNavToggle');
+  const mobileClose = document.getElementById('mobileNavClose');
+  const mainNav = document.getElementById('mainNav');
+  const mobileBackdrop = document.getElementById('mobileNavBackdrop');
 
+  function openMobileNav() {
+    mainNav?.classList.add('mobile-open');
+    mobileToggle?.classList.add('is-active');
+    mobileToggle?.setAttribute('aria-expanded', 'true');
+    mobileBackdrop?.classList.add('show');
+    document.body.classList.add('nav-drawer-open');
+  }
 
+  function closeMobileNav() {
+    mainNav?.classList.remove('mobile-open');
+    mobileToggle?.classList.remove('is-active');
+    mobileToggle?.setAttribute('aria-expanded', 'false');
+    mobileBackdrop?.classList.remove('show');
+    document.body.classList.remove('nav-drawer-open');
+  }
 
+  mobileToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (mainNav?.classList.contains('mobile-open')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
 
+  mobileClose?.addEventListener('click', closeMobileNav);
+  mobileBackdrop?.addEventListener('click', closeMobileNav);
+
+  // Close when clicking any nav link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileNav();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileNav();
+    }
+  });
 
   // --- 6. ADVENTURE VIDEO PLAY / PAUSE CONTROLLER ---
   const video = document.getElementById('adventureHeroVideo');
@@ -100,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function moveToSlide(index, animate = true) {
     if (!heroTrack) return;
     if (animate) {
-      heroTrack.style.transition = 'transform 0.9s cubic-bezier(0.25, 1, 0.35, 1)';
+      heroTrack.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.35, 1)';
     } else {
       heroTrack.style.transition = 'none';
     }
@@ -109,28 +152,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function nextSlide() {
-    if (isSliding || !heroTrack) return;
+    if (!heroTrack) return;
+    if (isSliding) return;
     isSliding = true;
     currentIndex++;
     moveToSlide(currentIndex, true);
 
-    // If reached the cloned first slide (index 3)
+    // If reached the cloned first slide (index 3), seamlessly reset to index 0
     if (currentIndex >= totalUniqueSlides) {
       setTimeout(() => {
-        // Instant reset back to original first slide without visual stutter
         moveToSlide(0, false);
         void heroTrack.offsetWidth; // force browser layout recalculation
         isSliding = false;
-      }, 920);
+      }, 420);
     } else {
       setTimeout(() => {
         isSliding = false;
-      }, 920);
+      }, 420);
     }
   }
 
   function prevSlide() {
-    if (isSliding || !heroTrack) return;
+    if (!heroTrack) return;
+    if (isSliding) return;
     isSliding = true;
     if (currentIndex <= 0) {
       moveToSlide(totalUniqueSlides, false);
@@ -143,13 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setTimeout(() => {
       isSliding = false;
-    }, 920);
+    }, 420);
   }
 
   function startHeroAutoPlay() {
     stopHeroAutoPlay();
-    // Continuous right-to-left movement every 2.8 seconds, never pausing
-    heroAutoTimer = setInterval(nextSlide, 2800);
+    // Fast and continuous 1.8s auto-slider interval
+    heroAutoTimer = setInterval(nextSlide, 1800);
   }
 
   function stopHeroAutoPlay() {
@@ -159,16 +203,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (heroSliderWrap && heroTrack) {
+  if (heroTrack) {
+    // Start hero auto sliding immediately and continuously
+    startHeroAutoPlay();
+
+    // Auto-restart when browser tab is focused again
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopHeroAutoPlay();
+      } else {
+        startHeroAutoPlay();
+      }
+    });
+
     // Touch swipe support for mobile viewports
     let touchStartX = 0;
     let touchEndX = 0;
 
-    heroSliderWrap.addEventListener('touchstart', (e) => {
+    heroSliderWrap?.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    heroSliderWrap.addEventListener('touchend', (e) => {
+    heroSliderWrap?.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
       if (touchStartX - touchEndX > 50) {
         nextSlide();
@@ -178,18 +234,211 @@ document.addEventListener('DOMContentLoaded', () => {
         startHeroAutoPlay();
       }
     }, { passive: true });
-
-    // Start hero auto sliding continuously right to left without pausing
-    startHeroAutoPlay();
   }
 
   // --- 9. TOUR PACKAGES FILTER BUTTONS INTERACTION ---
   const tourFilterBtns = document.querySelectorAll('.tour-filter-btn');
+  const tourCards = document.querySelectorAll('.tour-card-pkg');
+  const tourCountDisplay = document.getElementById('tourCountDisplay');
+
   tourFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       tourFilterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
+      const filter = btn.dataset.filter || 'all';
+      let visibleCount = 0;
+
+      tourCards.forEach(card => {
+        const cat = card.dataset.category || '';
+        if (filter === 'all' || cat.includes(filter)) {
+          card.style.display = '';
+          setTimeout(() => { card.style.opacity = '1'; }, 20);
+          visibleCount++;
+        } else {
+          card.style.opacity = '0';
+          card.style.display = 'none';
+        }
+      });
+
+      if (tourCountDisplay) {
+        tourCountDisplay.textContent = filter === 'all'
+          ? `Showing all 6 Premium Itineraries`
+          : `Showing ${visibleCount} Matching Itinerar${visibleCount === 1 ? 'y' : 'ies'}`;
+      }
     });
   });
+
+  // --- 9A. DESTINATIONS FILTER CONTROLLER ---
+  const destFilterBtns = document.querySelectorAll('.dest-filter-btn');
+  const destCards = document.querySelectorAll('.dest-card');
+
+  destFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      destFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.dest || 'all';
+
+      destCards.forEach(card => {
+        const destCat = card.dataset.dest || '';
+        if (filter === 'all' || destCat === filter) {
+          card.style.display = '';
+          setTimeout(() => { card.style.opacity = '1'; }, 20);
+        } else {
+          card.style.opacity = '0';
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // --- 9B. CONTACT FORM SUBMISSION FEEDBACK ---
+  const contactForm = document.querySelector('.contact-main-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Thank you! Your trip inquiry has been sent. Our team will contact your mobile number shortly.');
+      contactForm.reset();
+    });
+  }
+
+  // --- 10. TESTIMONIAL SHOWCASE CONTROLLER ---
+  const testimonials = [
+    {
+      name: 'Kevin Martin',
+      role: 'Customer',
+      photo: 'assets/images/testimonial-reviewer-main.jpg',
+      quote: 'Live The World curated the most unforgettable trip for our family to Manali and Parvati Valley! From cozy wooden cottages to picturesque riverside trails and expert local mountain guides, every single detail was handled with care.'
+    },
+    {
+      name: 'Rohit Verma',
+      role: 'Customer',
+      photo: 'assets/images/testimonial-thumb-2.jpg',
+      quote: 'Climbing the snowline ridge of Triund and watching the sunset above the clouds was an ethereal experience. The Live The World team provided top-notch camping gear, warm mountain meals, and safe certified guides!'
+    },
+    {
+      name: 'Zeynep Kaya',
+      role: 'Customer',
+      photo: 'assets/images/testimonial-thumb-3.jpg',
+      quote: 'The Himachal winter expedition was beyond words! The hot sulfur springs of Manikaran, pine trails in Tosh, and paragliding above Solang Valley made this my favorite trip of all time. Truly 5-star service!'
+    }
+  ];
+
+  let activeTIndex = 0;
+  const tPhoto = document.getElementById('mainReviewerPhoto');
+  const tName = document.getElementById('tAuthorName');
+  const tRole = document.getElementById('tAuthorRole');
+  const tText = document.getElementById('tReviewText');
+  const tThumbs = document.querySelectorAll('.thumb-avatar-item');
+  const tPrev = document.getElementById('tPrevBtn');
+  const tNext = document.getElementById('tNextBtn');
+
+  function updateTestimonial(index) {
+    if (index < 0) index = testimonials.length - 1;
+    if (index >= testimonials.length) index = 0;
+    activeTIndex = index;
+    const item = testimonials[activeTIndex];
+
+    if (tPhoto) {
+      tPhoto.style.opacity = '0';
+      setTimeout(() => {
+        tPhoto.src = item.photo;
+        tPhoto.style.opacity = '1';
+      }, 150);
+    }
+
+    if (tText) {
+      tText.style.opacity = '0';
+      setTimeout(() => {
+        tText.textContent = item.quote;
+        tText.style.opacity = '1';
+      }, 150);
+    }
+
+    if (tName) tName.textContent = item.name;
+    if (tRole) tRole.textContent = item.role;
+
+    tThumbs.forEach((thumb, i) => {
+      if (i === activeTIndex) {
+        thumb.classList.add('active');
+      } else {
+        thumb.classList.remove('active');
+      }
+    });
+  }
+
+  tPrev?.addEventListener('click', () => updateTestimonial(activeTIndex - 1));
+  tNext?.addEventListener('click', () => updateTestimonial(activeTIndex + 1));
+
+  tThumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => updateTestimonial(i));
+  });
+
+  // --- 11. FLEET VEHICLE ENQUIRY & TRIP SEARCH HANDLER ---
+  const bookVehicleBtns = document.querySelectorAll('[data-book-vehicle]');
+  bookVehicleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const vehicle = btn.dataset.bookVehicle || '';
+      const driverSelectId = btn.dataset.driverId;
+      const driverSelect = driverSelectId ? document.getElementById(driverSelectId) : null;
+      const driver = driverSelect ? driverSelect.value : 'With driver';
+
+      try {
+        sessionStorage.setItem('preferredVehicle', vehicle);
+        sessionStorage.setItem('preferredDriver', driver);
+      } catch (err) { }
+
+      window.location.href = `contact.html?vehicle=${encodeURIComponent(vehicle)}&driver=${encodeURIComponent(driver)}#contactForm`;
+    });
+  });
+
+  const tripSearchFleet = document.getElementById('trip-search-fleet');
+  if (tripSearchFleet) {
+    tripSearchFleet.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const dest = document.getElementById('fleet-where')?.value || 'Parvati Valley';
+      const when = document.getElementById('fleet-when')?.value || '';
+      const travelers = document.getElementById('fleet-travelers')?.value || '2 travellers';
+      const msg = `Destination: ${dest}\nTravel Date: ${when}\nTravellers: ${travelers}`;
+
+      try {
+        sessionStorage.setItem('tripSearchMsg', msg);
+      } catch (err) { }
+
+      window.location.href = `contact.html?search=1#contactForm`;
+    });
+  }
+
+  // Pre-fill contact form on contact.html if coming from Fleet or Trip Search
+  const contactMsgField = document.querySelector('textarea[name="message"]');
+  if (contactMsgField) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const vehicleParam = urlParams.get('vehicle');
+    const driverParam = urlParams.get('driver');
+    let prepopulated = '';
+
+    if (vehicleParam) {
+      prepopulated = `Vehicle Preference: ${vehicleParam}\nDriver Preference: ${driverParam || 'With driver'}\n`;
+    } else {
+      try {
+        const storedMsg = sessionStorage.getItem('tripSearchMsg');
+        if (storedMsg) {
+          prepopulated = storedMsg + '\n';
+          sessionStorage.removeItem('tripSearchMsg');
+        }
+      } catch (err) { }
+    }
+
+    if (prepopulated) {
+      contactMsgField.value = prepopulated;
+      const contactFormEl = document.getElementById('contactForm');
+      if (contactFormEl) {
+        setTimeout(() => {
+          contactFormEl.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }
 });
 

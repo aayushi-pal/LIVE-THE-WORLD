@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Fleet - Live The World Himalayan Holidays</title>
+  <meta name="description"
+    content="Discover our luxury mountain travel fleet: Toyota Innova Crysta SUVs, heavy-duty 4x4 off-road safari vehicles, and luxury Tempo Travellers for Himachal tours.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Font Awesome & Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Afacad:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&family=Arizonia&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Responsive Stylesheet -->
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Inner Pages Stylesheet -->
+  <link rel="stylesheet" href="assets/css/inner-pages.css">
+</head>
+
+<body>
+  <!-- ==================== SECTION 1: STICKY NAVIGATION BAR ==================== -->
+  <header class="ltw-navbar travlla-navbar" id="siteHeader">
+    <div class="navbar-wrapper">
+      <div class="navbar-container">
+
+        <!-- Logo Left Side -->
+        <a href="index.html" class="brand-logo-link" title="Live The World">
+          <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
+        </a>
+
+        <!-- Menu in the Centre: Home, About Us, Destination, Fleet, Tour Packages, Gallery -->
+        <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+          <div class="mobile-nav-header">
+            <span class="mobile-nav-brand">Live The <span>World</span></span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">&times;</button>
+          </div>
+          <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="nav-link"><i class="fa-solid fa-compass"></i> About Us</a>
+            <a href="destinations.html" class="nav-link"><i class="fa-solid fa-mountain-sun"></i> Destination</a>
+            <a href="fleet.html" class="nav-link active"><i class="fa-solid fa-car-side"></i> Fleet</a>
+            <a href="tours.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+            <a href="gallery.html" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html" class="nav-link mobile-only-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <a href="contact.html" class="mobile-cta-btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+            <div class="mobile-nav-contact">
+              <i class="fa-solid fa-phone"></i> <a href="tel:+911234567898">+91 12345 678 98</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Right Side: Contact Us Button & Mobile Hamburger Toggle Button -->
+        <div class="navbar-right-box">
+          <a href="contact.html" class="navbar-contact-btn">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+  <!-- ==================== SECTION 2: HERO BREADCRUMB BANNER ==================== -->
+  <section class="inner-hero-banner" id="fleet-hero">
+    <div class="inner-hero-content">
+      <h1 class="inner-hero-title">Our Premium Fleet</h1>
+      <div class="inner-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Our Fleet</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: TRIP BOOKING SEARCH STRIP ==================== -->
+  <section class="booking-strip">
+    <div class="fleet-ref-wrap">
+      <form id="trip-search-fleet" class="booking-form-strip">
+        <div class="field">
+          <label for="fleet-where">Where to?</label>
+          <select id="fleet-where">
+            <option value="Parvati Valley">Parvati Valley</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Manali">Manali</option>
+            <option value="Dharamshala">Dharamshala &amp; Triund</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fleet-when">Travel date</label>
+          <input id="fleet-when" type="date" required>
+        </div>
+        <div class="field">
+          <label for="fleet-travelers">Travellers</label>
+          <select id="fleet-travelers">
+            <option value="2 travellers">2 travellers</option>
+            <option value="1 traveller">1 traveller</option>
+            <option value="3–5 travellers">3–5 travellers</option>
+            <option value="6+ travellers">6+ travellers</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gold-strip">Plan My Escape <span>↗</span></button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 5: THE FLEET SHOWCASE ==================== -->
+  <section class="section-ref dark-ref" id="fleet">
+    <div class="fleet-ref-wrap">
+      <div class="heading-ref">
+        <div>
+          <span class="eyebrow-ref gold-eyebrow">THE ROAD IS PART OF THE STORY</span>
+          <h2>A ride for every journey.</h2>
+        </div>
+        <p>Explore vehicle options for couples, families, and groups. Confirm availability and specifications when you
+          enquire.</p>
+      </div>
+
+      <div class="fleet-ref-grid" id="fleet-cards">
+
+        <!-- Vehicle 1: Hatchback -->
+        <article class="vehicle-ref-card">
+          <img class="vehicle-photo-ref" src="assets/images/hatchback.jpg" alt="Hatchback vehicle" loading="lazy">
+          <div class="vehicle-body-ref">
+            <small class="vehicle-category-ref">COMPACT · CITY &amp; SHORT TRIPS</small>
+            <h3 class="vehicle-title-ref">Hatchback</h3>
+            <p class="vehicle-desc-ref">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="vehicle-price-ref">
+              <b>₹1,800</b>
+              <small>/ day · sample rate</small>
+            </div>
+            <label class="vehicle-driver-ref">Do you need a driver?
+              <select id="driver-hatchback" aria-label="Driver preference for Hatchback">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="text-link-ref" data-book-vehicle="Hatchback" data-driver-id="driver-hatchback">
+              Enquire about this vehicle ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- Vehicle 2: Sedan -->
+        <article class="vehicle-ref-card">
+          <img class="vehicle-photo-ref" src="assets/images/sedan.jpg" alt="Sedan vehicle" loading="lazy">
+          <div class="vehicle-body-ref">
+            <small class="vehicle-category-ref">COMFORT · COUPLES &amp; SMALL FAMILIES</small>
+            <h3 class="vehicle-title-ref">Sedan</h3>
+            <p class="vehicle-desc-ref">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="vehicle-price-ref">
+              <b>₹2,500</b>
+              <small>/ day · sample rate</small>
+            </div>
+            <label class="vehicle-driver-ref">Do you need a driver?
+              <select id="driver-sedan" aria-label="Driver preference for Sedan">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="text-link-ref" data-book-vehicle="Sedan" data-driver-id="driver-sedan">
+              Enquire about this vehicle ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- Vehicle 3: SUV -->
+        <article class="vehicle-ref-card">
+          <img class="vehicle-photo-ref" src="assets/images/suv.jpg" alt="SUV vehicle" loading="lazy">
+          <div class="vehicle-body-ref">
+            <small class="vehicle-category-ref">SPACIOUS · FAMILY GETAWAYS</small>
+            <h3 class="vehicle-title-ref">SUV</h3>
+            <p class="vehicle-desc-ref">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="vehicle-price-ref">
+              <b>₹3,500</b>
+              <small>/ day · sample rate</small>
+            </div>
+            <label class="vehicle-driver-ref">Do you need a driver?
+              <select id="driver-suv" aria-label="Driver preference for SUV">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="text-link-ref" data-book-vehicle="SUV" data-driver-id="driver-suv">
+              Enquire about this vehicle ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- Vehicle 4: Premium Car -->
+        <article class="vehicle-ref-card">
+          <img class="vehicle-photo-ref" src="assets/images/premium.jpg" alt="Premium Car vehicle" loading="lazy">
+          <div class="vehicle-body-ref">
+            <small class="vehicle-category-ref">PREMIUM · SPECIAL JOURNEYS</small>
+            <h3 class="vehicle-title-ref">Premium Car</h3>
+            <p class="vehicle-desc-ref">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="vehicle-price-ref">
+              <b>₹6,000</b>
+              <small>/ day · sample rate</small>
+            </div>
+            <label class="vehicle-driver-ref">Do you need a driver?
+              <select id="driver-premium" aria-label="Driver preference for Premium Car">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="text-link-ref" data-book-vehicle="Premium Car" data-driver-id="driver-premium">
+              Enquire about this vehicle ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- Vehicle 5: Luxury Tempo Traveller -->
+        <article class="vehicle-ref-card">
+          <img class="vehicle-photo-ref" src="assets/images/Tempo Traveller.png" alt="Luxury Tempo Traveller Group Van"
+            loading="lazy">
+          <div class="vehicle-body-ref">
+            <small class="vehicle-category-ref">GROUPS · MOUNTAIN RETREATS</small>
+            <h3 class="vehicle-title-ref">Tempo Traveller</h3>
+            <p class="vehicle-desc-ref">Spacious 12–16 seater maharaja recliners for group tours &amp; family retreats.
+            </p>
+            <div class="vehicle-price-ref">
+              <b>₹6,999</b>
+              <small>/ day · sample rate</small>
+            </div>
+            <label class="vehicle-driver-ref">Do you need a driver?
+              <select id="driver-tempo" aria-label="Driver preference for Tempo Traveller">
+                <option value="With driver">Yes, with hill chauffeur</option>
+              </select>
+            </label>
+            <button type="button" class="text-link-ref" data-book-vehicle="Tempo Traveller"
+              data-driver-id="driver-tempo">
+              Enquire about this vehicle ↗
+            </button>
+          </div>
+        </article>
+
+        <!-- Vehicle 6: 4x4 Expedition SUV -->
+        <article class="vehicle-ref-card">
+          <img class="vehicle-photo-ref" src="assets/images/4x4 SUV.png" alt="4x4 Expedition SUV" loading="lazy">
+          <div class="vehicle-body-ref">
+            <small class="vehicle-category-ref">OFF-ROAD · SPITI &amp; HIGH PASSES</small>
+            <h3 class="vehicle-title-ref">4x4 Expedition SUV</h3>
+            <p class="vehicle-desc-ref">High-ground-clearance 4WD Scorpio/Thar for Rohtang, Spiti Valley &amp; rugged
+              trails.</p>
+            <div class="vehicle-price-ref">
+              <b>₹4,500</b>
+              <small>/ day · sample rate</small>
+            </div>
+            <label class="vehicle-driver-ref">Do you need a driver?
+              <select id="driver-4x4" aria-label="Driver preference for 4x4 Expedition SUV">
+                <option value="With driver">Yes, with mountain driver</option>
+                <option value="Without driver">No, self-drive</option>
+              </select>
+            </label>
+            <button type="button" class="text-link-ref" data-book-vehicle="4x4 Expedition SUV"
+              data-driver-id="driver-4x4">
+              Enquire about this vehicle ↗
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="fleet-disclaimer-ref">Illustrative vehicles and estimated daily rates for design preview. Exact model,
+        driver availability, driver charges, fuel, distance limits, taxes, tolls, and self-drive terms must be confirmed
+        before booking.</p>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 8: SITE FOOTER ==================== -->
+  <footer class="site-footer" id="contact">
+    <div class="site-container">
+      <div class="dz-footer-main-grid">
+
+        <!-- Col 1: Brand Logo & Description -->
+        <div class="dz-footer-brand-col">
+          <a href="index.html" class="dz-brand-logo-link" title="Live The World">
+            <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
+          </a>
+          <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain
+            experiences, and thrilling paragliding adventures.</p>
+          <div class="dz-social-icons-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: DESTINATIONS -->
+        <div class="dz-footer-menu-col">
+          <h4 class="dz-col-heading">DESTINATIONS</h4>
+          <ul class="dz-footer-nav-list">
+            <li><a href="destinations.html#shimla"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="destinations.html#manali"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="destinations.html#parvati"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#dharamshala"><i class="fa-solid fa-chevron-right"></i> Dharamshala</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: EXPLORE -->
+        <div class="dz-footer-menu-col">
+          <h4 class="dz-col-heading">EXPLORE</h4>
+          <ul class="dz-footer-nav-list">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="fleet.html"><i class="fa-solid fa-chevron-right"></i> Travel Fleet</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: CONTACT US -->
+        <div class="dz-footer-contact-col">
+          <h4 class="dz-col-heading">CONTACT US</h4>
+          <div class="dz-contact-items-stack">
+            <!-- Mobile -->
+            <div class="dz-contact-badge-item">
+              <div class="dz-badge-circle">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="dz-badge-content">
+                <span class="dz-contact-label">Mobile</span>
+                <a href="tel:+911234567898" class="dz-phone-script">+91 12345 678 98</a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="dz-contact-badge-item">
+              <div class="dz-badge-circle">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="dz-badge-content">
+                <span class="dz-contact-label">Email</span>
+                <a href="mailto:info@livetheworld.com" class="dz-email-text">info@livetheworld.com</a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="dz-contact-badge-item">
+              <div class="dz-badge-circle">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="dz-badge-content">
+                <span class="dz-contact-label">Address</span>
+                <span class="dz-address-text">The Mall Road, Near Ridge, Shimla, HP 171001</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Follow Instagram Strip -->
+      <div class="dz-instagram-row">
+        <h3 class="dz-instagram-title">Follow Instagram</h3>
+        <div class="dz-instagram-grid">
+          <div class="dz-insta-thumb"><img src="assets/images/rafting.jfif" alt="River Rafting Adventure"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Paragliding in Solang Valley"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img.jfif" alt="White Water River Rapids"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img-3.jfif" alt="River Expedition Team"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-parvati.jpg" alt="Winter Mountain Trek" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Manali Valley Riverside" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Shimla Hillside Town" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/slider.jfif" alt="Snowboarding Alpine Slopes"
+              loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright -->
+      <div class="dz-footer-bottom">
+        <p class="dz-copyright-text">Copyright © 2026 <span class="dz-highlight-gold">Live The World</span>. All rights
+          reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/911234567898?text=Hello%20Live%20The%20World!%20I%20would%20like%20to%20inquire%20about%20vehicle%20rentals."
+    class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
+    title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

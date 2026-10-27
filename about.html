@@ -38,49 +38,53 @@
         <!-- Logo Left Side -->
         <a href="index.html" class="brand-logo-link" title="Live The World">
           <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
-          <div class="brand-text-wrap">
-            <span class="brand-name">Live The <span>World</span></span>
-          </div>
         </a>
 
-        <!-- Menu in the Centre: Home, About, Gallery, Tour Package, Contact Us -->
+        <!-- Menu in the Centre: Home, About Us, Destination, Fleet, Tour Packages, Gallery -->
         <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link active">About Us</a>
-          <a href="gallery.html" class="nav-link">Gallery</a>
-          <a href="tours.html" class="nav-link">Tour Packages</a>
-          <a href="contact.html" class="nav-link">Contact Us</a>
+          <div class="mobile-nav-header">
+            <span class="mobile-nav-brand">Live The <span>World</span></span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">&times;</button>
+          </div>
+          <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="nav-link active"><i class="fa-solid fa-compass"></i> About Us</a>
+            <a href="destinations.html" class="nav-link"><i class="fa-solid fa-mountain-sun"></i> Destination</a>
+            <a href="fleet.html" class="nav-link"><i class="fa-solid fa-car-side"></i> Fleet</a>
+            <a href="tours.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+            <a href="gallery.html" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html" class="nav-link mobile-only-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <a href="contact.html" class="mobile-cta-btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+            <div class="mobile-nav-contact">
+              <i class="fa-solid fa-phone"></i> <a href="tel:+911234567898">+91 12345 678 98</a>
+            </div>
+          </div>
         </nav>
 
-        <!-- Right Side Blank to keep Menu Centered -->
-        <div class="navbar-right-blank" aria-hidden="true"></div>
+        <!-- Right Side: Contact Us Button & Mobile Hamburger Toggle Button -->
+        <div class="navbar-right-box">
+          <a href="contact.html" class="navbar-contact-btn">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
 
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
   <!-- ==================== SECTION 2: ABOUT US HERO BREADCRUMB BANNER ==================== -->
   <section class="inner-hero-banner" id="about-hero">
-    <div class="inner-hero-sky-elements" aria-hidden="true">
-      <!-- Floating Paraglider in Sky (No Airplane) -->
-      <svg class="sky-paraglider" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 10,40 C 25,8 75,8 90,40 C 80,32 50,30 10,40 Z" fill="#DCA735" />
-        <path d="M 18,37 C 32,16 68,16 82,37 C 72,31 46,29 18,37 Z" fill="#114479" />
-        <line x1="20" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="40" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="60" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="80" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <circle cx="50" cy="71" r="3.5" fill="#DCA735" />
-      </svg>
-      <svg class="sky-balloon-1" viewBox="0 0 60 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 30,5 C 48,5 55,25 45,48 C 38,62 34,70 30,70 C 26,70 22,62 15,48 C 5,25 12,5 30,5 Z" fill="#DCA735" />
-        <rect x="27" y="74" width="6" height="5" fill="#091D33" rx="1" />
-      </svg>
-      <svg class="sky-balloon-2" viewBox="0 0 60 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 30,5 C 48,5 55,25 45,48 C 38,62 34,70 30,70 C 26,70 22,62 15,48 C 5,25 12,5 30,5 Z" fill="#114479" />
-        <rect x="27" y="74" width="6" height="5" fill="#DCA735" rx="1" />
-      </svg>
-    </div>
-
     <div class="inner-hero-content">
       <h1 class="inner-hero-title">About Us</h1>
       <div class="inner-breadcrumb">
@@ -97,8 +101,8 @@
 
       <!-- Left Column: Traveler Collage with Paraglider in Sky -->
       <div class="recommend-visual-col">
-        <img src="assets/images/about-dest-collage-clean.png" alt="We Recommend Beautiful Destinations"
-          class="recommend-collage-img" width="550" height="458">
+        <img src="assets/images/Family.png" alt="We Recommend Beautiful Destinations" class="recommend-collage-img"
+          width="650" height="533">
       </div>
 
       <!-- Center/Right Column: Heading, Lead, Feature Cards & Bottom Actions -->
@@ -109,7 +113,8 @@
         </h2>
 
         <p class="recommend-lead-desc">
-          Live The World is a premier adventure and travel agency that specializes in authentic Himalayan journeys, mountain experiences, and paragliding expeditions...
+          Live The World is a premier adventure and travel agency that specializes in authentic Himalayan journeys,
+          mountain experiences, and paragliding expeditions...
         </p>
 
         <!-- 2 Stacked Feature Cards matching Screenshot -->
@@ -147,13 +152,13 @@
         <!-- Bottom Actions Row: Golden Discover More Button + 3.5K Happy Customer -->
         <div class="recommend-bottom-row">
           <div class="recommend-bottom-actions">
-            <a href="#destinations" class="btn-recommend-discover">Discover More</a>
+            <a href="tours.html" class="btn-recommend-discover">Discover More</a>
 
             <div class="recommend-happy-customers">
               <div class="recommend-avatar-stack">
-                <img src="assets/images/pic1.webp" alt="Customer 1" class="recommend-avatar-img">
-                <img src="assets/images/pic2.webp" alt="Customer 2" class="recommend-avatar-img">
-                <img src="assets/images/pic3.webp" alt="Customer 3" class="recommend-avatar-img">
+                <img src="assets/images/testimonial-thumb-1.jpg" alt="Customer 1" class="recommend-avatar-img">
+                <img src="assets/images/testimonial-thumb-2.jpg" alt="Customer 2" class="recommend-avatar-img">
+                <img src="assets/images/testimonial-thumb-3.jpg" alt="Customer 3" class="recommend-avatar-img">
               </div>
               <div class="recommend-stats-text">
                 <span class="recommend-count-num">3.5K</span>
@@ -332,22 +337,26 @@
           Destinations worth exploring! Here are a few popular spots
         </p>
 
-        <!-- Paraglider Adventure Trail (Himalayan Paraglider Trail) -->
-        <div class="paraglider-adventure-trail">
-          <svg class="paraglider-mini-icon" width="46" height="38" viewBox="0 0 60 50" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M 6 22 C 14 7, 46 7, 54 22 C 46 17, 34 14, 30 14 C 26 14, 14 17, 6 22 Z" fill="#FF5722" />
-            <path d="M 18 14 C 24 10, 36 10, 42 14 L 38 17 C 34 15, 26 15, 22 17 Z" fill="#DCA735" />
-            <line x1="10" y1="21" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
-            <line x1="22" y1="16" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
-            <line x1="38" y1="16" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
-            <line x1="50" y1="21" x2="30" y2="40" stroke="#114479" stroke-width="1.1" />
-            <circle cx="30" cy="40" r="2.5" fill="#114479" />
-            <path d="M 28 42 L 32 42 L 33 46 L 27 46 Z" fill="#FF5722" />
-          </svg>
-          <svg class="paraglider-dotted-curve" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 25 C70 5, 120 35, 180 18 C230 5, 270 28, 310 15" stroke="rgba(6, 91, 98, 0.28)"
-              stroke-width="2" stroke-dasharray="5 5" fill="none" />
+        <!-- Paraglider with Dotted Thread Loop (Same style as Section 3 of index.html) -->
+        <div class="tours-paraglider-trail-wrap" aria-hidden="true">
+          <svg class="tours-paraglider-trail-svg" viewBox="0 0 740 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dotted looping thread -->
+            <path
+              d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
+              stroke="#A3CEE2" stroke-width="2" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
+            <circle cx="172" cy="54" r="3.8" fill="#A3CEE2" />
+            <circle cx="690" cy="40" r="4.2" fill="#A3CEE2" />
+
+            <!-- Flying Paraglider at the start of the thread -->
+            <g class="tours-thread-paraglider" transform="translate(130, 30) rotate(-12) scale(0.42)">
+              <path d="M 12 36 C 30 8, 110 8, 128 36 C 105 26, 75 20, 42 26 Z" fill="#DCA735" />
+              <path d="M 22 34 C 36 15, 102 15, 118 34 C 98 26, 72 22, 44 26 Z" fill="#114479" />
+              <line x1="22" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <line x1="48" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <line x1="92" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <line x1="118" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <circle cx="70" cy="72" r="5" fill="#DCA735" />
+            </g>
           </svg>
         </div>
       </div>
@@ -360,19 +369,19 @@
           <div class="card-image-wrap">
             <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley" class="destination-img">
           </div>
-          <div class="card-pill-btn">
+          <a href="parvati-valley-escape.html" class="card-pill-btn" title="View Parvati Valley Escape">
             <span>Parvati Valley</span>
-          </div>
+          </a>
         </div>
 
         <!-- Card 2: Shimla -->
         <div class="destination-photo-card">
           <div class="card-image-wrap">
-            <img src="assets/images/bg-shimla-img.jpg" alt="Shimla" class="destination-img">
+            <img src="assets/images/bg-shimla.jpg" alt="Shimla" class="destination-img">
           </div>
-          <div class="card-pill-btn">
+          <a href="shimla-hill-retreat.html" class="card-pill-btn" title="View Shimla Hill Retreat">
             <span>Shimla</span>
-          </div>
+          </a>
         </div>
 
         <!-- Card 3: Manali -->
@@ -380,9 +389,9 @@
           <div class="card-image-wrap">
             <img src="assets/images/Manali.jpg" alt="Manali" class="destination-img">
           </div>
-          <div class="card-pill-btn">
+          <a href="manali-mountain-adventure.html" class="card-pill-btn" title="View Manali Mountain Adventure">
             <span>Manali</span>
-          </div>
+          </a>
         </div>
 
       </div>
@@ -416,21 +425,26 @@
         Destinations worth exploring! Here are a few popular spots.
       </p>
 
-      <!-- Paraglider Adventure Trail (Strictly NO Airplane) -->
-      <div class="services-paraglider-trail" aria-hidden="true">
-        <svg class="trail-paraglider-svg" width="46" height="38" viewBox="0 0 60 50" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M 6 22 C 14 7, 46 7, 54 22 C 46 17, 34 14, 30 14 C 26 14, 14 17, 6 22 Z" fill="#FFAA0D" />
-          <path d="M 18 14 C 24 10, 36 10, 42 14 L 38 17 C 34 15, 26 15, 22 17 Z" fill="#FFFFFF" />
-          <line x1="10" y1="21" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
-          <line x1="22" y1="16" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
-          <line x1="38" y1="16" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
-          <line x1="50" y1="21" x2="30" y2="40" stroke="#FFFFFF" stroke-width="1.1" />
-          <circle cx="30" cy="40" r="2.5" fill="#FFAA0D" />
-        </svg>
-        <svg class="trail-dotted-curve" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 25 C70 5, 120 35, 180 18 C230 5, 270 28, 310 15" stroke="rgba(255, 255, 255, 0.45)"
-            stroke-width="1.8" stroke-dasharray="5 5" fill="none" />
+      <!-- Paraglider with Dotted Thread Loop (Same style as Section 3 of index.html) -->
+      <div class="tours-paraglider-trail-wrap" aria-hidden="true">
+        <svg class="tours-paraglider-trail-svg" viewBox="0 0 740 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Dotted looping thread -->
+          <path
+            d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
+            stroke="#A3CEE2" stroke-width="2" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
+          <circle cx="172" cy="54" r="3.8" fill="#A3CEE2" />
+          <circle cx="690" cy="40" r="4.2" fill="#A3CEE2" />
+
+          <!-- Flying Paraglider at the start of the thread -->
+          <g class="tours-thread-paraglider" transform="translate(130, 30) rotate(-12) scale(0.42)">
+            <path d="M 12 36 C 30 8, 110 8, 128 36 C 105 26, 75 20, 42 26 Z" fill="#DCA735" />
+            <path d="M 22 34 C 36 15, 102 15, 118 34 C 98 26, 72 22, 44 26 Z" fill="#114479" />
+            <line x1="22" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+            <line x1="48" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+            <line x1="92" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+            <line x1="118" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+            <circle cx="70" cy="72" r="5" fill="#DCA735" />
+          </g>
         </svg>
       </div>
     </div>
@@ -459,7 +473,8 @@
         <!-- Service Card 3: Safe Mountain Expeditions -->
         <div class="amazing-service-card">
           <div class="service-card-inner">
-            <img src="assets/images/service-safe-expeditions.png" alt="Safe Mountain Expeditions" class="service-card-img" loading="lazy">
+            <img src="assets/images/service-safe-expeditions.png" alt="Safe Mountain Expeditions"
+              class="service-card-img" loading="lazy">
           </div>
           <h3 class="service-card-label">Transportation</h3>
         </div>
@@ -469,7 +484,7 @@
           <div class="service-card-inner">
             <img src="assets/images/service-taxi-metro.png" alt="Texi & Metro" class="service-card-img" loading="lazy">
           </div>
-          <h3 class="service-card-label">Texi & Metro</h3>
+          <h3 class="service-card-label">Hotel & Stays</h3>
         </div>
 
       </div>
@@ -512,7 +527,7 @@
       <p class="adventure-cta-subtitle">IT'S TIME TO TRAVEL</p>
 
       <!-- Pill Button: Booking Now -->
-      <a href="#tours" class="adventure-booking-btn">Booking Now</a>
+      <a href="contact.html" class="adventure-booking-btn">Booking Now</a>
 
     </div>
   </section>
@@ -526,11 +541,11 @@
 
         <!-- Col 1: Brand Logo, Himalayan Trails, Description & Social Icons (Facebook, Instagram, LinkedIn) -->
         <div class="dz-footer-brand-col">
-          <a href="index.html" class="dz-brand-logo-link">
+          <a href="index.html" class="dz-brand-logo-link" title="Live The World">
             <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
-            <span class="dz-brand-logo-name">Live The <span>World</span></span>
           </a>
-          <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain experiences, and thrilling paragliding adventures.</p>
+          <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain
+            experiences, and thrilling paragliding adventures.</p>
           <div class="dz-social-icons-row">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
                 class="fa-brands fa-facebook-f"></i></a>
@@ -545,9 +560,10 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">DESTINATIONS</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
-            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
-            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#shimla"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="destinations.html#manali"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="destinations.html#parvati"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#dharamshala"><i class="fa-solid fa-chevron-right"></i> Dharamshala</a></li>
           </ul>
         </div>
 
@@ -555,10 +571,12 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">EXPLORE</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> FAQs</a></li>
-            <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="#tours"><i class="fa-solid fa-chevron-right"></i> Tour Guide</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="fleet.html"><i class="fa-solid fa-chevron-right"></i> Travel Fleet</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
           </ul>
         </div>
 
@@ -607,20 +625,28 @@
       <div class="dz-instagram-row">
         <h3 class="dz-instagram-title">Follow Instagram</h3>
         <div class="dz-instagram-grid">
-          <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 8" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting.jfif" alt="River Rafting Adventure"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Paragliding in Solang Valley"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img.jfif" alt="White Water River Rapids"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img-3.jfif" alt="River Expedition Team"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-parvati.jpg" alt="Winter Mountain Trek" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Manali Valley Riverside" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Shimla Hillside Town" loading="lazy">
+          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/slider.jfif" alt="Snowboarding Alpine Slopes"
+              loading="lazy"></div>
         </div>
       </div>
 
       <!-- Bottom Bar from Screenshot 2: Copyright -->
       <div class="dz-footer-bottom">
-        <p class="dz-copyright-text">Copyright © 2025 <span class="dz-highlight-gold">DexignZone</span> All rights
+        <p class="dz-copyright-text">Copyright © 2026 <span class="dz-highlight-gold">Live The World</span>. All rights
           reserved.</p>
       </div>
 

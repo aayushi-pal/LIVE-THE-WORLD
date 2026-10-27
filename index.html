@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&family=Arizonia&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Afacad:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&family=Arizonia&display=swap"
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
@@ -37,26 +37,52 @@
         <!-- Logo Left Side -->
         <a href="index.html" class="brand-logo-link" title="Live The World">
           <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
-          <div class="brand-text-wrap">
-            <span class="brand-name">Live The <span>World</span></span>
-          </div>
         </a>
 
-        <!-- Menu in the Centre: Home, About, Gallery, Tour Package, Contact Us -->
+        <!-- Menu in the Centre: Home, About Us, Destination, Fleet, Tour Packages, Gallery -->
         <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-          <a href="index.html" class="nav-link active">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="gallery.html" class="nav-link">Gallery</a>
-          <a href="tours.html" class="nav-link">Tour Packages</a>
-          <a href="contact.html" class="nav-link">Contact Us</a>
+          <div class="mobile-nav-header">
+            <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img"
+              style="height: 48px; width: auto;">
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">&times;</button>
+          </div>
+          <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="nav-link"><i class="fa-solid fa-compass"></i> About Us</a>
+            <a href="destinations.html" class="nav-link"><i class="fa-solid fa-mountain-sun"></i> Destination</a>
+            <a href="fleet.html" class="nav-link"><i class="fa-solid fa-car-side"></i> Fleet</a>
+            <a href="tours.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+            <a href="gallery.html" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html" class="nav-link mobile-only-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <a href="contact.html" class="mobile-cta-btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+            <div class="mobile-nav-contact">
+              <i class="fa-solid fa-phone"></i> <a href="tel:+911234567898">+91 12345 678 98</a>
+            </div>
+          </div>
         </nav>
 
-        <!-- Right Side Blank to keep Menu Centered -->
-        <div class="navbar-right-blank" aria-hidden="true"></div>
+        <!-- Right Side: Contact Us Button & Mobile Hamburger Toggle Button -->
+        <div class="navbar-right-box">
+          <a href="contact.html" class="navbar-contact-btn">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
 
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
   <!-- ==================== SECTION 2: HERO BANNER & HORIZONTAL DESTINATION SLIDER ==================== -->
   <section class="ltw-hero-banner travlla-hero-banner" id="home">
@@ -65,18 +91,29 @@
     <div class="hero-slider-wrap" id="heroSlider">
       <div class="hero-slider-track" id="heroSliderTrack">
 
-        <!-- Slide 1: Manali -->
+        <!-- Slide 1: Parvati Valley -->
         <div class="hero-slide" data-slide="0">
           <div class="hero-slide-bg">
-            <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks" class="hero-bg-img">
+            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley Pine Forests" class="hero-bg-img">
             <div class="ltw-banner-overlay travlla-banner-overlay"></div>
           </div>
           <div class="hero-center-wrapper">
-            <div class="hero-text-block">
-              <span class="trv-banner-explore-script">Explore</span>
-              <div class="trv-banner-text-mid">
-                <h1 class="trv-banner-text-large">Manali</h1>
-                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="ltw-butterfly-anim trv-butterfly-anim">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">
+                THE HIMALAYAS ARE CALLING
+              </div>
+              <h1 class="hero-headline">
+                <span class="headline-primary">Lose yourself.</span>
+                <span class="headline-accent">Find your world.</span>
+              </h1>
+              <p class="hero-subtext">
+                Follow the river. Wander through pine forests. Find a little more of yourself in Parvati Valley.
+              </p>
+              <div class="hero-actions-row">
+                <a href="about.html" class="hero-btn-primary">
+                  <span>Explore the Journey</span>
+                  <span class="btn-arrow">&#x2197;</span>
+                </a>
               </div>
             </div>
           </div>
@@ -85,49 +122,83 @@
         <!-- Slide 2: Shimla -->
         <div class="hero-slide" data-slide="1">
           <div class="hero-slide-bg">
-            <img src="assets/images/bg-shimla.jpg" alt="Shimla Queen of Hills" class="hero-bg-img">
+            <img src="assets/images/bg-shimla.jpg" alt="Shimla Hillside Retreat" class="hero-bg-img">
             <div class="ltw-banner-overlay travlla-banner-overlay"></div>
           </div>
           <div class="hero-center-wrapper">
-            <div class="hero-text-block">
-              <span class="trv-banner-explore-script">Explore</span>
-              <div class="trv-banner-text-mid">
-                <h1 class="trv-banner-text-large">Shimla</h1>
-                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="ltw-butterfly-anim trv-butterfly-anim">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">
+                THE HIMALAYAS ARE CALLING
+              </div>
+              <h1 class="hero-headline">
+                <span class="headline-primary">A little charm.</span>
+                <span class="headline-accent">A higher perspective.</span>
+              </h1>
+              <p class="hero-subtext">
+                Take the winding road to Shimla. Discover hillside charm, unhurried walks, and the joy of slowing down.
+              </p>
+              <div class="hero-actions-row">
+                <a href="about.html" class="hero-btn-primary">
+                  <span>Explore the Journey</span>
+                  <span class="btn-arrow">&#x2197;</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Slide 3: Parvati Valley -->
+        <!-- Slide 3: Manali -->
         <div class="hero-slide" data-slide="2">
           <div class="hero-slide-bg">
-            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley Magic" class="hero-bg-img">
+            <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks & Mountain Roads" class="hero-bg-img">
             <div class="ltw-banner-overlay travlla-banner-overlay"></div>
           </div>
           <div class="hero-center-wrapper">
-            <div class="hero-text-block">
-              <span class="trv-banner-explore-script">Explore</span>
-              <div class="trv-banner-text-mid">
-                <h1 class="trv-banner-text-large trv-banner-text-singleline">Parvati Valley</h1>
-                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="ltw-butterfly-anim trv-butterfly-anim">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">
+                THE HIMALAYAS ARE CALLING
+              </div>
+              <h1 class="hero-headline">
+                <span class="headline-primary">Chase the peaks.</span>
+                <span class="headline-accent">Keep the memories.</span>
+              </h1>
+              <p class="hero-subtext">
+                Let Manali bring out your adventurous side. Mountain roads, beautiful valleys, and a world waiting to be
+                explored.
+              </p>
+              <div class="hero-actions-row">
+                <a href="about.html" class="hero-btn-primary">
+                  <span>Explore the Journey</span>
+                  <span class="btn-arrow">&#x2197;</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Slide 4 (Seamless Loop Clone of Slide 1): Manali -->
+        <!-- Slide 4 (Seamless Loop Clone of Slide 1): Parvati Valley -->
         <div class="hero-slide hero-slide-clone" data-slide="3" aria-hidden="true">
           <div class="hero-slide-bg">
-            <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks" class="hero-bg-img">
+            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley Pine Forests" class="hero-bg-img">
             <div class="ltw-banner-overlay travlla-banner-overlay"></div>
           </div>
           <div class="hero-center-wrapper">
-            <div class="hero-text-block">
-              <span class="trv-banner-explore-script">Explore</span>
-              <div class="trv-banner-text-mid">
-                <h1 class="trv-banner-text-large">Manali</h1>
-                <img src="assets/images/butterfly.gif" alt="Flapping Butterfly" class="ltw-butterfly-anim trv-butterfly-anim">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">
+                THE HIMALAYAS ARE CALLING
+              </div>
+              <h1 class="hero-headline">
+                <span class="headline-primary">Lose yourself.</span>
+                <span class="headline-accent">Find your world.</span>
+              </h1>
+              <p class="hero-subtext">
+                Follow the river. Wander through pine forests. Find a little more of yourself in Parvati Valley.
+              </p>
+              <div class="hero-actions-row">
+                <a href="about.html" class="hero-btn-primary">
+                  <span>Explore the Journey</span>
+                  <span class="btn-arrow">&#x2197;</span>
+                </a>
               </div>
             </div>
           </div>
@@ -291,11 +362,12 @@
         <div class="tours-paraglider-trail-wrap" aria-hidden="true">
           <svg class="tours-paraglider-trail-svg" viewBox="0 0 740 85" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Dotted looping thread -->
-            <path d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
+            <path
+              d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
               stroke="#A3CEE2" stroke-width="2" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
             <circle cx="172" cy="54" r="3.8" fill="#A3CEE2" />
             <circle cx="690" cy="40" r="4.2" fill="#A3CEE2" />
-            
+
             <!-- Flying Paraglider at the start of the thread -->
             <g class="tours-thread-paraglider" transform="translate(130, 30) rotate(-12) scale(0.42)">
               <path d="M 12 36 C 30 8, 110 8, 128 36 C 105 26, 75 20, 42 26 Z" fill="#DCA735" />
@@ -318,9 +390,9 @@
           <div class="card-image-wrap">
             <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley" class="destination-img">
           </div>
-          <div class="card-pill-btn">
+          <a href="parvati-valley-escape.html" class="card-pill-btn" title="View Parvati Valley Escape">
             <span>Parvati Valley</span>
-          </div>
+          </a>
         </div>
 
         <!-- Card 3: Shimla -->
@@ -328,9 +400,9 @@
           <div class="card-image-wrap">
             <img src="assets/images/bg-shimla-img.jpg" alt="Shimla" class="destination-img">
           </div>
-          <div class="card-pill-btn">
+          <a href="shimla-hill-retreat.html" class="card-pill-btn" title="View Shimla Hill Retreat">
             <span>Shimla</span>
-          </div>
+          </a>
         </div>
 
         <!-- Card 4: Manali Peaks -->
@@ -338,9 +410,9 @@
           <div class="card-image-wrap">
             <img src="assets/images/Manali.jpg" alt="Manali Snow Peaks" class="destination-img">
           </div>
-          <div class="card-pill-btn">
+          <a href="manali-mountain-adventure.html" class="card-pill-btn" title="View Manali Mountain Adventure">
             <span>Manali</span>
-          </div>
+          </a>
         </div>
 
       </div>
@@ -363,7 +435,8 @@
         </h2>
 
         <p class="about-lead">
-          Live The World is a premier adventure and travel company that specializes in authentic Himalayan journeys, mountain experiences, and paragliding expeditions...
+          Live The World is a premier adventure and travel company that specializes in authentic Himalayan journeys,
+          mountain experiences, and paragliding expeditions...
         </p>
 
         <!-- Feature Block: 24/7 Badge + Feature List -->
@@ -408,7 +481,7 @@
 
         <!-- Bottom Actions: Discover More Button & Happy Customers -->
         <div class="about-bottom-actions">
-          <a href="#destinations" class="btn-discover-more">Discover More</a>
+          <a href="about.html" class="btn-discover-more">Discover More</a>
 
           <div class="happy-customers-wrap">
             <div class="avatar-stack">
@@ -434,26 +507,25 @@
           <!-- Floating "25 Years of Experience" Badge Connected to Paraglider with Dotted Thread -->
           <div class="exp-badge-container">
 
-            <!-- Connected Dotted Thread & Anchor Dots SVG -->
+            <!-- Connected Dotted Thread & Anchor Dots SVG (Matching Section 3 Style) -->
             <svg class="exp-connecting-thread" viewBox="0 0 390 235" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Dotted loop thread originating from middle anchor dot and connecting directly to paraglider -->
-              <path class="thread-path" d="M 145 192 C 50 205, 12 155, 20 90 C 28 32, 90 10, 168 36" stroke="#114479"
-                stroke-width="2.5" stroke-dasharray="7 6" stroke-linecap="round" />
-              <!-- Left Anchor 3-Dots Alignment (: • :) exactly as in reference -->
-              <circle cx="145" cy="178" r="2.5" fill="#114479" />
-              <circle cx="145" cy="192" r="4.5" fill="#114479" />
-              <circle cx="145" cy="206" r="2.5" fill="#114479" />
+              <path class="thread-path" d="M 145 192 C 50 205, 12 155, 20 90 C 28 32, 90 10, 168 36" stroke="#A3CEE2"
+                stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round" />
+              <!-- Left Anchor 3-Dots Alignment (: • :) in Section 3 style -->
+              <circle cx="145" cy="178" r="2.5" fill="#A3CEE2" />
+              <circle cx="145" cy="192" r="4.2" fill="#A3CEE2" />
+              <circle cx="145" cy="206" r="2.5" fill="#A3CEE2" />
             </svg>
 
-            <!-- Authentic Himalayan Adventure Paraglider (NO Airplane!) -->
+            <!-- Authentic Himalayan Adventure Paraglider (Matching Section 3 Brand Colors) -->
             <div class="exp-paraglider-rider" aria-label="Himalayan Paraglider">
               <svg width="215" height="175" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="expParagliderWing" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#FF3838" />
-                    <stop offset="30%" stop-color="#FF9F1C" />
-                    <stop offset="65%" stop-color="#2EC4B6" />
-                    <stop offset="100%" stop-color="#023047" />
+                    <stop offset="0%" stop-color="#DCA735" />
+                    <stop offset="45%" stop-color="#F3C644" />
+                    <stop offset="100%" stop-color="#114479" />
                   </linearGradient>
                   <filter id="gliderShad" x="-20%" y="-20%" width="150%" height="150%">
                     <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="rgba(0,0,0,0.2)" />
@@ -652,8 +724,7 @@
       <!-- Left Column: Traveler Man (Left-Man-Image.webp) & Sticky 3D Diorama (combination.png) -->
       <div class="services-visual-col">
         <div class="services-man-wrapper">
-          <img src="assets/images/Left-Man-Image.webp" alt="Traveler discovering best services"
-            class="services-man-img">
+          <img src="assets/images/couple-img.png" alt="Traveler discovering best services" class="services-man-img">
         </div>
         <div class="services-diorama-sticky">
           <img src="assets/images/combination.png" alt="Travel Wonders Diorama" class="diorama-sticky-img">
@@ -667,7 +738,9 @@
         <div class="services-header-block">
           <h2 class="services-heading">We offer Best <span class="text-orange">Services</span></h2>
           <p class="services-lead">
-            Live The World is a premier adventure and travel company that specializes in authentic Himalayan journeys, mountain experiences, and paragliding expeditions. We curate unforgettable mountain trails, high-altitude treks, and scenic getaways.
+            Live The World is a premier adventure and travel company that specializes in authentic Himalayan journeys,
+            mountain experiences, and paragliding expeditions. We curate unforgettable mountain trails, high-altitude
+            treks, and scenic getaways.
           </p>
         </div>
 
@@ -677,7 +750,34 @@
           <!-- Card 1: Exclusive Trip -->
           <div class="service-step-card">
             <div class="step-icon-wrap icon-blue">
-              <img src="assets/images/ship.webp" alt="Exclusive Trip" class="step-card-icon-img" width="64" height="64">
+              <!-- Mountain Peaks with Soaring Paraglider & Golden Sun (No Ship) -->
+              <svg class="step-card-icon-svg" width="62" height="62" viewBox="0 0 64 64" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-label="Exclusive Mountain Trip Icon">
+                <!-- Radiant Sun in Top-Right -->
+                <circle cx="48" cy="16" r="5" stroke="#DCA735" stroke-width="2" fill="none" />
+                <line x1="48" y1="8" x2="48" y2="6" stroke="#DCA735" stroke-width="2" stroke-linecap="round" />
+                <line x1="56" y1="16" x2="58" y2="16" stroke="#DCA735" stroke-width="2" stroke-linecap="round" />
+                <line x1="54" y1="10" x2="56" y2="8" stroke="#DCA735" stroke-width="2" stroke-linecap="round" />
+
+                <!-- Majestic Himalayan Mountain Peaks -->
+                <path d="M6 54L24 24L36 40L42 32L58 54H6Z" stroke="#114479" stroke-width="2.3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M19 32L24 35L29 32" stroke="#114479" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M39 36L42 38L46 36" stroke="#114479" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <!-- Soaring Paraglider Above Peaks -->
+                <path d="M14 18C20 8 36 8 42 18C36 14 20 14 14 18Z" stroke="#DCA735" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <line x1="18" y1="17" x2="28" y2="25" stroke="#114479" stroke-width="1.4" />
+                <line x1="38" y1="17" x2="28" y2="25" stroke="#114479" stroke-width="1.4" />
+                <circle cx="28" cy="25" r="1.8" fill="#114479" />
+
+                <!-- Base Mountain Stream / Trail -->
+                <path d="M14 58C20 56 26 60 32 58C38 56 44 60 50 58" stroke="#DCA735" stroke-width="2"
+                  stroke-linecap="round" />
+              </svg>
             </div>
             <h3 class="step-title">Exclusive Trip</h3>
             <p class="step-desc">We pay attention to every quality in the service we provide to you</p>
@@ -691,8 +791,25 @@
           <!-- Card 2: Easy Booking -->
           <div class="service-step-card">
             <div class="step-icon-wrap icon-orange">
-              <img src="assets/images/plane-booking.webp" alt="Easy Booking" class="step-card-icon-img" width="64"
-                height="64">
+              <!-- Calendar Ticket Pass with Confirmed Checkmark (No Airplane) -->
+              <svg class="step-card-icon-svg" width="62" height="62" viewBox="0 0 64 64" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-label="Easy Booking Icon">
+                <!-- Calendar Ticket Frame -->
+                <rect x="10" y="12" width="44" height="44" rx="8" stroke="#114479" stroke-width="2.3" fill="none" />
+                <!-- Binder Rings at Top -->
+                <line x1="20" y1="7" x2="20" y2="15" stroke="#DCA735" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="44" y1="7" x2="44" y2="15" stroke="#DCA735" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Header Divider Bar -->
+                <line x1="10" y1="23" x2="54" y2="23" stroke="#114479" stroke-width="2" />
+
+                <!-- Confirmed Checkmark Circle -->
+                <circle cx="32" cy="38" r="11" stroke="#DCA735" stroke-width="2" fill="none" />
+                <path d="M26 38L30 42L38 34" stroke="#114479" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+
+                <!-- Instant Booking Accent Star -->
+                <path d="M46 32L47 35L50 36L47 37L46 40L45 37L42 36L45 35Z" fill="#DCA735" />
+              </svg>
             </div>
             <h3 class="step-title">Easy Booking</h3>
             <p class="step-desc">Booking process and full support service assistance from us.</p>
@@ -706,8 +823,33 @@
           <!-- Card 3: Professional Guide -->
           <div class="service-step-card">
             <div class="step-icon-wrap icon-green">
-              <img src="assets/images/guide-icon.webp" alt="Professional Guide" class="step-card-icon-img" width="64"
-                height="64">
+              <!-- Professional Himalayan Mountain Guide with Map & Pin -->
+              <svg class="step-card-icon-svg" width="62" height="62" viewBox="0 0 64 64" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-label="Professional Mountain Guide Icon">
+                <!-- Guide Head & Explorer Cap -->
+                <circle cx="32" cy="21" r="7" stroke="#114479" stroke-width="2.2" fill="none" />
+                <path d="M22 17C22 13 42 13 42 17" stroke="#DCA735" stroke-width="2.2" stroke-linecap="round" />
+                <path d="M20 18H44" stroke="#DCA735" stroke-width="2.2" stroke-linecap="round" />
+
+                <!-- Backpack Bedroll Behind Shoulders -->
+                <rect x="15" y="27" width="34" height="6" rx="3" stroke="#DCA735" stroke-width="1.8" fill="none" />
+
+                <!-- Shoulders & Torso -->
+                <path d="M19 33C19 33 22 42 32 42C42 42 45 33 45 33" stroke="#114479" stroke-width="2.2"
+                  stroke-linecap="round" />
+
+                <!-- Unfolded Mountain Map Held by Guide -->
+                <path d="M12 43L25 39L38 43L52 39V56L38 60L25 56L12 60V43Z" stroke="#114479" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <!-- Map Fold Lines -->
+                <line x1="25" y1="39" x2="25" y2="56" stroke="#114479" stroke-width="1.8" />
+                <line x1="38" y1="43" x2="38" y2="60" stroke="#114479" stroke-width="1.8" />
+
+                <!-- Location Pin Marker -->
+                <circle cx="48" cy="11" r="4" stroke="#114479" stroke-width="2" fill="none" />
+                <path d="M48 15V19" stroke="#114479" stroke-width="2" stroke-linecap="round" />
+                <circle cx="48" cy="11" r="1.5" fill="#DCA735" />
+              </svg>
             </div>
             <h3 class="step-title">Professional Guide</h3>
             <p class="step-desc">While on vacation will be guided by our professional guide</p>
@@ -723,7 +865,7 @@
         <!-- Bottom Oblong Landscape Pill (landscape-pic.webp) -->
         <div class="services-landscape-pill-wrap">
           <div class="services-landscape-pill">
-            <img src="assets/images/landscape-pic.webp" alt="Tropical Island Panoramic View" class="landscape-pill-img">
+            <img src="assets/images/senior-couple.png" alt="Tropical Island Panoramic View" class="landscape-pill-img">
           </div>
         </div>
 
@@ -868,8 +1010,8 @@
     </div>
   </section>
 
-  <!-- ==================== SECTION 8: EXPLORE POPULAR TOURS ==================== -->
-  <section class="popular-tours-section" id="tours">
+  <!-- ==================== SECTION 8: A RIDE FOR EVERY JOURNEY (FLEET TOURS) ==================== -->
+  <section class="popular-tours-section light-vehicle-section" id="tours">
     <!-- Ambient Floating Paragliders in Sky -->
     <div class="tours-sky-paraglider tours-glider-left" aria-hidden="true">
       <svg width="210" height="155" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -902,22 +1044,23 @@
     </div>
 
     <div class="site-container">
-      <div class="section-header-center">
-        <h2 class="section-main-heading">Explore Popular <span class="text-gold">Tours!</span></h2>
-        <p class="section-desc-center">Discover handcrafted Himalayan getaways designed for adventure, peace, and
-          unforgettable moments.</p>
+      <!-- Section Header Centered with Dotted Paraglider Thread Trail (Matching 3rd Section) -->
+      <div class="light-fleet-header-center">
+        <span class="light-fleet-eyebrow">THE ROAD IS PART OF THE STORY</span>
+        <h2 class="light-fleet-title">A ride for every journey.</h2>
 
-        <!-- Dotted Flight Thread Loop with Paragliders -->
+        <!-- Dotted Flight Thread Loop with Soaring Paraglider (Matching Section 3) -->
         <div class="tours-paraglider-trail-wrap" aria-hidden="true">
-          <svg class="tours-paraglider-trail-svg" viewBox="0 0 740 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="tours-paraglider-trail-svg" viewBox="0 0 740 85" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Dotted looping thread -->
-            <path d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
+            <path
+              d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
               stroke="#A3CEE2" stroke-width="2" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
             <circle cx="172" cy="54" r="3.8" fill="#A3CEE2" />
             <circle cx="690" cy="40" r="4.2" fill="#A3CEE2" />
-            
-            <!-- Flying Paraglider 1 at the start of the thread -->
-            <g class="tours-thread-paraglider" transform="translate(118, 18) rotate(-12) scale(0.62)">
+
+            <!-- Flying Paraglider at the start of the thread -->
+            <g class="tours-thread-paraglider" transform="translate(130, 30) rotate(-12) scale(0.42)">
               <path d="M 12 36 C 30 8, 110 8, 128 36 C 105 26, 75 20, 42 26 Z" fill="#DCA735" />
               <path d="M 22 34 C 36 15, 102 15, 118 34 C 98 26, 72 22, 44 26 Z" fill="#114479" />
               <line x1="22" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
@@ -926,159 +1069,92 @@
               <line x1="118" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
               <circle cx="70" cy="72" r="5" fill="#DCA735" />
             </g>
-
-            <!-- Flying Paraglider 2 at the right end of the thread -->
-            <g class="tours-thread-paraglider-right" transform="translate(670, 10) rotate(14) scale(0.60)">
-              <path d="M 12 36 C 30 8, 110 8, 128 36 C 105 26, 75 20, 42 26 Z" fill="#FFAA0D" />
-              <path d="M 22 34 C 36 15, 102 15, 118 34 C 98 26, 72 22, 44 26 Z" fill="#114479" />
-              <line x1="22" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
-              <line x1="48" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
-              <line x1="92" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
-              <line x1="118" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
-              <circle cx="70" cy="72" r="5" fill="#FFAA0D" />
-            </g>
           </svg>
         </div>
       </div>
 
-      <div class="popular-tours-grid">
-        <!-- Tour Card 1: Manali -->
-        <div class="tour-package-card">
-          <div class="tour-card-image-wrap">
-            <img src="assets/images/Manali.jpg" alt="Manali Adventure Tour" class="tour-card-img" loading="lazy">
-            <span class="tour-duration-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              5 Days / 4 Nights
-            </span>
-          </div>
+      <!-- 3 Vehicle Cards Grid Matching Screenshot -->
+      <div class="light-fleet-grid">
 
-          <!-- Golden Background Bar Behind Title & Location Text -->
-          <div class="tour-card-title-bar">
-            <svg class="tour-loc-pin-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#114479" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <div class="tour-card-titles">
-              <span class="tour-loc-sub">Manali & Solang</span>
-              <h3 class="tour-card-title">Himalayan Solang Valley & Snow Point Expedition.</h3>
-            </div>
+        <!-- Vehicle 1: Hatchback -->
+        <article class="light-vehicle-card">
+          <div class="light-vehicle-img-wrap">
+            <img src="assets/images/hatchback.jpg" alt="Hatchback car" class="light-vehicle-img" loading="lazy">
           </div>
+          <div class="light-vehicle-body">
+            <small class="light-vehicle-tag">COMPACT · CITY &amp; SHORT TRIPS</small>
+            <h3 class="light-vehicle-heading">Hatchback</h3>
+            <p class="light-vehicle-copy">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="light-vehicle-price-row">
+              <span class="light-vehicle-price-val">₹1,800</span>
+              <span class="light-vehicle-price-unit">/ day · sample rate</span>
+            </div>
+            <label class="light-driver-label" for="home-driver-hatchback">Do you need a driver?
+              <select id="home-driver-hatchback" class="light-driver-select"
+                aria-label="Driver preference for Hatchback">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="light-vehicle-enquire-btn" data-book-vehicle="Hatchback"
+              data-driver-id="home-driver-hatchback">
+              Enquire about this vehicle <span>↗</span>
+            </button>
+          </div>
+        </article>
 
-          <div class="tour-card-content">
-            <div class="tour-info-row">
-              <div class="tour-price-box">
-                <span class="tour-price-val">₹12,499</span>
-                <span class="tour-price-unit">/ Person</span>
-              </div>
-              <p class="tour-card-desc">Experience snow activities, river crossing, and serene monastery walks in Old Manali.</p>
-            </div>
-            <div class="tour-card-footer">
-              <a href="#booking-steps" class="tour-pill-book-btn">Book Now</a>
-              <div class="tour-rating-block">
-                <span class="tour-review-count">(4.9 Review · 148)</span>
-                <div class="tour-star-icons" aria-label="4.9 rating">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
+        <!-- Vehicle 2: Sedan -->
+        <article class="light-vehicle-card">
+          <div class="light-vehicle-img-wrap">
+            <img src="assets/images/sedan.jpg" alt="Sedan car" class="light-vehicle-img" loading="lazy">
           </div>
-        </div>
+          <div class="light-vehicle-body">
+            <small class="light-vehicle-tag">COMFORT · COUPLES &amp; SMALL FAMILIES</small>
+            <h3 class="light-vehicle-heading">Sedan</h3>
+            <p class="light-vehicle-copy">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="light-vehicle-price-row">
+              <span class="light-vehicle-price-val">₹2,500</span>
+              <span class="light-vehicle-price-unit">/ day · sample rate</span>
+            </div>
+            <label class="light-driver-label" for="home-driver-sedan">Do you need a driver?
+              <select id="home-driver-sedan" class="light-driver-select" aria-label="Driver preference for Sedan">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="light-vehicle-enquire-btn" data-book-vehicle="Sedan"
+              data-driver-id="home-driver-sedan">
+              Enquire about this vehicle <span>↗</span>
+            </button>
+          </div>
+        </article>
 
-        <!-- Tour Card 2: Shimla -->
-        <div class="tour-package-card">
-          <div class="tour-card-image-wrap">
-            <img src="assets/images/bg-shimla.jpg" alt="Shimla Heritage Tour" class="tour-card-img" loading="lazy">
-            <span class="tour-duration-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              4 Days / 3 Nights
-            </span>
+        <!-- Vehicle 3: SUV -->
+        <article class="light-vehicle-card">
+          <div class="light-vehicle-img-wrap">
+            <img src="assets/images/suv.jpg" alt="SUV vehicle" class="light-vehicle-img" loading="lazy">
           </div>
+          <div class="light-vehicle-body">
+            <small class="light-vehicle-tag">SPACIOUS · FAMILY GETAWAYS</small>
+            <h3 class="light-vehicle-heading">SUV</h3>
+            <p class="light-vehicle-copy">Choose your preferred travel arrangement and enquire about availability.</p>
+            <div class="light-vehicle-price-row">
+              <span class="light-vehicle-price-val">₹3,500</span>
+              <span class="light-vehicle-price-unit">/ day · sample rate</span>
+            </div>
+            <label class="light-driver-label" for="home-driver-suv">Do you need a driver?
+              <select id="home-driver-suv" class="light-driver-select" aria-label="Driver preference for SUV">
+                <option value="With driver">Yes, with driver</option>
+                <option value="Without driver">No, without driver</option>
+              </select>
+            </label>
+            <button type="button" class="light-vehicle-enquire-btn" data-book-vehicle="SUV"
+              data-driver-id="home-driver-suv">
+              Enquire about this vehicle <span>↗</span>
+            </button>
+          </div>
+        </article>
 
-          <!-- Golden Background Bar Behind Title & Location Text -->
-          <div class="tour-card-title-bar">
-            <svg class="tour-loc-pin-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#114479" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <div class="tour-card-titles">
-              <span class="tour-loc-sub">Shimla & Kufri</span>
-              <h3 class="tour-card-title">Queen of Hills Heritage & Kufri Pine Forests.</h3>
-            </div>
-          </div>
-
-          <div class="tour-card-content">
-            <div class="tour-info-row">
-              <div class="tour-price-box">
-                <span class="tour-price-val">₹9,999</span>
-                <span class="tour-price-unit">/ Person</span>
-              </div>
-              <p class="tour-card-desc">Stroll along Mall Road, visit historical Viceregal Lodge, and enjoy horseback rides in Kufri.</p>
-            </div>
-            <div class="tour-card-footer">
-              <a href="#booking-steps" class="tour-pill-book-btn">Book Now</a>
-              <div class="tour-rating-block">
-                <span class="tour-review-count">(4.8 Review · 96)</span>
-                <div class="tour-star-icons" aria-label="4.8 rating">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tour Card 3: Parvati Valley -->
-        <div class="tour-package-card">
-          <div class="tour-card-image-wrap">
-            <img src="assets/images/bg-parvati.jpg" alt="Parvati Valley Trek" class="tour-card-img" loading="lazy">
-            <span class="tour-duration-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              6 Days / 5 Nights
-            </span>
-          </div>
-
-          <!-- Golden Background Bar Behind Title & Location Text -->
-          <div class="tour-card-title-bar">
-            <svg class="tour-loc-pin-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#114479" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <div class="tour-card-titles">
-              <span class="tour-loc-sub">Kasol, Tosh & Kheerganga</span>
-              <h3 class="tour-card-title">Parvati Valley Riverside Camps & Hot Springs Trek.</h3>
-            </div>
-          </div>
-
-          <div class="tour-card-content">
-            <div class="tour-info-row">
-              <div class="tour-price-box">
-                <span class="tour-price-val">₹14,999</span>
-                <span class="tour-price-unit">/ Person</span>
-              </div>
-              <p class="tour-card-desc">Camp under starlit Himalayan skies, hike pine trails to Kheerganga natural sulfur springs.</p>
-            </div>
-            <div class="tour-card-footer">
-              <a href="#booking-steps" class="tour-pill-book-btn">Book Now</a>
-              <div class="tour-rating-block">
-                <span class="tour-review-count">(5.0 Review · 224)</span>
-                <div class="tour-star-icons" aria-label="5.0 rating">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1101,7 +1177,8 @@
         <!-- Column 1: Left Special Offer Card -->
         <div class="steps-offer-card">
           <div class="steps-offer-img-wrap">
-            <img src="assets/images/pic1-1.webp" alt="Travel Special Offer" class="steps-offer-img" loading="lazy">
+            <img src="assets/images/Couple-back-img .jpeg" alt="Travel Special Offer" class="steps-offer-img"
+              loading="lazy">
           </div>
           <div class="steps-offer-badge-box">
             <span class="steps-offer-title">Get Special Offer</span>
@@ -1126,7 +1203,8 @@
               <p class="steps-pill-desc">First, select your preferred destination and proceed further</p>
             </div>
             <div class="steps-pill-icon-circle">
-              <img src="assets/images/destination.webp" alt="Choose Destination Icon" class="steps-pill-icon-img" width="44" height="44">
+              <img src="assets/images/destination.webp" alt="Choose Destination Icon" class="steps-pill-icon-img"
+                width="44" height="44">
             </div>
           </div>
 
@@ -1138,7 +1216,8 @@
               <p class="steps-pill-desc">We pay attention to every quality in the service we provide to you</p>
             </div>
             <div class="steps-pill-icon-circle">
-              <img src="assets/images/make-payment.webp" alt="Make Payment Icon" class="steps-pill-icon-img" width="44" height="44">
+              <img src="assets/images/make-payment.webp" alt="Make Payment Icon" class="steps-pill-icon-img" width="44"
+                height="44">
             </div>
           </div>
 
@@ -1150,7 +1229,8 @@
               <p class="steps-pill-desc">We pay attention to every quality in the service we provide to you</p>
             </div>
             <div class="steps-pill-icon-circle">
-              <img src="assets/images/travelling-1.webp" alt="Ready For Travelling Icon" class="steps-pill-icon-img" width="44" height="44">
+              <img src="assets/images/travelling-1.webp" alt="Ready For Travelling Icon" class="steps-pill-icon-img"
+                width="44" height="44">
             </div>
           </div>
 
@@ -1178,8 +1258,11 @@
                 </filter>
               </defs>
               <g filter="url(#stepGliderGlow)">
-                <!-- Flight Dotted Thread Trail (Trailing behind to the top-right sky) -->
-                <path d="M 148 42 C 168 28, 160 8, 136 5 C 112 2, 90 8, 70 12" stroke="#DCA735" stroke-width="1.8" stroke-dasharray="4 4" fill="none" opacity="0.85" />
+                <!-- Flight Dotted Thread Trail (Section 3 Style) -->
+                <path d="M 148 42 C 168 28, 160 8, 136 5 C 112 2, 90 8, 70 12" stroke="#A3CEE2" stroke-width="2"
+                  stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
+                <circle cx="148" cy="42" r="3.2" fill="#A3CEE2" />
+                <circle cx="70" cy="12" r="3.2" fill="#A3CEE2" />
                 <!-- Paraglider Main Wing Arc (Gold) -->
                 <path d="M 18 42 C 42 8, 122 8, 146 42 C 118 30, 80 22, 42 30 Z" fill="url(#stepGliderGold)" />
                 <!-- Wing Inner Aerodynamic Stripe (Alpine Navy) -->
@@ -1187,7 +1270,8 @@
                 <!-- Wing Cell Ribs -->
                 <path d="M 52 30 C 56 18, 64 14, 70 12" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none" />
                 <path d="M 82 26 C 82 16, 82 12, 82 10" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none" />
-                <path d="M 112 30 C 108 18, 100 14, 94 12" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none" />
+                <path d="M 112 30 C 108 18, 100 14, 94 12" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"
+                  fill="none" />
                 <!-- Suspension Lines -->
                 <line x1="28" y1="40" x2="82" y2="78" stroke="#114479" stroke-width="1.3" opacity="0.85" />
                 <line x1="58" y1="32" x2="82" y2="78" stroke="#114479" stroke-width="1.3" opacity="0.85" />
@@ -1222,44 +1306,137 @@
           </div>
 
           <!-- Floating Clouds Accents -->
-          <img src="assets/images/cloud-1.png" alt="Cloud Accent" class="steps-stage-cloud cloud-top-right" aria-hidden="true">
-          <img src="assets/images/cloud-2.png" alt="Cloud Accent" class="steps-stage-cloud cloud-mid-left" aria-hidden="true">
-          <img src="assets/images/cloud-1.png" alt="Cloud Accent" class="steps-stage-cloud cloud-bottom-right" aria-hidden="true">
+          <img src="assets/images/cloud-1.png" alt="Cloud Accent" class="steps-stage-cloud cloud-top-right"
+            aria-hidden="true">
+          <img src="assets/images/cloud-2.png" alt="Cloud Accent" class="steps-stage-cloud cloud-mid-left"
+            aria-hidden="true">
+          <img src="assets/images/cloud-1.png" alt="Cloud Accent" class="steps-stage-cloud cloud-bottom-right"
+            aria-hidden="true">
 
           <!-- Traveler Girl Image Riding Suitcase -->
-          <img src="assets/images/Girl-Image.webp" alt="Live The World Happy Traveler" class="steps-girl-img" loading="lazy">
+          <img src="assets/images/travel-girl.png" alt="Live The World Happy Traveler" class="steps-girl-img"
+            loading="lazy">
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ==================== SECTION 10: WHY CHOOSE US / 24/7 CALL BANNER ==================== -->
+  <!-- ==================== SECTION 9 (WHY CHOOSE US / 24 HOURS SERVICE CALL BANNER) ==================== -->
   <section class="why-choose-banner-section" id="why-choose">
     <div class="site-container">
       <div class="why-choose-banner-card">
 
-        <!-- Left Features List -->
-        <div class="why-choose-left">
-          <span class="banner-badge-light">Why Choose Us?</span>
-          <h2 class="banner-choose-title">We Deliver The Safest, Most Memorable Journeys</h2>
-          <ul class="why-choose-checklist">
-            <li><i class="fa-solid fa-circle-check"></i> Certified Local Himalayan Guides</li>
-            <li><i class="fa-solid fa-circle-check"></i> Best Price & Handpicked Stays Guarantee</li>
-            <li><i class="fa-solid fa-circle-check"></i> 24/7 On-Ground Emergency & Medical Assistance</li>
-          </ul>
-          <a href="#tours" class="btn-theme-gold banner-action-btn">Explore Packages <i
-              class="fa-solid fa-arrow-right"></i></a>
+        <!-- Left Side: Why Choose Us! Title, 2x2 Feature Checklist, Discover More Button -->
+        <div class="why-choose-left-box">
+          <h2 class="why-choose-script-heading">Why Choose Us!</h2>
+
+          <div class="why-choose-grid-features">
+            <!-- Feature 1: Perfect Detailing -->
+            <div class="why-choose-item">
+              <span class="why-choose-check-circle" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="why-choose-item-label">Perfect Detailing</span>
+            </div>
+
+            <!-- Feature 2: Save Your Budget -->
+            <div class="why-choose-item">
+              <span class="why-choose-check-circle" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="why-choose-item-label">Save Your Budget</span>
+            </div>
+
+            <!-- Feature 3: Free Consultations -->
+            <div class="why-choose-item">
+              <span class="why-choose-check-circle" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="why-choose-item-label">Free Consultations</span>
+            </div>
+
+            <!-- Feature 4: Completed Certification -->
+            <div class="why-choose-item">
+              <span class="why-choose-check-circle" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="why-choose-item-label">Completed Certification</span>
+            </div>
+          </div>
+
+          <a href="tours.html" class="why-choose-discover-pill">Discover More</a>
         </div>
 
-        <!-- Right Call Us Card -->
-        <div class="why-choose-right-call">
-          <div class="call-banner-icon-wrap">
-            <i class="fa-solid fa-headset"></i>
+        <!-- Right Side: 24 Hours Service Graphic + CALL US + Phone Number -->
+        <div class="why-choose-right-call-box">
+          <!-- 24 HOURS SERVICE Badge (Exact image assets/images/24-Image.webp) -->
+          <div class="why-choose-24-badge-holder">
+            <img src="assets/images/24-Image.webp" alt="24 Hours Service" class="why-choose-24-img" loading="lazy">
           </div>
-          <span class="call-banner-tag">HAVE QUESTIONS? CALL US NOW</span>
-          <a href="tel:+919876543210" class="call-banner-number">+91 98765 43210</a>
-          <span class="call-banner-sub">Toll Free • Available 24/7 For Inquiries</span>
+          <div class="why-choose-call-label">CALL US</div>
+          <a href="tel:2062421112" class="why-choose-phone-link">206-242-1112</a>
+        </div>
+
+        <!-- Bottom Skyline Silhouette Vector (London Eye, Big Ben, Space Needle, Skyscrapers) -->
+        <div class="why-choose-skyline-wrap" aria-hidden="true">
+          <svg class="why-choose-skyline-svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g fill="#05182c" opacity="0.48">
+              <!-- Big Ben / Elizabeth Tower left -->
+              <rect x="35" y="45" width="22" height="75" />
+              <polygon points="35,45 46,18 57,45" />
+              <circle cx="46" cy="40" r="4" fill="#0c2d4e" />
+              <!-- London Eye Ferris Wheel -->
+              <circle cx="105" cy="65" r="32" stroke="#05182c" stroke-width="3" fill="none" />
+              <circle cx="105" cy="65" r="4" />
+              <line x1="105" y1="65" x2="90" y2="120" stroke="#05182c" stroke-width="2.5" />
+              <line x1="105" y1="65" x2="120" y2="120" stroke="#05182c" stroke-width="2.5" />
+              <line x1="105" y1="33" x2="105" y2="97" stroke="#05182c" stroke-width="1.2" />
+              <line x1="73" y1="65" x2="137" y2="65" stroke="#05182c" stroke-width="1.2" />
+              <line x1="82" y1="42" x2="128" y2="88" stroke="#05182c" stroke-width="1.2" />
+              <line x1="82" y1="88" x2="128" y2="42" stroke="#05182c" stroke-width="1.2" />
+              <!-- City Buildings Left -->
+              <rect x="145" y="70" width="30" height="50" />
+              <rect x="180" y="55" width="25" height="65" />
+              <rect x="210" y="75" width="35" height="45" />
+              <rect x="250" y="40" width="28" height="80" />
+              <polygon points="250,40 264,25 278,40" />
+              <rect x="282" y="65" width="40" height="55" />
+              <rect x="326" y="50" width="32" height="70" />
+              <rect x="362" y="70" width="28" height="50" />
+              <!-- Center City Skyline -->
+              <rect x="395" y="58" width="35" height="62" />
+              <rect x="435" y="35" width="30" height="85" />
+              <polygon points="435,35 450,15 465,35" />
+              <rect x="470" y="65" width="45" height="55" />
+              <rect x="520" y="45" width="32" height="75" />
+              <!-- Space Needle / Observation Tower Center -->
+              <path d="M575,120 L585,55 L580,50 L580,45 L590,40 L600,45 L600,50 L595,55 L605,120 Z" />
+              <ellipse cx="590" cy="46" rx="16" ry="4" />
+              <line x1="590" y1="40" x2="590" y2="10" stroke="#05182c" stroke-width="2" />
+              <!-- Skyscrapers Right -->
+              <rect x="625" y="60" width="28" height="60" />
+              <rect x="658" y="48" width="36" height="72" />
+              <rect x="698" y="68" width="30" height="52" />
+              <rect x="732" y="38" width="34" height="82" />
+              <polygon points="732,38 749,20 766,38" />
+              <rect x="770" y="55" width="38" height="65" />
+              <rect x="812" y="72" width="26" height="48" />
+              <rect x="842" y="42" width="32" height="78" />
+              <rect x="878" y="60" width="35" height="60" />
+              <rect x="918" y="48" width="40" height="72" />
+              <rect x="962" y="65" width="30" height="55" />
+              <rect x="996" y="36" width="32" height="84" />
+              <polygon points="996,36 1012,18 1028,36" />
+              <rect x="1032" y="58" width="42" height="62" />
+              <rect x="1078" y="68" width="35" height="52" />
+              <rect x="1118" y="46" width="38" height="74" />
+              <rect x="1160" y="62" width="40" height="58" />
+              <!-- Bottom solid ground bar -->
+              <rect x="0" y="112" width="1200" height="8" />
+            </g>
+          </svg>
         </div>
 
       </div>
@@ -1270,72 +1447,194 @@
   <section class="testimonials-section" id="testimonials">
     <div class="site-container">
 
-      <!-- Header: LIVE THE WORLD Two-Tone Title & Our Client Says -->
-      <div class="testimonials-header-wrap">
-        <div class="testimonials-two-tone-wrap">
-          <h2 class="testimonials-two-tone-title">LIVE THE WORLD</h2>
+      <!-- Header: Our Client Says! (Matching Reference Screenshot) -->
+      <div class="testimonials-header-block">
+
+        <!-- Ambient Floating Paraglider on Left Side of "Our Client Says" -->
+        <div class="testimonials-header-glider-left" aria-hidden="true">
+          <svg class="testimonials-glider-svg" width="140" height="105" viewBox="0 0 160 120" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gliderLeftGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#F3C644" />
+                <stop offset="50%" stop-color="#DCA735" />
+                <stop offset="100%" stop-color="#C48E1D" />
+              </linearGradient>
+              <linearGradient id="gliderLeftNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#114479" />
+                <stop offset="100%" stop-color="#081E36" />
+              </linearGradient>
+              <filter id="gliderLeftShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="-2" dy="5" stdDeviation="4" flood-color="#114479" flood-opacity="0.25" />
+              </filter>
+            </defs>
+
+            <g class="testimonials-glider-anim-left" filter="url(#gliderLeftShadow)" transform="rotate(-15 80 60)">
+              <!-- Outer Canopy Arc (Gold) -->
+              <path d="M 16 44 C 42 8, 126 8, 152 44 C 122 30, 82 22, 44 32 Z" fill="url(#gliderLeftGold)" />
+              <!-- Inner Aerodynamic Stripe (Alpine Navy) -->
+              <path d="M 32 40 C 52 18, 118 18, 138 40 C 114 30, 80 26, 48 30 Z" fill="url(#gliderLeftNavy)" />
+              <!-- Wing Ribs -->
+              <path d="M 54 30 C 58 18, 66 14, 72 12" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" fill="none" />
+              <path d="M 84 26 C 84 16, 84 12, 84 10" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" fill="none" />
+              <path d="M 114 30 C 110 18, 102 14, 96 12" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"
+                fill="none" />
+              <!-- Suspension Rigging Lines -->
+              <line x1="26" y1="42" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+              <line x1="58" y1="32" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+              <line x1="110" y1="32" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+              <line x1="142" y1="42" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+              <!-- Pilot Silhouette -->
+              <circle cx="84" cy="82" r="4.5" fill="#DCA735" />
+              <ellipse cx="84" cy="90" rx="3.5" ry="6" fill="#114479" />
+            </g>
+          </svg>
         </div>
 
-        <div class="testimonials-subheading-block">
-          <h3 class="testimonials-client-says-title">Our Client Says!</h3>
-          <div class="testimonials-trail-container">
-            <p class="testimonials-client-says-desc">Destinations worth exploring! Here are a few popular spots.</p>
-            <!-- Decorative Dotted Adventure Trail SVG with Paraglider -->
-            <svg class="testimonials-path-trail" viewBox="0 0 680 65" fill="none" xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true">
-              <path d="M 50 42 C 110 48, 170 14, 220 22 C 270 30, 250 58, 340 40 C 430 22, 500 58, 600 32"
-                stroke="#CBD5E1" stroke-width="1.8" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
-              <circle cx="605" cy="32" r="4.5" fill="#CBD5E1" />
-              <circle cx="95" cy="40" r="4" fill="#CBD5E1" />
-              <g transform="translate(32, 28) scale(0.32)">
-                <path d="M 10 38 C 26 8, 94 8, 110 38 C 90 28, 62 22, 34 28 Z" fill="#DCA735" />
-                <line x1="20" y1="36" x2="60" y2="68" stroke="#114479" stroke-width="1.8" />
-                <line x1="100" y1="36" x2="60" y2="68" stroke="#114479" stroke-width="1.8" />
-                <circle cx="60" cy="72" r="6" fill="#114479" />
+        <h2 class="testimonials-client-says-title">Our Client Says!</h2>
+        <p class="testimonials-client-says-desc">Destinations worth exploring! Here are a few popular spots.</p>
+
+        <!-- Paraglider with Dotted Thread Loop (Matching Section 3) -->
+        <div class="tours-paraglider-trail-wrap" aria-hidden="true">
+          <svg class="tours-paraglider-trail-svg" viewBox="0 0 740 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dotted looping thread -->
+            <path
+              d="M 170 54 C 250 56, 320 50, 395 34 C 440 24, 475 26, 468 46 C 458 66, 412 62, 404 44 C 396 22, 452 16, 530 26 C 585 33, 635 42, 690 40"
+              stroke="#A3CEE2" stroke-width="2" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />
+            <circle cx="172" cy="54" r="3.8" fill="#A3CEE2" />
+            <circle cx="690" cy="40" r="4.2" fill="#A3CEE2" />
+
+            <!-- Flying Paraglider at the start of the thread -->
+            <g class="tours-thread-paraglider" transform="translate(130, 30) rotate(-12) scale(0.42)">
+              <path d="M 12 36 C 30 8, 110 8, 128 36 C 105 26, 75 20, 42 26 Z" fill="#DCA735" />
+              <path d="M 22 34 C 36 15, 102 15, 118 34 C 98 26, 72 22, 44 26 Z" fill="#114479" />
+              <line x1="22" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <line x1="48" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <line x1="92" y1="26" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <line x1="118" y1="34" x2="70" y2="72" stroke="#114479" stroke-width="1.8" opacity="0.8" />
+              <circle cx="70" cy="72" r="5" fill="#DCA735" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Reduced & Refined LIVE THE WORLD Banner with Soaring Paraglider (No Thread Sign, No Airplane) -->
+      <div class="testimonials-wordmark-wrap" aria-hidden="true">
+        <div class="testimonials-wordmark-inner">
+          <span class="testimonials-wordmark-text">LIVE THE WORLD</span>
+
+          <!-- Gliding Paraglider (Gold & Navy brand colors, No Thread Sign) -->
+          <div class="testimonials-floating-glider">
+            <svg class="testimonials-glider-svg" width="160" height="120" viewBox="0 0 160 120" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gliderWingGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#F3C644" />
+                  <stop offset="50%" stop-color="#DCA735" />
+                  <stop offset="100%" stop-color="#C48E1D" />
+                </linearGradient>
+                <linearGradient id="gliderWingNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#114479" />
+                  <stop offset="100%" stop-color="#081E36" />
+                </linearGradient>
+                <filter id="gliderShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#114479" flood-opacity="0.32" />
+                </filter>
+              </defs>
+
+              <g class="testimonials-glider-anim" filter="url(#gliderShadow)" transform="rotate(-12 80 60)">
+                <!-- Outer Canopy Arc (Gold) -->
+                <path d="M 16 44 C 42 8, 126 8, 152 44 C 122 30, 82 22, 44 32 Z" fill="url(#gliderWingGold)" />
+                <!-- Inner Aerodynamic Stripe (Alpine Navy) -->
+                <path d="M 32 40 C 52 18, 118 18, 138 40 C 114 30, 80 26, 48 30 Z" fill="url(#gliderWingNavy)" />
+                <!-- Wing Ribs -->
+                <path d="M 54 30 C 58 18, 66 14, 72 12" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" fill="none" />
+                <path d="M 84 26 C 84 16, 84 12, 84 10" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" fill="none" />
+                <path d="M 114 30 C 110 18, 102 14, 96 12" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"
+                  fill="none" />
+                <!-- Suspension Rigging Lines -->
+                <line x1="26" y1="42" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+                <line x1="58" y1="32" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+                <line x1="110" y1="32" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+                <line x1="142" y1="42" x2="84" y2="82" stroke="#114479" stroke-width="1.4" opacity="0.85" />
+                <!-- Pilot Silhouette -->
+                <circle cx="84" cy="82" r="4.5" fill="#DCA735" />
+                <ellipse cx="84" cy="90" rx="3.5" ry="6" fill="#114479" />
               </g>
             </svg>
           </div>
         </div>
       </div>
 
+      <!-- Main Testimonial Showcase (Matches Screenshot 2 Layout Exactly) -->
       <div class="testimonial-showcase-grid">
 
-        <!-- Left Column: Primary Client Photo with Thumbnail Stack -->
-        <div class="testimonial-portraits-col">
+        <!-- Column 1: Large Portrait Frame -->
+        <div class="testimonial-portrait-col">
           <div class="main-portrait-frame">
-            <img src="assets/images/pic1-1.webp" alt="Client Reviewer" class="main-reviewer-photo">
-          </div>
-          <div class="testimonial-thumb-stack">
-            <img src="assets/images/pic1.webp" alt="Reviewer Thumbnail" class="thumb-avatar active">
-            <img src="assets/images/pic2.webp" alt="Reviewer Thumbnail" class="thumb-avatar">
-            <img src="assets/images/pic3.webp" alt="Reviewer Thumbnail" class="thumb-avatar">
+            <img src="assets/images/testimonial-reviewer-main.jpg" alt="Featured Reviewer" class="main-reviewer-photo"
+              id="mainReviewerPhoto">
           </div>
         </div>
 
-        <!-- Right Column: Testimonial Quote Card -->
-        <div class="testimonial-card-col">
-          <div class="testimonial-quote-box">
-            <div class="quote-stars-row">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+        <!-- Column 2: Stack of 3 rounded square avatars -->
+        <div class="testimonial-thumb-stack">
+          <div class="thumb-avatar-item active" data-index="0" role="button" tabindex="0"
+            aria-label="Review by Kevin Martin">
+            <img src="assets/images/testimonial-thumb-1.jpg" alt="Kevin Martin" class="thumb-img">
+          </div>
+          <div class="thumb-avatar-item" data-index="1" role="button" tabindex="0" aria-label="Review by Rohit Verma">
+            <img src="assets/images/testimonial-thumb-2.jpg" alt="Rohit Verma" class="thumb-img">
+          </div>
+          <div class="thumb-avatar-item" data-index="2" role="button" tabindex="0" aria-label="Review by Zeynep Kaya">
+            <img src="assets/images/testimonial-thumb-3.jpg" alt="Zeynep Kaya" class="thumb-img">
+          </div>
+        </div>
+
+        <!-- Column 3: Testimonial details (Name, Role, Quote Icon, Body, Stars, Arrows) -->
+        <div class="testimonial-content-col">
+          <div class="testimonial-author-header">
+            <div class="author-title-group">
+              <h3 class="testimonial-author-script" id="tAuthorName">Kevin Martin</h3>
+              <span class="testimonial-author-role" id="tAuthorRole">Customer</span>
             </div>
-            <blockquote class="testimonial-quote-text">
-              "Live The World curated the most unforgettable trip for our family to Manali and Parvati Valley! From cozy
-              wooden cottages to picturesque riverside cafes and patient mountain drivers, everything was handled with
-              perfection. Highly recommend their Himalayan tours!"
-            </blockquote>
-            <div class="testimonial-author-meta">
-              <h3 class="author-name">Aarav Sharma</h3>
-              <span class="author-location">Adventure Enthusiast from Mumbai</span>
+            <!-- Elegant double quote outline icon matching Screenshot 2 -->
+            <div class="testimonial-quote-icon-box" aria-hidden="true">
+              <svg class="testimonial-quote-svg" width="46" height="40" viewBox="0 0 48 42" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 28C6.58 28 3 24.42 3 20C3 12.82 8.82 7 16 7V12C12.13 12 9 15.13 9 19C9.64 18.38 10.77 18 12 18C15.87 18 19 21.13 19 25C19 28.87 15.87 32 12 32C9.55 32 7.42 30.73 6.18 28.85"
+                  stroke="#114479" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M35 28C30.58 28 27 24.42 27 20C27 12.82 32.82 7 40 7V12C36.13 12 33 15.13 33 19C33.64 18.38 34.77 18 36 18C39.87 18 43 21.13 43 25C43 28.87 39.87 32 36 32C33.55 32 31.42 30.73 30.18 28.85"
+                  stroke="#114479" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </div>
-            <div class="testimonial-nav-dots">
-              <span class="t-dot active"></span>
-              <span class="t-dot"></span>
-              <span class="t-dot"></span>
-            </div>
+          </div>
+
+          <p class="testimonial-review-body" id="tReviewText">
+            Live The World curated the most unforgettable trip for our family to Manali and Parvati Valley! From cozy
+            wooden cottages to picturesque riverside trails and expert local mountain guides, every single detail was
+            handled with care.
+          </p>
+
+          <!-- 5 Gold Star Rating -->
+          <div class="testimonial-stars-rating" aria-label="5 out of 5 stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <!-- Navigation Arrow Buttons (Orange/Gold circles with white arrows) -->
+          <div class="testimonial-nav-arrows">
+            <button class="t-nav-arrow-btn t-prev-btn" id="tPrevBtn" aria-label="Previous Testimonial">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="t-nav-arrow-btn t-next-btn" id="tNextBtn" aria-label="Next Testimonial">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
         </div>
 
@@ -1372,7 +1671,7 @@
       <p class="adventure-cta-subtitle">IT'S TIME TO TRAVEL</p>
 
       <!-- Pill Button: Booking Now -->
-      <a href="#tours" class="adventure-booking-btn">Booking Now</a>
+      <a href="contact.html" class="adventure-booking-btn">Booking Now</a>
 
     </div>
   </section>
@@ -1386,9 +1685,8 @@
 
         <!-- Col 1: Brand Logo, Himalayan Trails, Description & Social Icons (Facebook, Instagram, LinkedIn) -->
         <div class="dz-footer-brand-col">
-          <a href="index.html" class="dz-brand-logo-link">
+          <a href="index.html" class="dz-brand-logo-link" title="Live The World">
             <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
-            <span class="dz-brand-logo-name">Live The <span>World</span></span>
           </a>
           <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain
             experiences, and thrilling paragliding adventures.</p>
@@ -1406,9 +1704,10 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">DESTINATIONS</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
-            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
-            <li><a href="#destinations"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#shimla"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="destinations.html#manali"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="destinations.html#parvati"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#dharamshala"><i class="fa-solid fa-chevron-right"></i> Dharamshala</a></li>
           </ul>
         </div>
 
@@ -1416,10 +1715,12 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">EXPLORE</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> FAQs</a></li>
-            <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="#tours"><i class="fa-solid fa-chevron-right"></i> Tour Guide</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="fleet.html"><i class="fa-solid fa-chevron-right"></i> Travel Fleet</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
           </ul>
         </div>
 
@@ -1468,25 +1769,28 @@
       <div class="dz-instagram-row">
         <h3 class="dz-instagram-title">Follow Instagram</h3>
         <div class="dz-instagram-grid">
-          <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy">
+          <div class="dz-insta-thumb"><img src="assets/images/rafting.jfif" alt="River Rafting Adventure"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Paragliding in Solang Valley"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img.jfif" alt="White Water River Rapids"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/rafting-img-3.jfif" alt="River Expedition Team"
+              loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/bg-parvati.jpg" alt="Winter Mountain Trek" loading="lazy">
           </div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy">
+          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Manali Valley Riverside" loading="lazy">
           </div>
-          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy">
+          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Shimla Hillside Town" loading="lazy">
           </div>
-          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy">
-          </div>
-          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 8" loading="lazy">
-          </div>
+          <div class="dz-insta-thumb"><img src="assets/images/slider.jfif" alt="Snowboarding Alpine Slopes"
+              loading="lazy"></div>
         </div>
       </div>
 
       <!-- Bottom Bar from Screenshot 2: Copyright -->
       <div class="dz-footer-bottom">
-        <p class="dz-copyright-text">Copyright © 2025 <span class="dz-highlight-gold">DexignZone</span> All rights
+        <p class="dz-copyright-text">Copyright © 2026 <span class="dz-highlight-gold">Live The World</span>. All rights
           reserved.</p>
       </div>
 
@@ -1502,7 +1806,7 @@
   </a>
 
   <!-- JavaScript -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=3.0"></script>
 </body>
 
 </html>

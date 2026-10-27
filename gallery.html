@@ -39,46 +39,53 @@
         <!-- Logo Left Side -->
         <a href="index.html" class="brand-logo-link" title="Live The World">
           <img src="assets/images/logo.png" alt="Live The World Logo" class="brand-logo-img">
-          <div class="brand-text-wrap">
-            <span class="brand-name">Live The <span>World</span></span>
-          </div>
         </a>
 
-        <!-- Menu in the Centre: Home, About, Gallery, Tour Package, Contact Us -->
+        <!-- Menu in the Centre: Home, About Us, Destination, Fleet, Tour Packages, Gallery -->
         <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="gallery.html" class="nav-link active">Gallery</a>
-          <a href="tours.html" class="nav-link">Tour Packages</a>
-          <a href="contact.html" class="nav-link">Contact Us</a>
+          <div class="mobile-nav-header">
+            <span class="mobile-nav-brand">Live The <span>World</span></span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">&times;</button>
+          </div>
+          <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="nav-link"><i class="fa-solid fa-compass"></i> About Us</a>
+            <a href="destinations.html" class="nav-link"><i class="fa-solid fa-mountain-sun"></i> Destination</a>
+            <a href="fleet.html" class="nav-link"><i class="fa-solid fa-car-side"></i> Fleet</a>
+            <a href="tours.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+            <a href="gallery.html" class="nav-link active"><i class="fa-solid fa-images"></i> Gallery</a>
+            <a href="contact.html" class="nav-link mobile-only-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <a href="contact.html" class="mobile-cta-btn"><i class="fa-solid fa-phone"></i> Contact Us</a>
+            <div class="mobile-nav-contact">
+              <i class="fa-solid fa-phone"></i> <a href="tel:+911234567898">+91 12345 678 98</a>
+            </div>
+          </div>
         </nav>
 
-        <!-- Right Side Blank to keep Menu Centered -->
-        <div class="navbar-right-blank" aria-hidden="true"></div>
+        <!-- Right Side: Contact Us Button & Mobile Hamburger Toggle Button -->
+        <div class="navbar-right-box">
+          <a href="contact.html" class="navbar-contact-btn">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
 
       </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
   <!-- ==================== SECTION 2: PHOTO GALLERY HERO BREADCRUMB BANNER ==================== -->
   <section class="inner-hero-banner" id="gallery-hero">
-    <div class="inner-hero-sky-elements" aria-hidden="true">
-      <!-- Floating Paraglider in Sky (No Airplane) -->
-      <svg class="sky-paraglider" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 10,40 C 25,8 75,8 90,40 C 80,32 50,30 10,40 Z" fill="#DCA735" />
-        <path d="M 18,37 C 32,16 68,16 82,37 C 72,31 46,29 18,37 Z" fill="#114479" />
-        <line x1="20" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="40" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="60" y1="33" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <line x1="80" y1="38" x2="50" y2="68" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
-        <circle cx="50" cy="71" r="3.5" fill="#DCA735" />
-      </svg>
-      <svg class="sky-balloon-1" viewBox="0 0 60 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 30,5 C 48,5 55,25 45,48 C 38,62 34,70 30,70 C 26,70 22,62 15,48 C 5,25 12,5 30,5 Z" fill="#DCA735" />
-        <rect x="27" y="74" width="6" height="5" fill="#091D33" rx="1" />
-      </svg>
-    </div>
-
     <div class="inner-hero-content">
       <h1 class="inner-hero-title">Gallery</h1>
       <div class="inner-breadcrumb">
@@ -101,62 +108,62 @@
 
       <!-- Collage Masonry Grid matching Screenshot 3 -->
       <div class="gallery-collage-grid">
-        <!-- Item 1: Mountain Ocean View -->
+        <!-- Item 1: Langza Buddha Statue Spiti Valley -->
         <div class="gallery-item g-item-1">
-          <img src="assets/images/landscape-pic.webp" alt="Coastal Peaks" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.31 PM (1).jpeg" alt="Langza Buddha Statue Spiti Valley" loading="lazy">
           <div class="gallery-overlay">
-            <h4>Himalayan Foothills</h4>
-            <span>Shimla Valley</span>
+            <h4>Langza Buddha Statue</h4>
+            <span>Spiti Valley 4,400m</span>
           </div>
           <div class="gallery-expand-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
 
-        <!-- Item 2: Lake Reflection & Boat -->
+        <!-- Item 2: Himalayan Family Retreat Panorama -->
         <div class="gallery-item g-item-2">
-          <img src="assets/images/parvati-valley.jpg" alt="Parvati River Gorge" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.03 PM.jpeg" alt="Himalayan Family Retreat with Snow Peaks" loading="lazy">
           <div class="gallery-overlay">
-            <h4>Parvati River Valley</h4>
-            <span>Kasol, Himachal</span>
+            <h4>Himalayan Family Retreat</h4>
+            <span>Snow Peaks Panorama</span>
           </div>
           <div class="gallery-expand-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
 
-        <!-- Item 3: Hikers On Mountain Summit -->
+        <!-- Item 3: Kinnaur Rock Tunnel Gateway -->
         <div class="gallery-item g-item-3">
-          <img src="assets/images/Girl-Image.webp" alt="Summit Trekkers" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.08 PM.jpeg" alt="Kinnaur Rock Tunnel Expedition" loading="lazy">
           <div class="gallery-overlay">
-            <h4>Triund Alpine Ridge</h4>
-            <span>Dharamshala</span>
+            <h4>Kinnaur Rock Tunnel</h4>
+            <span>Himalayan Gateway Expedition</span>
           </div>
           <div class="gallery-expand-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
 
-        <!-- Item 4: Traveler In Yellow Dress At Overlook -->
+        <!-- Item 4: Key Monastery Spiti Valley -->
         <div class="gallery-item g-item-4">
-          <img src="assets/images/24-Image.webp" alt="Mountain Viewpoint" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.32 PM.jpeg" alt="Key Monastery Spiti Valley" loading="lazy">
           <div class="gallery-overlay">
-            <h4>Jakhu Sunrise Peak</h4>
-            <span>Shimla Panorama</span>
+            <h4>Key Monastery</h4>
+            <span>Ancient Spiti Heritage</span>
           </div>
           <div class="gallery-expand-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
 
-        <!-- Item 5: Riverbed Rocks & Emerald Water -->
+        <!-- Item 5: High Mountain Suspension Bridge -->
         <div class="gallery-item g-item-5">
-          <img src="assets/images/Manali.jpg" alt="Solang Snow Pass" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.57 PM.jpeg" alt="High Mountain Suspension Bridge Crossing" loading="lazy">
           <div class="gallery-overlay">
-            <h4>Solang Snow Valley</h4>
-            <span>Manali Adventure</span>
+            <h4>Himalayan Suspension Bridge</h4>
+            <span>High Gorge Valley Crossing</span>
           </div>
           <div class="gallery-expand-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
 
-        <!-- Item 6: Traveler Taking Camera Photo -->
+        <!-- Item 6: Kinnaur Cliff Route Mountain Road -->
         <div class="gallery-item g-item-6">
-          <img src="assets/images/pic1-1.webp" alt="Travel Photographer" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.05 PM.jpeg" alt="Kinnaur Cliff Route Mountain Road" loading="lazy">
           <div class="gallery-overlay">
-            <h4>Candid Explorations</h4>
-            <span>Himalayan Culture</span>
+            <h4>Kinnaur Cliff Route</h4>
+            <span>Dramatic Mountain Highway</span>
           </div>
           <div class="gallery-expand-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         </div>
@@ -171,34 +178,34 @@
       <!-- Secondary Photo Strip Grid (10 Photo Grid matching Screenshot 3) -->
       <div class="gallery-photo-strip-grid">
         <div class="strip-item">
-          <img src="assets/images/tour-bangkok.webp" alt="Mountain Waterfall" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.10 PM.jpeg" alt="Spiti River Boulder Valley with Snow Peaks" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/tour-spain.webp" alt="Heritage Temple" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.27 PM.jpeg" alt="World's Highest Post Office Hikkim" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/tour-kerala.webp" alt="Riverside Camp" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.22 PM.jpeg" alt="Glacier Stream and Himalayan Snow Peaks" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/paragliding.jpg" alt="Paragliding Solang" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.20 PM (1).jpeg" alt="Himalayan Stupa Under Moonlit Sky" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/bg-shimla.jpg" alt="Pine Valley Trail" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.28 PM (1).jpeg" alt="Senior Travelers at Hikkim Post Office" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/destination.webp" alt="Alpine Snow Pass" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.07 PM.jpeg" alt="Kinnaur Rock Cliff Roadside" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/pic2.webp" alt="Sunset Over Ridge" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.01 PM.jpeg" alt="Gorge Suspension Bridge View" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/pic3.webp" alt="Cultural Village" loading="lazy">
+          <img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.28 PM.jpeg" alt="Hikkim 4440m - World's Highest Post Office" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/Manali.jpg" alt="Beas River Canyon" loading="lazy">
+          <img src="assets/images/rafting.jfif" alt="White Water River Rafting Adventure" loading="lazy">
         </div>
         <div class="strip-item">
-          <img src="assets/images/parvati-valley.jpg" alt="Pine Forest Hikes" loading="lazy">
+          <img src="assets/images/paragliding.jpg" alt="Sky Paragliding in Solang Valley" loading="lazy">
         </div>
       </div>
 
@@ -212,9 +219,8 @@
 
         <!-- Col 1: Brand Logo & Description -->
         <div class="dz-footer-brand-col">
-          <a href="index.html" class="dz-brand-logo-link">
+          <a href="index.html" class="dz-brand-logo-link" title="Live The World">
             <img src="assets/images/logo.png" alt="Live The World Logo" class="dz-footer-logo-img">
-            <span class="dz-brand-logo-name">Live The <span>World</span></span>
           </a>
           <p class="dz-brand-slogan-desc">Live The World brings you unforgettable Himalayan journeys, authentic mountain experiences, and thrilling paragliding adventures.</p>
           <div class="dz-social-icons-row">
@@ -231,9 +237,10 @@
         <div class="dz-footer-menu-col">
           <h4 class="dz-col-heading">DESTINATIONS</h4>
           <ul class="dz-footer-nav-list">
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
-            <li><a href="index.html#destinations"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#shimla"><i class="fa-solid fa-chevron-right"></i> Shimla</a></li>
+            <li><a href="destinations.html#manali"><i class="fa-solid fa-chevron-right"></i> Manali</a></li>
+            <li><a href="destinations.html#parvati"><i class="fa-solid fa-chevron-right"></i> Parvati Valley</a></li>
+            <li><a href="destinations.html#dharamshala"><i class="fa-solid fa-chevron-right"></i> Dharamshala</a></li>
           </ul>
         </div>
 
@@ -242,9 +249,11 @@
           <h4 class="dz-col-heading">EXPLORE</h4>
           <ul class="dz-footer-nav-list">
             <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="about.html#faq"><i class="fa-solid fa-chevron-right"></i> FAQs</a></li>
-            <li><a href="index.html#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Guide</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-chevron-right"></i> Destinations</a></li>
+            <li><a href="fleet.html"><i class="fa-solid fa-chevron-right"></i> Travel Fleet</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-chevron-right"></i> Tour Packages</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
           </ul>
         </div>
 
@@ -293,20 +302,20 @@
       <div class="dz-instagram-row">
         <h3 class="dz-instagram-title">Follow Instagram</h3>
         <div class="dz-instagram-grid">
-          <div class="dz-insta-thumb"><img src="assets/images/pic1-1.webp" alt="Travel Moment 1" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-bangkok.webp" alt="Travel Moment 2" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/tour-spain.webp" alt="Travel Moment 3" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/landscape-pic.webp" alt="Travel Moment 4" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/Manali.jpg" alt="Travel Moment 5" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/parvati-valley.jpg" alt="Travel Moment 6" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/bg-shimla.jpg" alt="Travel Moment 7" loading="lazy"></div>
-          <div class="dz-insta-thumb"><img src="assets/images/paragliding.jpg" alt="Travel Moment 8" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.31 PM (1).jpeg" alt="Langza Buddha Statue" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.03 PM.jpeg" alt="Himalayan Family Retreat" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.10 PM.jpeg" alt="Spiti River Valley" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.27 PM.jpeg" alt="World Highest Post Office" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.22 PM.jpeg" alt="Glacier Stream & Snow Peaks" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.42.05 PM.jpeg" alt="Kinnaur Cliff Route" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.32 PM.jpeg" alt="Key Monastery Heritage" loading="lazy"></div>
+          <div class="dz-insta-thumb"><img src="assets/images/WhatsApp Image 2026-10-22 at 1.41.20 PM (1).jpeg" alt="Stupa Under Moonlit Sky" loading="lazy"></div>
         </div>
       </div>
 
       <!-- Bottom Bar from Screenshot 2: Copyright -->
       <div class="dz-footer-bottom">
-        <p class="dz-copyright-text">Copyright © 2025 <span class="dz-highlight-gold">DexignZone</span> All rights
+        <p class="dz-copyright-text">Copyright © 2026 <span class="dz-highlight-gold">Live The World</span>. All rights
           reserved.</p>
       </div>
     </div>
