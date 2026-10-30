@@ -1,5 +1,5 @@
 # ==============================================================================
-# LIVE THE WORLD - Clean URLs & SEO Server Configuration (.htaccess)
+# LIVES THE WORLD - Clean URLs & SEO Server Configuration (.htaccess)
 # ==============================================================================
 RewriteEngine On
 RewriteBase /

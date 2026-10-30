@@ -1,5 +1,5 @@
 /**
- * LIVE THE WORLD - Main Interactive Script
+ * LIVES THE WORLD - Main Interactive Script
  * Header scroll state, Popular Destinations & Interactive Controls
  */
 
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (controlIcon) {
           controlIcon.className = 'fa-solid fa-pause play-icon';
         }
-        showToast('Playing Adventure Video: Live The World');
+        showToast('Playing Adventure Video: Lives The World');
       } else {
         // Pause playback
         if (video) {
@@ -332,13 +332,13 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Kevin Martin',
       role: 'Customer',
       photo: 'assets/images/testimonial-reviewer-main.jpg',
-      quote: 'Live The World curated the most unforgettable trip for our family to Manali and Parvati Valley! From cozy wooden cottages to picturesque riverside trails and expert local mountain guides, every single detail was handled with care.'
+      quote: 'Lives The World curated the most unforgettable trip for our family to Manali and Parvati Valley! From cozy wooden cottages to picturesque riverside trails and expert local mountain guides, every single detail was handled with care.'
     },
     {
       name: 'Rohit Verma',
       role: 'Customer',
       photo: 'assets/images/testimonial-thumb-2.jpg',
-      quote: 'Climbing the snowline ridge of Triund and watching the sunset above the clouds was an ethereal experience. The Live The World team provided top-notch camping gear, warm mountain meals, and safe certified guides!'
+      quote: 'Climbing the snowline ridge of Triund and watching the sunset above the clouds was an ethereal experience. The Lives The World team provided top-notch camping gear, warm mountain meals, and safe certified guides!'
     },
     {
       name: 'Zeynep Kaya',
@@ -356,13 +356,13 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Ananya Iyer',
       role: 'Customer',
       photo: 'assets/images/reviewer-ananya.jpg',
-      quote: 'Booking the Spiti Valley circuit with Live The World was the best travel decision! From high-altitude homestays in Langza to visiting the world’s highest post office in Hikkim, everything was smooth and safe. Our mountain driver was courteous and highly experienced!'
+      quote: 'Booking the Spiti Valley circuit with Lives The World was the best travel decision! From high-altitude homestays in Langza to visiting the world’s highest post office in Hikkim, everything was smooth and safe. Our mountain driver was courteous and highly experienced!'
     },
     {
       name: 'Rajesh Patel',
       role: 'Customer',
       photo: 'assets/images/reviewer-rajesh.jpg',
-      quote: 'Traveling with elderly parents can be challenging, but Live The World took care of every single comfort on our 7-day Himachal family holiday. Clean tempo traveller, prompt chauffeurs, and great hotel selections with snow-peak views. Highly recommended!'
+      quote: 'Traveling with elderly parents can be challenging, but Lives The World took care of every single comfort on our 7-day Himachal family holiday. Clean tempo traveller, prompt chauffeurs, and great hotel selections with snow-peak views. Highly recommended!'
     }
   ];
 
@@ -481,5 +481,91 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-});
 
+  // --- 12. GALLERY FULL IMAGE LIGHTBOX MODAL ---
+  const lightboxModal = document.getElementById('galleryLightbox');
+  if (lightboxModal) {
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxSub = document.getElementById('lightboxSub');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const closeBtn = document.getElementById('lightboxCloseBtn');
+    const backdrop = document.getElementById('lightboxBackdrop');
+    const prevBtn = document.getElementById('lightboxPrevBtn');
+    const nextBtn = document.getElementById('lightboxNextBtn');
+
+    // Collect all gallery items in the primary collage grid and sliders
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-collage-grid .gallery-item, .gallery-dual-slider-section .slider-strip-item:not([aria-hidden="true"])'));
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      if (index < 0 || index >= galleryItems.length) return;
+      currentIndex = index;
+      const item = galleryItems[currentIndex];
+      const img = item.querySelector('img');
+      const title = item.querySelector('h4')?.textContent || item.querySelector('.slider-photo-caption')?.textContent || item.getAttribute('data-title') || 'Himalayan Expedition';
+      const sub = item.querySelector('span:not(.slider-photo-caption)')?.textContent || 'Lives The World Memories';
+
+      if (img && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || title;
+      }
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      if (lightboxSub) lightboxSub.textContent = sub;
+      if (lightboxCounter) lightboxCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+
+      lightboxModal.classList.add('active');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lightboxImg) lightboxImg.src = '';
+    }
+
+    function showPrev() {
+      const newIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      openLightbox(newIndex);
+    }
+
+    function showNext() {
+      const newIndex = (currentIndex + 1) % galleryItems.length;
+      openLightbox(newIndex);
+    }
+
+    galleryItems.forEach((item, idx) => {
+      // Clicking the card or golden expand button
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLightbox(idx);
+      });
+
+      const expandBtn = item.querySelector('.gallery-expand-icon');
+      if (expandBtn) {
+        expandBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          openLightbox(idx);
+        });
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    backdrop?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+  }
+
+});

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://livetheworld.in/sitemap.xml
+Sitemap: https://livestheworld.in/sitemap.xml

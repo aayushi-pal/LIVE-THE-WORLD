@@ -1,5 +1,5 @@
 /* ===================================================================
-   LIVE THE WORLD - TRAVEL & TOUR PORTAL
+   LIVES THE WORLD - TRAVEL & TOUR PORTAL
    Exact Travlla Theme Recreation for Himachal & Himalayan Expeditions
    Locations: Parvati Valley, Shimla, Manali
    Palette: Deep Teal, Lime Green, Royal Gold & Mountain Navy
@@ -3881,7 +3881,7 @@ body.nav-drawer-open {
    HIMALAYAN DESTINATIONS MARQUEE & PANORAMA SECTION
    Matches Reference Screenshot:
    - Infinite Smooth Marquee with Flag Tour Badges, Cursive Destinations, Popular! tags
-   - Live The World Giant Watermark Typography
+   - Lives The World Giant Watermark Typography
    - Himalayas Panoramic Visual
    =================================================================== */
 .marquee-destinations-section {
@@ -4063,7 +4063,7 @@ body.nav-drawer-open {
   transform: translateY(-4px) scale(1.015);
 }
 
-/* Right-Side Box: Popular & LIVE THE WORLD (Exact match to Reference Screenshot) */
+/* Right-Side Box: Popular & LIVES THE WORLD (Exact match to Reference Screenshot) */
 .marquee-banner-right-box {
   position: relative;
   z-index: 2;
@@ -4089,7 +4089,7 @@ body.nav-drawer-open {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
 }
 
-/* Giant LIVE THE WORLD Typography (Matching screenshot's warm cream SEARCH letters) */
+/* Giant LIVES THE WORLD Typography (Matching screenshot's warm cream SEARCH letters) */
 .marquee-banner-headline {
   font-family: 'Figtree', sans-serif;
   font-size: clamp(3.2rem, 5.0vw, 5.0rem);
@@ -5315,7 +5315,7 @@ body.nav-drawer-open {
 
 /* ===================================================================
    11. OUR CLIENTS SAY / TESTIMONIALS SECTION
-   (Exact Match to Reference Screenshot: LIVE THE WORLD Banner & Paraglider)
+   (Exact Match to Reference Screenshot: LIVES THE WORLD Banner & Paraglider)
    =================================================================== */
 .testimonials-section {
   background-color: #FAF8F5;
@@ -5376,7 +5376,7 @@ body.nav-drawer-open {
   margin: -14px auto 0;
 }
 
-/* Refined & Reduced LIVE THE WORLD Wordmark Banner (No Thread Sign, Clean Paraglider) */
+/* Refined & Reduced LIVES THE WORLD Wordmark Banner (No Thread Sign, Clean Paraglider) */
 .testimonials-wordmark-wrap,
 .testimonials-giant-banner-wrap {
   position: relative;

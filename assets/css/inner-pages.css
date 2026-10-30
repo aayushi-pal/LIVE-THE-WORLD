@@ -1,5 +1,5 @@
 /* ===================================================================
-   LIVE THE WORLD - INNER PAGES STYLESHEET (ABOUT, GALLERY, TOURS, CONTACT)
+   LIVES THE WORLD - INNER PAGES STYLESHEET (ABOUT, GALLERY, TOURS, CONTACT)
    Consistent with Landing Page Theme:
    - Royal Navy Blue (#091D33, #114479), Gold (#DCA735), White (#FFFFFF), Off-White (#FAF8F5, #FAF0DB)
    - Fonts: Figtree / Playfair / Dancing Script
@@ -563,6 +563,7 @@
 
 .tour-card-price-tag {
   position: absolute;
+  white-space: nowrap;
   bottom: 16px;
   right: 16px;
   background: var(--color-gold-gradient);
@@ -1772,7 +1773,7 @@ textarea.contact-input-field {
 }
 
 /* ===================================================================
-   WHY LIVE THE WORLD - STATS & JOURNEY SECTION (destinations.html)
+   WHY LIVES THE WORLD - STATS & JOURNEY SECTION (destinations.html)
    Light Elegant Alpine Palette
    =================================================================== */
 .about-journey-section {
@@ -2466,7 +2467,7 @@ textarea.contact-input-field {
 
 /* ========================================================
    FLEET PAGE — REFERENCE WEBSITE DESIGN IMPLEMENTATION
-   Ref: https://live-the-world-himalayan-journeys.gaurav173689.chatgpt.site/#fleet
+   Ref: https://lives-the-world-himalayan-journeys.gaurav173689.chatgpt.site/#fleet
    ======================================================== */
 
 :root {
@@ -3857,5 +3858,383 @@ body.package-detail-page .package-detail-hero-section {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+}
+
+/* ===================================================================
+   GALLERY "PLACE IN THE WORLD" DUAL DIRECTION CONTINUOUS SLIDER
+   Row 1: Slide Right to Left (Continuous Infinite Marquee)
+   Row 2: Slide Left to Right (Continuous Infinite Marquee)
+   =================================================================== */
+.gallery-dual-slider-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 10px 0 24px 0;
+  overflow: hidden;
+}
+
+.gallery-slider-row {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+.gallery-slider-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  will-change: transform;
+}
+
+/* Row 1: Right to Left (Images continuously slide towards the left) */
+.track-move-left {
+  animation: gallerySlideRightToLeft 42s linear infinite;
+}
+
+/* Row 2: Left to Right (Images continuously slide towards the right) */
+.track-move-right {
+  animation: gallerySlideLeftToRight 42s linear infinite;
+}
+
+/* Pause track motion on user hover or keyboard focus */
+.gallery-slider-row:hover .gallery-slider-track,
+.gallery-slider-row:focus-within .gallery-slider-track {
+  animation-play-state: paused;
+}
+
+@keyframes gallerySlideRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gallerySlideLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Slider item card styling */
+.slider-strip-item {
+  width: 290px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: #114479;
+  box-shadow: 0 8px 24px rgba(9, 29, 51, 0.12);
+  border: 1.5px solid rgba(220, 167, 53, 0.22);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slider-strip-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slider-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 14px 10px;
+  background: linear-gradient(to top, rgba(9, 29, 51, 0.90) 0%, rgba(9, 29, 51, 0.5) 60%, rgba(9, 29, 51, 0) 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.slider-strip-item:hover {
+  transform: translateY(-6px);
+  border-color: #DCA735;
+  box-shadow: 0 14px 34px rgba(17, 68, 121, 0.26);
+}
+
+.slider-strip-item:hover img {
+  transform: scale(1.08);
+}
+
+.slider-strip-item:hover .slider-photo-caption {
+  color: #DCA735;
+}
+
+@media (max-width: 768px) {
+  .slider-strip-item {
+    width: 230px;
+    height: 160px;
+    border-radius: 14px;
+  }
+  .track-move-left {
+    animation-duration: 28s;
+  }
+  .track-move-right {
+    animation-duration: 28s;
+  }
+}
+
+
+/* ===================================================================
+   GALLERY LIGHTBOX MODAL STYLING
+   =================================================================== */
+.gallery-expand-icon {
+  cursor: pointer;
+  z-index: 4;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-expand-icon:hover {
+  transform: scale(1.18) rotate(6deg);
+  background: #FFFFFF;
+  color: #114479;
+  box-shadow: 0 6px 18px rgba(220, 167, 53, 0.6);
+}
+
+.gallery-item {
+  cursor: pointer;
+}
+
+/* Lightbox overlay container */
+.gallery-lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+}
+
+.gallery-lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dark blurred backdrop */
+.lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(9, 29, 51, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Modal Dialog box */
+.lightbox-dialog {
+  position: relative;
+  z-index: 2;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Close Button (Top-Right) */
+.lightbox-close-btn {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(220, 167, 53, 0.45);
+  background: rgba(17, 68, 121, 0.7);
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  z-index: 10;
+}
+
+.lightbox-close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: #DCA735;
+  border-color: #DCA735;
+  color: #091D33;
+}
+
+/* Prev / Next Nav Buttons */
+.lightbox-nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(220, 167, 53, 0.4);
+  background: rgba(17, 68, 121, 0.7);
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.lightbox-prev-btn {
+  left: 24px;
+}
+
+.lightbox-next-btn {
+  right: 24px;
+}
+
+.lightbox-nav-btn:hover {
+  background: #DCA735;
+  border-color: #DCA735;
+  color: #091D33;
+  transform: translateY(-50%) scale(1.12);
+}
+
+/* Content Box */
+.lightbox-content-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  max-height: 86vh;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  border: 1.5px solid rgba(220, 167, 53, 0.4);
+  background: #091D33;
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-lightbox-modal.active .lightbox-content-box {
+  transform: scale(1);
+}
+
+/* Image Wrap & Main Image */
+.lightbox-image-wrap {
+  width: 100%;
+  max-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #05101c;
+  overflow: hidden;
+}
+
+.lightbox-main-img {
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+/* Caption Bar */
+.lightbox-caption-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #091D33;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 16px;
+}
+
+.lightbox-caption-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lightbox-title {
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.lightbox-sub {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  color: #DCA735;
+  margin: 0;
+}
+
+.lightbox-counter {
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #b6c5d2;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+  .lightbox-prev-btn {
+    left: 10px;
+  }
+  .lightbox-next-btn {
+    right: 10px;
+  }
+  .lightbox-close-btn {
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+  .lightbox-image-wrap {
+    max-height: 60vh;
+  }
+  .lightbox-main-img {
+    max-height: 60vh;
+  }
+  .lightbox-caption-bar {
+    padding: 12px 16px;
+  }
+  .lightbox-title {
+    font-size: 1.05rem;
   }
 }
