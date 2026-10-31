@@ -366,20 +366,18 @@
               <label for="pkgGuestVehicle">Vehicle Preference</label>
               <select id="pkgGuestVehicle" name="vehicle">
                 <option value="Help me choose">Help me choose</option>
-                <option value="Hatchback (Swift / Tiago)">Hatchback (Swift / Tiago)</option>
-                <option value="Sedan (Dzire / Etios)">Sedan (Dzire / Etios)</option>
-                <option value="SUV (Innova Crysta / Ertiga)">SUV (Innova Crysta / Ertiga)</option>
-                <option value="Premium 4x4 (Fortuner)">Premium 4x4 (Fortuner)</option>
-                <option value="Tempo Traveller (12-16 Seater)">Tempo Traveller (12-16 Seater)</option>
+                <option value="4x4 Mountain Jeep">4x4 Mountain Jeep</option>
+                <option value="Tempo Traveller (20+ Seats)">Tempo Traveller (20+ Seats)</option>
+                <option value="Mahindra Bolero">Mahindra Bolero</option>
               </select>
             </div>
 
             <div class="sidebar-form-field">
               <label for="pkgGuestDriver">Need a driver?</label>
               <select id="pkgGuestDriver" name="driver">
-                <option value="With driver (Recommended for Hills)">With driver (Recommended)</option>
-                <option value="Without driver">Without driver</option>
-                <option value="Not sure yet">Not sure yet</option>
+                <option value="With Driver">With Driver (Recommended)</option>
+                <option value="Without Driver">Without Driver</option>
+                <option value="Need Guidance">Need Guidance</option>
               </select>
             </div>
 
@@ -516,7 +514,7 @@
   </footer>
 
   <!-- Floating WhatsApp Action Button -->
-  <a href="https://wa.me/911234567898?text=Hello%20Lives%20The%20World!%20I%20would%20like%20to%20plan%20the%20Parvati%20Valley%20Riverside%20Escape."
+  <a href="https://wa.me/919773546426?text=Hello%20Lives%20The%20World!%20I%20would%20like%20to%20plan%20the%20Parvati%20Valley%20Riverside%20Escape."
     class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
     title="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
@@ -538,29 +536,51 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         const pkgName = 'Parvati Valley Riverside Escape';
-        const name = document.getElementById('pkgGuestName').value;
-        const email = document.getElementById('pkgGuestEmail').value;
+        const destination = 'Parvati Valley';
+        const name = document.getElementById('pkgGuestName').value.trim();
+        const email = document.getElementById('pkgGuestEmail').value.trim();
         const date = document.getElementById('pkgGuestDate').value;
         const count = document.getElementById('pkgGuestCount').value;
         const vehicle = document.getElementById('pkgGuestVehicle').value;
         const driver = document.getElementById('pkgGuestDriver').value;
 
+        // Format date to "31 October 2026" style
+        let formattedDate = date;
+        if (date) {
+          try {
+            const parts = date.split('-');
+            if (parts.length === 3) {
+              const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+              ];
+              const day = parseInt(parts[2], 10);
+              const monthIndex = parseInt(parts[1], 10) - 1;
+              const year = parts[0];
+              if (monthIndex >= 0 && monthIndex < 12 && !isNaN(day)) {
+                formattedDate = `${day} ${monthNames[monthIndex]} ${year}`;
+              }
+            }
+          } catch (err) {}
+        }
+
         const brief = `=========================================
 LIVES THE WORLD — PACKAGE ENQUIRY BRIEF
 =========================================
 Package: ${pkgName}
+Destination: ${destination}
 Estimated Price: Starting from ₹5,999 / person
 -----------------------------------------
 Guest Name: ${name}
 Email Address: ${email}
-Travel Date: ${date}
+Travel Date: ${formattedDate}
 Travellers: ${count}
 Vehicle Preference: ${vehicle}
 Driver Option: ${driver}
 -----------------------------------------
 Lives The World Himalayan Journeys
 The Mall Road, Near Ridge, Shimla, HP
-Mobile: +91 12345 678 98 | Email: info@livestheworld.com
+Mobile: +91 97735 46426 | Email: info@livestheworld.com
 =========================================`;
 
         const blob = new Blob([brief], { type: 'text/plain' });
@@ -573,9 +593,30 @@ Mobile: +91 12345 678 98 | Email: info@livestheworld.com
         document.body.removeChild(a);
         setTimeout(() => URL.revokeObjectURL(url), 1000);
 
-        // Pre-fill WhatsApp message
-        const waText = encodeURIComponent(`Hello Lives The World! I would like to inquire about the ${pkgName}.\n\nName: ${name}\nDate: ${date}\nTravellers: ${count}\nVehicle: ${vehicle}`);
-        window.open(`https://wa.me/911234567898?text=${waText}`, '_blank');
+        // Pre-fill WhatsApp message matching requested template
+        const waMessage = `Hello Live The World Team!
+
+I’m interested in booking a trip with Live The World. Please find my travel details below:
+
+PERSONAL DETAILS
+• Name: ${name}
+• Travel Date: ${formattedDate}
+• Number of Travellers: ${count}
+
+TRIP DETAILS
+• Tour Package: ${pkgName}
+• Destination: ${destination}
+• Selected Vehicle: ${vehicle}
+• Driver Preference: ${driver}
+
+MY REQUEST
+Please share the best available price, package details, inclusions, and booking procedure.
+
+I look forward to hearing from you!
+
+Thank you.`;
+
+        window.open(`https://wa.me/919773546426?text=${encodeURIComponent(waMessage)}`, '_blank');
       });
     }
   </script>

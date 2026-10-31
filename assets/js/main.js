@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function moveToSlide(index, animate = true) {
     if (!heroTrack) return;
     if (animate) {
-      heroTrack.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.35, 1)';
+      heroTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.35, 1)';
     } else {
       heroTrack.style.transition = 'none';
     }
@@ -187,11 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
         moveToSlide(0, false);
         void heroTrack.offsetWidth; // force browser layout recalculation
         isSliding = false;
-      }, 420);
+      }, 620);
     } else {
       setTimeout(() => {
         isSliding = false;
-      }, 420);
+      }, 620);
     }
   }
 
@@ -210,13 +210,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setTimeout(() => {
       isSliding = false;
-    }, 420);
+    }, 620);
   }
 
   function startHeroAutoPlay() {
     stopHeroAutoPlay();
-    // Fast and continuous 1.8s auto-slider interval
-    heroAutoTimer = setInterval(nextSlide, 1800);
+    // Calm 5s auto-slider interval
+    heroAutoTimer = setInterval(nextSlide, 5000);
   }
 
   function stopHeroAutoPlay() {
@@ -316,13 +316,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 9B. CONTACT FORM SUBMISSION FEEDBACK ---
+  // --- 9B. CONTACT FORM DIRECT WHATSAPP FORWARD ---
   const contactForm = document.querySelector('.contact-main-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('Thank you! Your trip inquiry has been sent. Our team will contact your mobile number shortly.');
+
+      const name = document.getElementById('contactName')?.value.trim() || '';
+      const email = document.getElementById('contactEmail')?.value.trim() || '';
+      const mobile = document.getElementById('contactMobile')?.value.trim() || '';
+      const message = contactForm.querySelector('textarea[name="message"]')?.value.trim() || '';
+
+      const waMessage = `Hello Live The World Team!
+
+I have sent an inquiry from the website contact page. Please find my details below:
+
+PERSONAL DETAILS
+• Name: ${name}
+• Email: ${email}
+• Mobile: ${mobile}
+
+MESSAGE
+${message}
+
+Thank you.`;
+
+      const waUrl = `https://wa.me/919773546426?text=${encodeURIComponent(waMessage)}`;
+
+      // Reset form fields
       contactForm.reset();
+
+      // Send directly on WhatsApp 9773546426
+      window.open(waUrl, '_blank');
     });
   }
 
